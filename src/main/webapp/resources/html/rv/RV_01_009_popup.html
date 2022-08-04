@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <div class="contents-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <!-- [popup source] -->
+                    <!-- [comment]
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupInfomation"><span>popup (검사 항목 ? 클릭 시 설명 레이아웃)</span></button>
+
+                    <div class="c-layer-popup type02" id="popupChkupInfomation" role="dialog" aria-labelledby="popupChkupInfomation_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-header">
+                                    <div class="c-modal-title-field">
+                                        <h4 class="c-title" id="popupChkupInfomation_Label">위 내시경 (비수면)</h4>
+                                    </div>
+                                    <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                                </div>
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <p>내시경이란 기구를 이용하여 구강을 통해 식도, 위, 십이지장 등 소화기관을 관찰하며, 이상이 있는 경우 조직 검사를 통해 진단하는 검사 방법입니다. (수면) 안전한 수면 유도제를 사용하여 위내시경 검사 시 불편감을 최소화 한 검사입니다.</p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer justify-cont-e">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupSelectChkup01">
+                        <span> popup (검사항목을 선택하여 주시기 바랍니다.)</span>
+                    </button>
+
+                    <div class="c-layer-popup type01" id="popupSelectChkup01" role="dialog" aria-labelledby="popupSelectChkup01_Label " aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupSelectChkup01_Label">검사항목 선택 안내 팝업</h4>
+                                        <p>검사항목을 선택하여 주시기 바랍니다.</p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupSelectChkup02">
+                        <span> popup (검사항목에 대한 선택이 완료 되었습니다. 확인하여 주시기 바랍니다.)</span>
+                    </button>
+
+                    <div class="c-layer-popup type01" id="popupSelectChkup02" role="dialog" aria-labelledby="popupSelectChkup02_Label " aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupSelectChkup02_Label">검사항목 선택 안내 팝업</h4>
+                                        <p>
+                                            검사항목에 대한 선택이 완료 되었습니다. <br />
+                                            확인하여 주시기 바랍니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupSelectChkup03">
+                        <span> popup (검사 항목 관련 안내 팝업(Text 구분))</span>
+                    </button>
+
+                    <div class="c-layer-popup type01" id="popupSelectChkup03" role="dialog" aria-labelledby="popupSelectChkup03_Label " aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupSelectChkup03_Label">검사항목 선택 안내 팝업</h4>
+                                        <div class="in-cont">
+                                            <p>대장내시경 검사 일정이 <br />회사 검진 기간 내 불가합니다.</p>
+                                            <p>대장 내시경 검사만 별도의 일정으로 예약을 <br />원하실 경우 확인 버튼을 눌러주시기 바랍니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupSelectChkup05">
+                        <span> popup (위내시경 검사 안내 관련 팝업- 검진기관의 위내시경 검사항목에는 65세 이상 연령제한이 있습니다. 컨디션에 따라 문진 후 대체검사로 진행 될 수 있습니다.)</span>
+                    </button>
+
+                    <div class="c-layer-popup type01" id="popupSelectChkup05" role="dialog" aria-labelledby="popupSelectChkup05_Label " aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupSelectChkup05_Label">검사항목 선택 안내 팝업</h4>
+                                        <div class="in-cont ta-l">
+                                            <p>검진기관의 위내시경 검사항목에는 65세 이상 연령제한이 있습니다. 컨디션에 따라 문진 후 대체검사로 진행 될 수 있습니다.</p>
+                                            <p>대체 검사 (펩시노겐 검사)는 위암의 선별 검사 중 하나로 혈액검사를 통해 간편하게 진행할 수 있습니다</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupSelectChkup06">
+                        <span> popup (대장내시경 검사 안내 관련 팝업- 검진기관의 위내시경 검사항목에는 65세 이상 연령제한이 있습니다. 컨디션에 따라 문진 후 대체검사로 진행 될 수 있습니다.)</span>
+                    </button>
+
+                    <div class="c-layer-popup type01" id="popupSelectChkup06" role="dialog" aria-labelledby="popupSelectChkup06_Label " aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupSelectChkup06_Label">검사항목 선택 안내 팝업</h4>
+                                        <div class="in-cont ta-l">
+                                            <p>검진기관의 대장내시경 검사항목에는 65세 이상 연령제한이 있습니다. 컨디션에 따라 문진 후 대체 검사 (얼리텍, m2-pk)로 진행 될 수 있습니다.</p>
+                                            <p>대체검사(얼리텍검사, M2-PK)는 대장암 조기진단 검사로 분변내에 유전자검사를 통해 간편하게 진행할 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Contents -->
+            </div>
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

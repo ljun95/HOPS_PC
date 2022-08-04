@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <div class="contents-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <!-- [popup source] -->
+                    <!-- [comment]
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupAllViewsurcharges"><span>open popup</span></button>
+
+                    <!-- type 추가 -->
+                    <div class="c-layer-popup type02 surcharges" id="popupAllViewsurcharges" role="dialog" aria-labelledby="popupAllViewsurcharges_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-header">
+                                    <div class="c-modal-title-field">
+                                        <h4 class="c-title" id="popupAllViewsurcharges_Label">추가금 전체보기</h4>
+                                    </div>
+                                    <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                                </div>
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <div class="total-surcharges-wrap">
+                                            <ul class="total-surcharges-list">
+                                                <li class="price-row">
+                                                    <div class="name">검진상품 추가금</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">검진상품 추가금</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택1) 대장내시경</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택1) 위 내시경 (수면)</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택1) 갑상선초음파</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택1) 대장내시경</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택1) 위 내시경 (수면)</div>
+                                                    <div class="price"><em>100,000</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택2) 갑상선초음파</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택2) 대장내시경</div>
+                                                    <div class="price"><em>500,000</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택2) 위 내시경 (수면)</div>
+                                                    <div class="price"><em>500,000</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택3) L-Spine CT</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">선택3) 갑상선초음파</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                                <li class="price-row">
+                                                    <div class="name">추가) 대장내시경</div>
+                                                    <div class="price"><em>0</em> <span>원</span></div>
+                                                </li>
+                                            </ul>
+                                            <div class="btm-total-price">
+                                                <div class="price-row">
+                                                    <div class="name">개인 추가금 합계</div>
+                                                    <div class="price"><em>1,100,000</em> <span>원</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                </section>
+                <!-- // Contents -->
+            </div>
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        scrollbarCustom('.c-modal-body');
+    </script>
+</body>
+
+</html>

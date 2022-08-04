@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+
+            <!--  button data-target === popup id -->
+            <!--  aria-labelledby === title id -->
+
+            <section class="contents">
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupHoldOffice01"><span>popup (재직 알림)</span></button>
+                <div class="c-layer-popup type04" id="popupHoldOffice01" role="dialog" aria-labelledby="popupHoldOffice01_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupHoldOffice01_Label">재직 알림</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+                            <!-- c-modal-body -->
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="join-login-field">
+                                        <div class="cont-box">
+                                            <p>재직 된 회사가 중복 확인 되었습니다. 퇴직하신 회사에 대해서 퇴직 처리하여 주시기 바랍니다.</p>
+                                        </div>
+
+                                        <div class="co-table-field">
+                                            <!-- table-type02 -->
+                                            <div class="co-table table-type02">
+                                                <table class="table">
+                                                    <caption>
+                                                        재직 회사 목록 : 회사선택 , 아이디/사번, 이름, 부서에 대한 정보
+                                                    </caption>
+                                                    <colgroup>
+                                                        <col class="checkbox" />
+                                                        <col />
+                                                        <col style="width: 180px" />
+                                                        <col style="width: 180px" />
+                                                        <col />
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col">회사명</th>
+                                                            <th scope="col">아이디/사번</th>
+                                                            <th scope="col">이름</th>
+                                                            <th scope="col">부서</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!--  input 생성 시 for/id 매칭-->
+                                                        <tr>
+                                                            <td class="tbl-chk">
+                                                                <div class="c-rdochk">
+                                                                    <input type="radio" name="rdoInOffice" id="rdoInOffice01_01" />
+                                                                    <label for="rdoInOffice01_01" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>버거킹</td>
+                                                            <td class="ta-c">011144</td>
+                                                            <td class="ta-c">홍길동</td>
+                                                            <td>삼성역점(파트)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="tbl-chk">
+                                                                <div class="c-rdochk">
+                                                                    <input type="radio" name="rdoInOffice" id="rdoInOffice01_02" />
+                                                                    <label for="rdoInOffice01_02" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>버거킹</td>
+                                                            <td class="ta-c">011144</td>
+                                                            <td class="ta-c">홍길동</td>
+                                                            <td>삼성역점(파트)</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="tbl-chk">
+                                                                <div class="c-rdochk">
+                                                                    <input type="radio" name="rdoInOffice" id="rdoInOffice01_03" />
+                                                                    <label for="rdoInOffice01_03" class="chk-label"><i></i><span class="skip">checkbox</span></label>
+                                                                </div>
+                                                            </td>
+                                                            <td>버거킹</td>
+                                                            <td class="ta-c">011144</td>
+                                                            <td class="ta-c">홍길동</td>
+                                                            <td>삼성역점(파트)</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //  c-modal-body -->
+
+                            <div class="c-modal-footer">
+                                <div class="inner justify-cont-sb">
+                                    <p class="co-ref-txt is-gray-2">퇴직 처리시 해당회사의 검진 예약은 이용이 불가하며, 예약 진행 중인 퇴직자의 검진 예약은 자동 취소 처리 됩니다.</p>
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button type="button" class="co-btn bg-navy-1"><span>퇴직</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertHoldOffice01_01">
+                    <span>popup (퇴직하실 회사를 선택하지 않았습니다. 선택하신 후 눌러 주시기 바랍니다.)</span>
+                </button>
+
+                <div class="c-layer-popup type01" id="alertHoldOffice01_01" role="dialog" aria-labelledby="alertHoldOffice01_01_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="alertHoldOffice01_01_Label">퇴직회사 미선택</h4>
+                                    <p>
+                                        퇴직하실 회사를 선택하지 않았습니다. <br />
+                                        선택하신 후 눌러 주시기 바랍니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertHoldOffice01_02"><span>popup (퇴직 처리시 해당 회사의 검진예약은 이용이 불가능하며, 예약 진행 중인 퇴직자의 검진 예약은 자동 취소 됩니다. 해당 회사에서 퇴직처리 하시겠습니까?) </span></button>
+
+                <div class="c-layer-popup type02" id="alertHoldOffice01_02" role="dialog" aria-labelledby="alertHoldOffice01_02_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="alertHoldOffice01_02_Label">퇴직 확인</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <p class="ta-l">
+                                        퇴직 처리시 해당 회사의 검진예약은 이용이 불가능하며, 예약 진행 중인 퇴직자의 검진 예약은 자동 취소 됩니다. <br /><br />
+                                        해당 회사에서 퇴직처리 하시겠습니까?
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <!-- popup-->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertHoldOffice01_03"><span>popup (퇴직 처리되었습니다.) </span></button>
+                <div class="c-layer-popup type01" id="alertHoldOffice01_03" role="dialog" aria-labelledby="alertHoldOffice01_03_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="alertHoldOffice01_03_Label">퇴직처리 완료</h4>
+                                    <p>퇴직 처리되었습니다.</p>
+                                </div>
+                            </div>
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Contents -->
+            </section>
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

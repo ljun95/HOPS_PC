@@ -1,0 +1,373 @@
+//  = ico-type01
+$ico-sprite01-res: 0; // 첫번째 x
+.t-i-help01 {
+  background-position: 0 #{-$result}px;
+}
+
+$ico-list01: (
+  info01,
+  arrow01-01,
+  arrow01-double,
+  arrow03-01,
+  arrow02-01,
+  date,
+  time,
+  search,
+  close01-01,
+  home,
+  profile,
+  nav01,
+  nav02,
+  nav03,
+  nav04,
+  nav05,
+  add-ci,
+  datepick,
+  document-search,
+  arrow-full,
+  map,
+  favorite01,
+  assignment,
+  refresh,
+  check,
+  close02,
+  down,
+  eye,
+  menu-hamburger,
+  special,
+  center-info
+);
+
+.ico-type01 {
+  $size: 28px !default;
+  background: {
+    image: url($image-ico-sprite01);
+    size: auto 218px;
+    repeat: no-repeat;
+  }
+  width: $size;
+  height: $size;
+  display: inline-block;
+  @include is-blind;
+
+  @each $icon in $ico-list01 {
+    $ico-sprite01-res: $ico-sprite01-res + 38;
+
+    &.t-i-#{$icon} {
+      background-position: #{-$ico-sprite01-res}px $ico-sprite01-t-y;
+    }
+  }
+
+  // + help
+  &.t-i-help01-02 {
+    background-position: 0 -38px;
+  }
+
+  &.t-i-help01-03 {
+    background-position: 0 -76px;
+  }
+}
+
+// + arrow01
+$ico-list01-arrow01: (arrow01-02, arrow01-03, arrow01-04, arrow01-05);
+$ico-arrow01-pos: 0;
+@each $icon in $ico-list01-arrow01 {
+  $ico-arrow01-pos: $ico-arrow01-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -76px #{-$ico-arrow01-pos}px;
+  }
+}
+
+// + arrow03
+$ico-list01-arrow03: (arrow03-02, arrow03-03, arrow03-04);
+$ico-arrow03-pos: 0;
+@each $icon in $ico-list01-arrow03 {
+  $ico-arrow03-pos: $ico-arrow03-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -152px #{-$ico-arrow03-pos}px;
+  }
+}
+// + arrow02
+.ico-type.t-i-arrow02-02 {
+  background-position: -192px -36px;
+}
+
+// + close01
+$ico-list01-close01: (close01-02, close01-03);
+$ico-close01-pos: 0;
+@each $icon in $ico-list01-close01 {
+  $ico-close01-pos: $ico-close01-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -152px #{-$ico-close01-pos}px;
+  }
+}
+// + nav01 '
+
+$ico-list01-nav01: (nav01-02, nav01-03);
+$ico-nav01-pos: 0;
+@each $icon in $ico-list01-nav01 {
+  $ico-nav01-pos: $ico-nav01-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -456px #{-$ico-nav01-pos}px;
+  }
+}
+
+// + nav02
+$ico-list01-nav02: (nav02-02, nav02-03);
+$ico-nav02-pos: 0;
+@each $icon in $ico-list01-nav02 {
+  $ico-nav02-pos: $ico-nav02-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -494px #{-$ico-nav02-pos}px;
+  }
+}
+
+// + nav03
+$ico-list01-nav03: (nav03-02, nav03-03);
+$ico-nav03-pos: 0;
+@each $icon in $ico-list01-nav03 {
+  $ico-nav03-pos: $ico-nav03-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -532px #{-$ico-nav03-pos}px;
+  }
+}
+
+// + nav04
+$ico-list01-nav04: (nav04-02, nav04-03);
+$ico-nav04-pos: 0;
+@each $icon in $ico-list01-nav04 {
+  $ico-nav04-pos: $ico-nav04-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -570px #{-$ico-nav04-pos}px;
+  }
+}
+
+// + nav05
+$ico-list01-nav05: (nav05-02, nav05-03);
+$ico-nav05-pos: 0;
+@each $icon in $ico-list01-nav02 {
+  $ico-nav05-pos: $ico-nav05-pos + 38;
+  .ico-type01.t-i-#{$icon} {
+    background-position: -608px #{-$ico-nav05-pos}px;
+  }
+}
+// + favorite
+.ico-type01.t-i-favorite01-02 {
+  background-position: -836px -38px;
+}
+
+// = icon type02
+$ico-list02: (check01, check02, check03, check04, arrow-left01, arrow-left02, arrow-right01, arrow-right02, date, time, search, close, info, play);
+
+.ico-type02 {
+  $size: 28px !default;
+  background: {
+    image: url($image-ico-sprite02);
+    size: 542px auto;
+    repeat: no-repeat;
+  }
+  width: $size;
+  height: $size;
+  display: inline-block;
+  @include is-blind;
+
+  @each $icon in $ico-list02 {
+    $ico-sprite01-res: $ico-sprite01-res + 38;
+
+    &.i-#{$icon} {
+      background-position: #{-$ico-sprite01-res}px $ico-sprite01-t-y;
+    }
+  }
+}
+
+.ico-search {
+  background: url($image-ico-path + 'ico_search_01.svg') center/100% no-repeat;
+  width: 17px;
+  height: 17px;
+}
+
+// = icon checkbox
+$ico-chkbox-sprite-res: 0; // 첫번째 x
+$ico-chkbox-list01: (is-default, is-white, is-main, is-sub, is-red, is-full);
+.ico-checkbox {
+  $size: 28px !default;
+  background: {
+    image: url($image-ico-chkbox-sprite01);
+    size: auto 28px;
+    repeat: no-repeat;
+  }
+  width: $size;
+  height: $size;
+  display: inline-block;
+  @include is-blind;
+
+  &.is-default {
+    background-position: 0 0;
+  }
+
+  @each $icon in $ico-chkbox-list01 {
+    $ico-sprite01-res: $ico-chkbox-sprite-res + 38;
+
+    &.#{$icon} {
+      background-position: #{-$ico-chkbox-sprite-res}px 0;
+    }
+  }
+}
+
+// = chekup-item
+
+.ico-chkupitem {
+  $size: 46px;
+  background: url($image-ico-path + 'ico_sprites_checkup.png') center/396px auto no-repeat;
+
+  width: $size;
+  height: $size;
+  display: inline-block;
+  @include is-blind;
+
+  $ico-sprite-pos-x-1: -10px;
+  $ico-sprite-pos-x-2: -76px;
+  $ico-sprite-pos-x-3: -142px;
+  $ico-sprite-pos-x-4: -208px;
+  $ico-sprite-pos-x-5: -274px;
+  $ico-sprite-pos-x-6: -340px;
+  $ico-sprite-pos-x-7: -406px;
+  $ico-sprite-pos-x-8: -472px;
+
+  $ico-sprite-pos-x-6: -340px;
+  $ico-sprite-pos: 10;
+  &.item-1 {
+    background-position: -10px -10px;
+  }
+  &.item-7 {
+    background-position: -10px $ico-sprite-pos-x-2;
+  }
+  &.item-13 {
+    background-position: -10px $ico-sprite-pos-x-3;
+  }
+  &.item-19 {
+    background-position: -10px $ico-sprite-pos-x-4;
+  }
+  &.item-25 {
+    background-position: -10px $ico-sprite-pos-x-5;
+  }
+  &.item-31 {
+    background-position: -10px $ico-sprite-pos-x-6;
+  }
+  &.item-37 {
+    background-position: -10px $ico-sprite-pos-x-7;
+  }
+  &.item-43 {
+    background-position: -10px $ico-sprite-pos-x-8;
+  }
+
+  @for $i from 2 through 6 {
+    $ico-sprite-pos: $ico-sprite-pos + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos}px -10px;
+    }
+  }
+
+  $ico-sprite-pos-2: 10;
+  @for $i from 8 through 12 {
+    $ico-sprite-pos-2: $ico-sprite-pos-2 + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos-2}px $ico-sprite-pos-x-2;
+    }
+  }
+
+  $ico-sprite-pos-3: 10;
+  @for $i from 14 through 18 {
+    $ico-sprite-pos-3: $ico-sprite-pos-3 + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos-3}px $ico-sprite-pos-x-3;
+    }
+  }
+  $ico-sprite-pos-4: 10;
+  @for $i from 20 through 24 {
+    $ico-sprite-pos-4: $ico-sprite-pos-4 + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos-4}px $ico-sprite-pos-x-4;
+    }
+  }
+  $ico-sprite-pos-5: 10;
+  @for $i from 26 through 30 {
+    $ico-sprite-pos-5: $ico-sprite-pos-5 + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos-5}px $ico-sprite-pos-x-5;
+    }
+  }
+  $ico-sprite-pos-6: 10;
+  @for $i from 32 through 36 {
+    $ico-sprite-pos-6: $ico-sprite-pos-6 + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos-6}px $ico-sprite-pos-x-6;
+    }
+  }
+  $ico-sprite-pos-7: 10;
+  @for $i from 38 through 42 {
+    $ico-sprite-pos-7: $ico-sprite-pos-7 + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos-7}px $ico-sprite-pos-x-7;
+    }
+  }
+  $ico-sprite-pos-8: 10;
+  @for $i from 44 through 46 {
+    $ico-sprite-pos-8: $ico-sprite-pos-8 + 66;
+    &.item-#{$i} {
+      background-position: #{-$ico-sprite-pos-8}px $ico-sprite-pos-x-8;
+    }
+  }
+}
+
+// = ico-bg-type
+.ico-bg-type {
+  padding: 6px;
+  border-radius: 12px;
+  min-width: 32px;
+  min-height: 32px;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  background: {
+    image: url($image-ico-sprite01);
+    size: auto 218px;
+    repeat: no-repeat;
+  }
+  display: inline-block;
+  &.is-red {
+    &.favorite {
+      background-position: -834px -36px;
+    }
+    background-color: #ffebe9;
+  }
+  &.is-blue {
+    background-color: $color-gray-8;
+    &.favorite {
+      background-position: -834px 2px;
+    }
+    &.info01 {
+      background-position: -36px 2px;
+    }
+
+    &.assignment {
+      background-position: -872px 2px;
+    }
+  }
+}
+
+// = Icon
+.ico-checkup-01 {
+  width: 17px;
+  height: 13px;
+  display: inline-block;
+  background: url($image-ico-path + 'ico_chk_01.svg') center/100% auto no-repeat;
+}
+
+.ico-checkup-01 {
+  width: 17px;
+  height: 13px;
+  display: inline-block;
+  background: url($image-ico-path + 'ico_chk_01.svg') center/100% auto no-repeat;
+}

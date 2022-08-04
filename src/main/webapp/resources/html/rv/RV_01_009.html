@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="resevation-container">
+        <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <h1 class="skip">KMI 한국의학연구소</h1>
+                <div class="top-logo">
+                    <h2 class="logo">
+                        <a href="javascript:;"><img src="../../images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
+                    </h2>
+                </div>
+
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav01"> 건강검진제도</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;" class="on">국가건강 검진 제도안내</a></li>
+                                <li><a href="javascript:;">우리회사 검진제도 안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav02">검진예약/결과조회</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">예약하기</a></li>
+                                <li><a href="javascript:;">예약내역</a></li>
+                                <li><a href="javascript:;">검진기관</a></li>
+                                <li><a href="javascript:;">검진결과</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav03">결과상담</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">결과 상담하기</a></li>
+                                <li><a href="javascript:;">상담이력</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav04">건강정보</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">검진항목 정보</a></li>
+                                <li><a href="javascript:;">영상건강정보</a></li>
+                                <li><a href="javascript:;">질환별건강정보</a></li>
+                                <li><a href="javascript:;">검진센터 탐방</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav05">커뮤니티</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">공지사항</a></li>
+                                <li><a href="javascript:;">FAQ</a></li>
+                                <li><a href="javascript:;">이벤트</a></li>
+                                <li><a href="javascript:;">서비스 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <p class="slogan">평생을 건강하게 !</p>
+                    </div>
+                    <div class="top-right">
+                        <ul class="user-info">
+                            <li>KT</li>
+                            <li>운영지원팀</li>
+                        </ul>
+                        <div class="user-profile">
+                            <a href="javascript:;" class="btn-open-usercontrol">
+                                <div class="img">
+                                    <img src="../../images/ico/ico_user_profile.svg" alt="" />
+                                </div>
+                                <div class="name"><em>홍길동</em> 님</div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                    <li>
+                                        <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupModPernalInfo"><span>개인정보 변경</span></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header-->
+
+            <div class="contents-wrap health-select-examination-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <div class="cont-wrap">
+                        <!-- reservation-sidebar -->
+                        <div class="reservation-sidebar">
+                            <div class="inner-wrap">
+                                <em class="top-title">검진기관 및 검진항목</em>
+                                <div class="reservation-step-field">
+                                    <!-- [comment] 
+																	- side list 상태별 스타일 제어 class
+																	- is-now : 현재
+																	- is-end : 완료
+																-->
+                                    <ul class="reservation-step-list">
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">01. 대상자 선택</p>
+                                                    <p class="rsv-data">김크미</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">02. 검진기관 및 검진항목</p>
+                                                    <p class="rsv-data">검진기관 및 검진항목검진기관 및 검진항목검진기관 및 검진항목</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-now">
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">03. 선택검사</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">04. 추가검사</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">05. 검진일자</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">06. 검진자 정보 입력</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">07. 최종 확인</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // reservation-sidebar -->
+                        <div class="contents-area reserve-contents-area">
+                            <div class="co-location-wrap">
+                                <div class="co-location">
+                                    <p>
+                                        <a href="javascript:;" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
+                                    </p>
+
+                                    <p>검진예약/결과조회</p>
+
+
+                                    <p class="on">예약하기</p>
+
+                                </div>
+
+                                <div class="co-title-field">
+                                    <h1 class="title">선택검사</h1>
+                                </div>
+                            </div>
+                            <!-- [Comment] 
+									- 선택 옵션에 따라 input 요소 checkbox/radio 사용 
+								-->
+                            <div class="co-cont-section">
+                                <div class="select-chkup-list-wrap">
+                                    <ul class="co-accrodion-list medical-chkup-list">
+                                        <li>
+                                            <div class="co-accordion chkup-ctg-accordion on">
+                                                <div class="btn-accrodion">
+                                                    <div class="col-6 left">
+                                                        <div class="inner">
+                                                            <div class="info-title-field">
+                                                                <p class="txt">선택검사 01</p>
+                                                                <p class="sub-txt"><em class="num">3</em>개의 검사항목을 선택하여 주시기바랍니다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 center"></div>
+                                                    <div class="col-3 right">
+                                                        <div class="inner">
+                                                            <div class="cnt">(<span class="current-cnt">0</span>/<span class="total-cnt">3</span>)</div>
+                                                            <button class="btn-ckupctg-accordion ico-accordion"><span class="is-blind">펼치기</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accrodion-panel" style="display: block">
+                                                    <div class="panel-cont">
+                                                        <div class="healthexam-item-field">
+                                                            <div class="title-field">
+                                                                <div class="left">
+                                                                    <p class="title">대장내시경</p>
+                                                                </div>
+                                                                <div class="right"></div>
+                                                            </div>
+                                                            <ul class="healthexam-item-list">
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="checkbox" id="inputChkuㅎpGrp01_Chk01_01" />
+                                                                                    <label for="inputChkupGrp01_Chk01_01" class="chk-label"><i></i><span>Brain CT 촬영</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="checkbox" id="inputChkupGrp01_Chk01_02" />
+                                                                                    <label for="inputChkupGrp01_Chk01_02" class="chk-label"><i></i><span>Brain CT 촬영</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3 surcharges">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3 rsv-date">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="healthexam-item-field">
+                                                            <div class="title-field">
+                                                                <div class="left">
+                                                                    <p class="title">대장내시경</p>
+                                                                </div>
+                                                                <div class="right"></div>
+                                                            </div>
+                                                            <ul class="healthexam-item-list">
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="checkbox" id="inputChkupGrp01_Chk02_01" />
+                                                                                    <label for="inputChkupGrp01_Chk02_01" class="chk-label"><i></i><span>대장내시경</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <!-- [comment] 
+			- 선택 되었을 때 Acoordion 상태 (해당 기능 관련 기획자 문의)
+		-->
+                                            <div class="co-accordion chkup-ctg-accordion">
+                                                <div class="btn-accrodion">
+                                                    <div class="col-6 left">
+                                                        <div class="inner">
+                                                            <div class="info-title-field">
+                                                                <p class="txt">선택검사 01</p>
+                                                                <!-- <p class="sub-txt"><em class="num">3</em>개의 검사항목을 선택하여 주시기바랍니다.</p> -->
+                                                                <div class="select-list">
+                                                                    <ul>
+                                                                        <li>폐 CT 촬영</li>
+                                                                        <li>Brain CT 촬영</li>
+                                                                        <li>대장내시경</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 center">
+                                                        <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                    </div>
+                                                    <div class="col-3 right">
+                                                        <div class="inner">
+                                                            <div class="cnt">(<span class="current-cnt">3</span>/<span class="total-cnt">3</span>)</div>
+                                                            <button class="btn-ckupctg-accordion ico-accordion"><span class="is-blind">펼치기</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="accrodion-panel">
+                                                    <div class="panel-cont">
+                                                        <div class="healthexam-item-field">
+                                                            <div class="title-field">
+                                                                <div class="left">
+                                                                    <p class="title">대장내시경</p>
+                                                                </div>
+                                                                <div class="right"></div>
+                                                            </div>
+                                                            <ul class="healthexam-item-list">
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="checkbox" id="inputChkupGrp03_Chk01_01" checked />
+                                                                                    <label for="inputChkupGrp03_Chk01_01" class="chk-label"><i></i><span>폐 CT 촬영 </span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="checkbox" id="inputChkupGrp03_Chk01_02" checked />
+                                                                                    <label for="inputChkupGrp03_Chk01_02" class="chk-label"><i></i><span>Brain CT 촬영</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3 surcharges">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3 rsv-date">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="healthexam-item-field">
+                                                            <div class="title-field">
+                                                                <div class="left">
+                                                                    <p class="title">대장내시경</p>
+                                                                </div>
+                                                                <div class="right"></div>
+                                                            </div>
+                                                            <ul class="healthexam-item-list">
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="checkbox" id="inputChkupGrp03_Chk02_01" checked />
+                                                                                    <label for="inputChkupGrp03_Chk02_01" class="chk-label"><i></i><span>대장내시경</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="co-accordion chkup-ctg-accordion">
+                                                <div class="btn-accrodion">
+                                                    <div class="left col-6">
+                                                        <div class="inner">
+                                                            <div class="info-title-field">
+                                                                <p class="txt">선택검사 02</p>
+                                                                <p class="sub-txt"><em class="num">2</em>개의 검사항목을 선택하여 주시기바랍니다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="center col-3"></div>
+                                                    <div class="right col-3">
+                                                        <div class="inner">
+                                                            <div class="cnt">(<span class="current-cnt">0</span>/<span class="total-cnt">2</span>)</div>
+                                                            <button class="btn-ckupctg-accordion ico-accordion"><span class="is-blind">펼치기</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accrodion-panel">
+                                                    <div class="panel-cont">
+                                                        <div class="healthexam-item-field">
+                                                            <div class="title-field">
+                                                                <div class="left">
+                                                                    <p class="title">대장내시경</p>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <p class="top-ref-txt">대장내시경/M2-PK/얼리텍 중복선택 불가</p>
+                                                                </div>
+                                                            </div>
+                                                            <ul class="healthexam-item-list">
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <!-- radio 인 경우 -->
+                                                                                    <input type="radio" name="inputChkupGrp02_Chk01" id="inputChkupGrp02_Chk01_01" />
+                                                                                    <label for="inputChkupGrp02_Chk01_01" class="chk-label"><i></i><span>Brain CT 촬영</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-unable-txt">회사검진 기간 내 불가</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="item-ref-txt">
+                                                                        <p>회사 검진 기간 내 불가한 검사 항목을 선택하셨습니다. 검진 일자 단계에서 별도의 일정을 선택해 주세요.</p>
+                                                                        <p>상품 비고 텍스트 영역</p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="radio" name="inputChkupGrp02_Chk01" id="inputChkupGrp02_Chk02_01" />
+                                                                                    <label for="inputChkupGrp02_Chk02_01" class="chk-label"><i></i><span>Brain CT 촬영</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3 surcharges">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3 rsv-date">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="healthexam-item-field">
+                                                            <div class="title-field">
+                                                                <div class="left">
+                                                                    <p class="title">대장내시경</p>
+                                                                </div>
+                                                                <div class="right"></div>
+                                                            </div>
+                                                            <ul class="healthexam-item-list">
+                                                                <li>
+                                                                    <div class="healthexam-item-card">
+                                                                        <div class="in-row type01">
+                                                                            <div class="col-6 category">
+                                                                                <div class="c-chkbox type02">
+                                                                                    <input type="checkbox" id="inputChkup02_01" />
+                                                                                    <label for="inputChkup02_01" class="chk-label"><i></i><span>대장내시경</span></label>
+                                                                                </div>
+                                                                                <button type="button" class="chkup-info-detail">
+                                                                                    <span><i class="ico-type01 t-i-help01-02"><span>설명 자세히 보기</span></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="per-surcharges">개인 추가금<em>0</em>원</div>
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <div class="date-box">
+                                                                                    <p class="date-confirm">빠른예약일<em class="date">2021.03.25</em>이후</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="resevation-btmbar-wrap">
+                                <div class="resevation-btm-bar type01">
+                                    <div class="buttons">
+                                        <div class="left">
+                                            <a href="javascript:;" class="co-btn btn-reservation-prev is-active"><span>이전</span></a>
+                                        </div>
+                                        <div class="right">
+
+                                            <a href="javascript:;" class="co-btn btn-reservation-next"><span>다음</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Contents -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="logo">
+                        <img src="../../images/logo/footer_logo_01.svg" alt="KMI 재단법인 한국의학연구소 KOREA MEDICAL INSTITUTE" />
+                    </div>
+                    <div class="info-field">
+                        <ul class="top-useinfo">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이용약관</a></li>
+                            <li><a href="javascript:;">이용가이드</a></li>
+                        </ul>
+                        <ul class="company-info">
+                            <li>상호 : 재단법인 한국의학연구소대표자 성명 : 이상호본원 : (우)03173 서울시 종로구 세종대로 23길 54(당주동, 세종빌딩)</li>
+                            <li>전화 : 1599-7070 전자우편주소 : <a href="mailto:webmaster@kmi.or.kr">webmaster@kmi.or.kr</a>사업자등록번호 : 130-82-06 960 </li>
+                            <li>오전 09:00 ~ 오후 18:00 공휴일 휴무 고객문의 : 5555-5555</li>
+                            <li>Copyright© KMI.All Rights Reserved.</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn-go-top"><span class="skip">맨 위로 이동</span></a>
+                </div>
+            </footer>
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        // 선택 검사 첫번째 accordion만 초기에 활성화 상태
+        $('.medical-chkup-list').children('li:first-child').find('.chkup-ctg-accordion').addClass('on');
+        $('.medical-chkup-list').children('li:first-child').find('.accrodion-panel').show();
+
+        ckupctgToggleAccordion();
+        checkupCtgInputChkInit();
+        checkupCtgInputChk();
+        checkupInputCntControl();
+        $(window).on('load resize', function() {
+            reservationSideBarFloating();
+        });
+        $(window).on('load resize scroll', function() {
+            reservationBtmBarFixed();
+        });
+    </script>
+</body>
+
+</html>

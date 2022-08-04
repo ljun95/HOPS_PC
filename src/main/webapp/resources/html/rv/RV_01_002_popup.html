@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <div class="contents-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <!-- [popup source] -->
+                    <!-- [comment]
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                    <!--  Popup -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupCtgCart01"><span>popup (항목비교 담기는 최대 3개까지 선택 가능합니다.)</span></button>
+
+                    <div class="c-layer-popup type01" id="popupChkupCtgCart01" role="dialog" aria-labelledby="popupChkupCtgCart01_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupChkupCtgCart01_Label">항목비교담기 안내 팝업</h4>
+                                        <p>항목비교 담기는 최대 3개까지 선택 가능합니다.</p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup 02 -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupCtgCart02">
+                        <span> popup (검진 상품을 선택하지 않았습니다. 선택하신 후 눌러 주시기 바랍니다.)</span>
+                    </button>
+
+                    <div class="c-layer-popup type01" id="popupChkupCtgCart02" role="dialog" aria-labelledby="popupChkupCtgCart02_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupChkupCtgCart02_Label">검진 상품 미선택 안내 팝업</h4>
+                                        <p>
+                                            검진 상품을 선택하지 않았습니다.<br />
+                                            선택하신 후 눌러 주시기 바랍니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup 03 -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupCtgCart03"><span>popup (비교하실 검진상품을 선택해 주시기 바랍니다.)</span></button>
+
+                    <div class="c-layer-popup type01" id="popupChkupCtgCart03" role="dialog" aria-labelledby="popupChkupCtgCart03_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupChkupCtgCart03_Label">검진 상품 선택 안내 팝업</h4>
+                                        <p>비교하실 검진상품을 선택해 주시기 바랍니다.</p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup 04 -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupCtgCart04"><span>popup (선택하신 항목을 항목 비교에 추가하시겠습니까?)</span></button>
+
+                    <div class="c-layer-popup type01" id="popupChkupCtgCart04" role="dialog" aria-labelledby="popupChkupCtgCart04_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupChkupCtgCart04_Label">검진 상품 선택 안내 팝업</h4>
+                                        <p class="c-space-letter">선택하신 항목을 항목 비교에 추가하시겠습니까?</p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup 05 -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupCtgCart05"><span>popup (해당 검진기관 및 검진항목을 선택하시겠습니까?)</span></button>
+
+                    <div class="c-layer-popup type01" id="popupChkupCtgCart05" role="dialog" aria-labelledby="popupChkupCtgCart05_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupChkupCtgCart05_Label">검진 상품 선택 안내 팝업</h4>
+                                        <p>해당 검진기관 및 검진항목을 <br />선택하시겠습니까?</p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup 06 -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupCtgCart06"><span>popup (해당항목을 삭제 하시겠습니까?)</span></button>
+
+                    <div class="c-layer-popup type01" id="popupChkupCtgCart06" role="dialog" aria-labelledby="popupChkupCtgCart06_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupChkupCtgCart06_Label">검진 상품 선택 안내 팝업</h4>
+                                        <p>해당항목을 삭제 하시겠습니까?</p>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <!--  Popup 07 -->
+                    <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupCtgCart07">
+                        <span>popup (해당 메뉴로 이동할 경우 선택하신 모든 내역이 삭제됩니다. 해당 메뉴로 이동하시겠습니까?)</span>
+                    </button>
+
+                    <div class="c-layer-popup type01" id="popupChkupCtgCart07" role="dialog" aria-labelledby="popupChkupCtgCart07_Label" aria-modal="true" aria-hidden="true">
+                        <div class="modal-wrap">
+                            <div class="modal-field" tabindex="0">
+                                <div class="c-modal-body">
+                                    <div class="c-modal-inner">
+                                        <h4 class="c-title skip" id="popupChkupCtgCart07_Label">검진 상품 선택 안내 팝업</h4>
+                                        <div class="in-cont">
+                                            <p>해당 메뉴로 이동할 경우 선택하신 <br />모든 내역이 삭제됩니다.</p>
+                                            <p>해당 메뉴로 이동하시겠습니까?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-modal-footer">
+                                    <div class="inner">
+                                        <div class="buttons">
+                                            <button class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Contents -->
+            </div>
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

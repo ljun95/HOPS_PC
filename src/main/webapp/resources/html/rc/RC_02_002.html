@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- [comment]
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                <button type="button" class="co-btn btn-open-popup" data-toggle="modal" data-target="#popupConsultApplyDetails"><span>open popup</span></button>
+
+                <div class="c-layer-popup type03" id="popupConsultApplyDetails" role="dialog" aria-labelledby="popupConsultApplyDetails_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap modal-dialog-centered">
+                        <div class="modal-field">
+                            <!-- modal Header -->
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupConsultApplyDetails_Label">상담 답변 보기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="co-article">
+                                        <div class="co-title-field">
+                                            <h5 class="sub-title">상담 신청 내역</h5>
+                                        </div>
+                                        <div class="co-cont-article consult-detail">
+                                            <div class="inner">
+                                                <dl>
+                                                    <dt>제목</dt>
+                                                    <dd>There are many variations</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>상담신청일</dt>
+                                                    <dd>2021-05-15</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>신청 내용</dt>
+                                                    <dd>
+                                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                                                        Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="co-article">
+                                        <div class="co-title-field">
+                                            <h5 class="sub-title">상담 신청 답변</h5>
+                                        </div>
+                                        <div class="co-cont-article consult-detail">
+                                            <div class="inner">
+                                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
+                                                are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+
+                            <!-- modal-footer -->
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- = type03  -->
+                    <!-- [ // layer popup] -->
+                </div>
+
+                <!--  안내창 팝업 레이아웃 	-->
+                <div class="c-layer-popup type01 add-popup" id="joinInfoPopup" role="dialog" aria-labelledby="joinInfoPopupLabel" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="joinInfoPopupLabel">입력 안내</h4>
+                                    <p>이메일 중복여부를 확인해 주세요.</p>
+                                    <!-- alert 창 문구 
+										- 이미 사용중인 이메일 아이디입니다.
+										- 인증번호가 발송 되었습니다.
+										- 인증되었습니다.
+										- 인증번호를 확인해주세요.
+										-  개인정보 입력 안된 사항이 있습니다.
+										-->
+                                </div>
+                            </div>
+
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  // 안내창 팝업 레이아웃	-->
+            </section>
+            <!-- // Contents -->
+
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+        <p><a href="#subSideNav" tabindex="1">서브메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="resevation-container">
+        <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <h1 class="skip">KMI 한국의학연구소</h1>
+                <div class="top-logo">
+                    <h2 class="logo">
+                        <a href="javascript:;"><img src="../../images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
+                    </h2>
+                </div>
+
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav01"> 건강검진제도</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;" class="on">국가건강 검진 제도안내</a></li>
+                                <li><a href="javascript:;">우리회사 검진제도 안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav02">검진예약/결과조회</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">예약하기</a></li>
+                                <li><a href="javascript:;">예약내역</a></li>
+                                <li><a href="javascript:;">검진기관</a></li>
+                                <li><a href="javascript:;">검진결과</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav03">결과상담</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">결과 상담하기</a></li>
+                                <li><a href="javascript:;">상담이력</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav04">건강정보</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">검진항목 정보</a></li>
+                                <li><a href="javascript:;">영상건강정보</a></li>
+                                <li><a href="javascript:;">질환별건강정보</a></li>
+                                <li><a href="javascript:;">검진센터 탐방</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav05">커뮤니티</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">공지사항</a></li>
+                                <li><a href="javascript:;">FAQ</a></li>
+                                <li><a href="javascript:;">이벤트</a></li>
+                                <li><a href="javascript:;">서비스 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <p class="slogan">평생을 건강하게 !</p>
+                    </div>
+                    <div class="top-right">
+                        <ul class="user-info">
+                            <li>KT</li>
+                            <li>운영지원팀</li>
+                        </ul>
+                        <div class="user-profile">
+                            <a href="javascript:;" class="btn-open-usercontrol">
+                                <div class="img">
+                                    <img src="../../images/ico/ico_user_profile.svg" alt="" />
+                                </div>
+                                <div class="name"><em>홍길동</em> 님</div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                    <li>
+                                        <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupModPernalInfo"><span>개인정보 변경</span></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header-->
+
+            <div class="contents-wrap rsv-exam-result-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <div class="cont-wrap">
+                        <!-- reservation-sidebar -->
+                        <div class="reservation-sidebar rsv-sidebar-fixed">
+                            <div class="inner-wrap">
+                                <em class="top-title">바로가기</em>
+                                <div class="reservation-step-field">
+                                    <!-- [comment] 
+																	- side list 상태별 스타일 제어 class
+																	- is-now : 현재
+																	- is-end : 완료
+																-->
+                                    <ul class="reservation-step-list">
+                                        <li class="is-now">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;;">
+                                                    <p class="rsv-title">종합소견</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;;">
+                                                    <p class="rsv-title">기초검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;;">
+                                                    <p class="rsv-title">혈액검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;;">
+                                                    <p class="rsv-title">장비검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <a href="javascript:;;">
+                                                    <p class="rsv-title">기타검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //  reservation-sidebar -->
+                        <div class="contents-area reserve-contents-area co-exam-result-area">
+                            <div class="co-location-wrap">
+                                <div class="co-location">
+                                    <p>
+                                        <a href="javascript:;" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
+                                    </p>
+
+                                    <p>검진예약/결과조회</p>
+
+
+                                    <p class="on">검진 결과</p>
+
+                                </div>
+
+                                <div class="co-title-field">
+                                    <h1 class="title">검진 결과</h1>
+                                </div>
+                            </div>
+
+                            <div class="co-cont-section">
+                                <!-- result-article-wrap -->
+                                <!-- [comment] 
+										- 좌측 바로가기 각 메뉴 클릭 시 해당 검사 영역으로 스크롤 이동 처리 필요
+									-->
+                                <div class="result-article-wrap">
+                                    <div class="result-article">
+                                        <div class="mychkup-history-wrap">
+                                            <div class="co-title-field">
+                                                <h2 class="title">MY 건강검진 이력</h2>
+                                            </div>
+                                            <div class="mychkup-history-card-wrap">
+                                                <div class="mychkup-history-field is-active">
+                                                    <div class="swiper mychkup-history-swiper center01">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <div class="mychkup-history-card on">
+                                                                    <a href="javascript:;" role="button">
+                                                                        <div class="top-box">
+                                                                            <p class="date">2022-05-12</p>
+                                                                        </div>
+                                                                        <p class="name">정밀종합검진 일반형</p>
+                                                                        <p class="center">한국의학연구소 광화문</p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <div class="mychkup-history-card">
+                                                                    <a href="javascript:;" role="button">
+                                                                        <div class="top-box">
+                                                                            <p class="date">2022-05-12</p>
+                                                                            <span class="co-badge type01">미신청</span>
+                                                                        </div>
+                                                                        <p class="name">정밀종합검진 일반형</p>
+                                                                        <p class="center">한국의학연구소 광화문</p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <div class="mychkup-history-card on is-not-apply">
+                                                                    <a href="javascript:;" role="button">
+                                                                        <div class="top-box">
+                                                                            <p class="date">2022-05-12</p>
+                                                                            <span class="co-badge type01">미신청</span>
+                                                                        </div>
+                                                                        <p class="name">정밀종합검진 일반형</p>
+                                                                        <p class="center">한국의학연구소 광화문</p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <div class="mychkup-history-card">
+                                                                    <a href="javascript:;" role="button">
+                                                                        <div class="top-box">
+                                                                            <p class="date">2022-05-12</p>
+                                                                            <span class="co-badge type01">미신청</span>
+                                                                        </div>
+                                                                        <p class="name">정밀종합검진 일반형</p>
+                                                                        <p class="center">한국의학연구소 광화문</p>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="co-slide-btn-prev"></div>
+                                                        <div class="co-slide-btn-next"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="result-article">
+                                        <div class="co-title-field">
+                                            <h2 class="title">종합소견</h2>
+                                            <div class="buttons">
+                                                <button class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="list-field">
+                                            <ul class="co-list-card circle02">
+                                                <li>흉부촬영상 좌상의 비활동성 섬유흔 소견 입니다. 이전 염증등에 의한 변화로 현재 임상적 의의는 없으며 정기적인 검사를 하시기 바랍니다.</li>
+                                                <li>유방 X-선 검사상, 우상중 경계가 부분적으로 보이는 결절성 음영 소견입니다. 유방조직의 중첩에 의한 가성병변을 감별하기 위해 서 초음파검사로 확인을 요합니다.</li>
+                                                <li>심초음파 검사상 특별한 이상 소견 없습니다. 특이 증상 (흉통, 두근거림, 호흡곤란 등) 이 있으면 전문의 상담 바랍니다.</li>
+                                                <li>자궁초음파 검사에서 자궁 근종(3.7cm이하)이 나타납니다. 자궁 근종은 자궁근층에서 유래되는 가장 흔한 양성 신생물로 정기적 으로 크기 변화를 관찰하시기 바랍니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="result-article">
+                                        <div class="faq-list-field">
+                                            <ul class="co-accrodion-list medical-chkup-result-list">
+                                                <li>
+                                                    <div class="co-accordion on">
+                                                        <a href="javascript:;" role="button" class="btn-accrodion">
+                                                            <div class="left">
+                                                                <div class="inner">
+                                                                    <p class="txt">신체 계측 및 혈압 검사</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="right">
+                                                                <div class="inner">
+                                                                    <div class="cnt">(<span>5</span>)</div>
+                                                                    <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="accrodion-panel">
+                                                            <div class="panel-cont">
+                                                                <div class="chkup-result-cont type01">
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div class="row inner result-card01">
+                                                                                <div class="col-4 col-title">
+                                                                                    <p class="title">신장</p>
+                                                                                </div>
+                                                                                <div class="col-4 col-compare">
+                                                                                    <div class="compare-info">
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">176</em>
+                                                                                            <span class="unit">cm</span>
+                                                                                        </div>
+                                                                                        <span class="divide">/</span>
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">176</em>
+                                                                                            <span class="unit">cm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-4 col-btn">
+                                                                                    <div class="buttons">
+                                                                                        <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="row inner result-card01">
+                                                                                <div class="col-4 col-title">
+                                                                                    <p class="title">혈압</p>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="col-4 col-compare">
+                                                                                    <div class="compare-info">
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">0</em>
+                                                                                            <span class="unit">mmHg</span>
+                                                                                        </div>
+                                                                                        <span class="divide">/</span>
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">0</em>
+                                                                                            <span class="unit">mmHg</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-4 col-btn">
+                                                                                    <div class="buttons">
+                                                                                        <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div class="row inner result-card01">
+                                                                                <div class="col-4 col-title">
+                                                                                    <p class="title">체중</p>
+                                                                                </div>
+                                                                                <div class="col-4 col-compare">
+                                                                                    <div class="compare-info">
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">176</em>
+                                                                                            <span class="unit">kg</span>
+                                                                                        </div>
+                                                                                        <span class="divide">/</span>
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">176</em>
+                                                                                            <span class="unit">kg</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-4 col-btn">
+                                                                                    <div class="buttons">
+                                                                                        <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="row inner result-card01">
+                                                                                <div class="col-4 col-title">
+                                                                                    <p class="title">허리둘레복위cm</p>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="col-4 col-compare">
+                                                                                    <div class="compare-info">
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">0</em>
+                                                                                            <span class="unit">복위cm</span>
+                                                                                        </div>
+                                                                                        <span class="divide">/</span>
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">0</em>
+                                                                                            <span class="unit">복위cm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-4 col-btn">
+                                                                                    <div class="buttons">
+                                                                                        <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div class="row inner result-card01">
+                                                                                <div class="col-4 col-title">
+                                                                                    <p class="title">체질량지수</p>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div class="col-4 col-compare">
+                                                                                    <div class="compare-info">
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">176</em>
+                                                                                            <span class="unit">BMI</span>
+                                                                                        </div>
+                                                                                        <span class="divide">/</span>
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">176</em>
+                                                                                            <span class="unit">BMI</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-4 col-btn">
+                                                                                    <div class="buttons">
+                                                                                        <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="row inner result-card01">
+                                                                                <div class="col-4 col-title">
+                                                                                    <p class="title">허벅지둘레</p>
+                                                                                </div>
+                                                                                <div class="col-4 col-compare">
+                                                                                    <div class="compare-info">
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">0</em>
+                                                                                            <span class="unit">cm</span>
+                                                                                        </div>
+                                                                                        <span class="divide">/</span>
+                                                                                        <div class="unit-box">
+                                                                                            <em class="r-value">0</em>
+                                                                                            <span class="unit">cm</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-4 col-btn">
+                                                                                    <div class="buttons">
+                                                                                        <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="co-accordion">
+                                                        <a href="javascript:;" role="button" class="btn-accrodion">
+                                                            <p class="txt">시력, 안저촬영, 안압검사</p>
+                                                            <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                        </a>
+                                                        <div class="accrodion-panel">
+                                                            <div class="panel-cont">
+                                                                <div class="cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, cupiditate.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="co-accordion">
+                                                        <a href="javascript:;" role="button" class="btn-accrodion">
+                                                            <p class="txt">소변검사</p>
+                                                            <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                        </a>
+                                                        <div class="accrodion-panel">
+                                                            <div class="panel-cont">
+                                                                <div class="co-table cont-type04 tbl-center tbl-chkup-result01">
+                                                                    <table class="table">
+                                                                        <caption>
+                                                                            소변검사 정보 : 관련 검사명, 임상참고치, 현재결과, 낮은치, 정상, 높은치, 대상질환, 비교하기 대한 정보
+                                                                        </caption>
+                                                                        <colgroup>
+                                                                            <col style="width: 12.5%" />
+                                                                            <col style="width: 12.5%" />
+                                                                            <col style="width: 12.5%" />
+                                                                            <col style="width: 12.5%" />
+                                                                            <col style="width: 12.5%" />
+                                                                            <col style="width: 12.5%" />
+                                                                            <col style="width: 12.5%" />
+                                                                            <col style="width: 12.5%" />
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>관련 검사명</th>
+                                                                                <th>임상참고치</th>
+                                                                                <th>현재결과</th>
+                                                                                <th>낮은치</th>
+                                                                                <th>정상</th>
+                                                                                <th>높은치</th>
+                                                                                <th>대상질환</th>
+                                                                                <th><span class="skip">비교하기</span></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="ta-l">백혈구</td>
+                                                                                <td>-</td>
+                                                                                <td class="bg-gray-12">2</td>
+                                                                                <td>-</td>
+                                                                                <td>*</td>
+                                                                                <td>-</td>
+                                                                                <td rowspan="4">
+                                                                                    방광염 <br />
+                                                                                    요도염<br />
+                                                                                    요로결석<br />
+                                                                                    당뇨병<br />
+                                                                                    황달
+                                                                                </td>
+                                                                                <td class="tbl-in-cont">
+                                                                                    <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="ta-l">Nitrite</td>
+                                                                                <td>-</td>
+                                                                                <td class="bg-gray-12">2</td>
+                                                                                <td>-</td>
+                                                                                <td>*</td>
+                                                                                <td>-</td>
+                                                                                <td class="tbl-in-cont">
+                                                                                    <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="ta-l">요비중</td>
+                                                                                <td>-</td>
+                                                                                <td class="bg-gray-12">2</td>
+                                                                                <td>-</td>
+                                                                                <td>*</td>
+                                                                                <td>-</td>
+                                                                                <td class="tbl-in-cont">
+                                                                                    <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="ta-l">PH</td>
+                                                                                <td>5.0 ~ 8.0</td>
+                                                                                <td class="bg-gray-12">2</td>
+                                                                                <td>-</td>
+                                                                                <td>*</td>
+                                                                                <td>-</td>
+                                                                                <td class="tbl-in-cont">
+                                                                                    <button type="button" class="co-btn is-outline-navy-1 btn-result-compare"><span>비교하기</span></button>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="co-accordion">
+                                                        <a href="javascript:;" role="button" class="btn-accrodion">
+                                                            <p class="txt">대사증후군</p>
+                                                            <div class="ico-accordion"><span class="is-blind">펼치기</span></div>
+                                                        </a>
+                                                        <div class="accrodion-panel">
+                                                            <div class="panel-cont">
+                                                                <div class="cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, cupiditate.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // result-article-wrap -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Contents -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="logo">
+                        <img src="../../images/logo/footer_logo_01.svg" alt="KMI 재단법인 한국의학연구소 KOREA MEDICAL INSTITUTE" />
+                    </div>
+                    <div class="info-field">
+                        <ul class="top-useinfo">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이용약관</a></li>
+                            <li><a href="javascript:;">이용가이드</a></li>
+                        </ul>
+                        <ul class="company-info">
+                            <li>상호 : 재단법인 한국의학연구소대표자 성명 : 이상호본원 : (우)03173 서울시 종로구 세종대로 23길 54(당주동, 세종빌딩)</li>
+                            <li>전화 : 1599-7070 전자우편주소 : <a href="mailto:webmaster@kmi.or.kr">webmaster@kmi.or.kr</a>사업자등록번호 : 130-82-06 960 </li>
+                            <li>오전 09:00 ~ 오후 18:00 공휴일 휴무 고객문의 : 5555-5555</li>
+                            <li>Copyright© KMI.All Rights Reserved.</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn-go-top"><span class="skip">맨 위로 이동</span></a>
+                </div>
+            </footer>
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        var swiper = undefined;
+
+        function myChkHistorySwiper() {
+            var windowSizeWidth = $(window).width();
+            if ((swiper03 = 'undefined' && windowSizeWidth <= 2000)) {
+                $('.mychkup-history-field').addClass('is-active');
+                swiper03 = new Swiper('.mychkup-history-swiper', {
+                    slidesPerView: 'auto',
+                    centeredSlides: false,
+                    grabCursor: false,
+                    loopedSlides: 100,
+                    watchOverflow: true,
+                    navigation: {
+                        prevEl: '.co-slide-btn-prev',
+                        nextEl: '.co-slide-btn-next',
+                    },
+                });
+            } else {
+                $('.mychkup-history-field').removeClass('is-active');
+            }
+        }
+        $(window).on('load resize', function() {
+            myChkHistorySwiper();
+        });
+        myChkHistorySwiper();
+        toggleAccordion();
+    </script>
+</body>
+
+</html>

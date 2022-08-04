@@ -1,0 +1,384 @@
+@mixin vendorPrefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin pfxAppearance {
+  appearance: none;
+}
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+@mixin placeholderC {
+  & ::placeholder {
+    @content;
+  }
+}
+
+@mixin ellipsisLine01 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+@mixin ellipsisMultiline($lineCnt, $lineHeight, $height, $maxHeight) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: $lineHeight;
+  max-height: $maxHeight;
+}
+
+@mixin after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+@mixin position($x, $y) {
+  position: absolute;
+  left: $x;
+  top: $y;
+
+  @if $x == 50% and $y == 50% {
+    transform: translate(-50%, -50%);
+  } @else if $x == 50% {
+    transform: translateX(-50%);
+  } @else if $y == 50% {
+    transform: translateY(-50%);
+  }
+}
+
+@mixin hide {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+// icon
+@mixin arrow($color: transparent) {
+  width: 8px;
+  height: 10px;
+  transform: rotate(90deg);
+  border: 3px solid $color;
+  border-radius: 2px;
+  border-right: 0;
+  border-top: 0;
+  content: ' ';
+  display: block;
+  height: 0.625em;
+  margin-top: -0.4375em;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  width: 0.625em;
+}
+
+@mixin icoType01 {
+  width: 28px;
+  height: 28px;
+  background: {
+    image: url($image-ico-sprite01);
+    size: 1218px auto;
+    repeat: no-repeat;
+  }
+}
+
+@mixin is-blind {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+// = Flex
+@mixin justify-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+// = Form
+// + basic
+@mixin inputText {
+  border-radius: $input-border-radius;
+  padding: 6px 12px;
+  outline: 0;
+  min-height: $input-text-height;
+  font: {
+    size: $fs-nomal;
+    weight: $weight-300;
+    family: $font-name;
+  }
+}
+
+// +  detail  (readonly)
+@mixin inputDetail {
+  line-height: 30px;
+  color: $color-gray-1;
+  min-height: initial;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  padding-left: 0;
+  background: transparent;
+}
+
+@mixin txtareaDetail {
+  line-height: 30px;
+  color: $color-black-1;
+  background-color: $color-white-1;
+  border: 0;
+}
+
+@mixin inputDetailFocus {
+  transition: none;
+  border-color: $input-detail-border-color;
+  box-shadow: none;
+}
+
+// + is-error
+@mixin inputError {
+  border-color: $color-orange-1;
+}
+
+// + focus
+@mixin inputTextFocus {
+  transition: all 0;
+  border-color: $input-focus-border-color;
+}
+
+// + readonly
+@mixin inputReadonlyFocus {
+  border-color: $color-gray-4;
+  transition: none;
+
+  box-shadow: none;
+}
+
+// + textarea
+@mixin txtareaReadonly {
+  line-height: $p-lineheight-normal;
+  color: $color-black-1;
+  background-color: $color-white-1;
+  border: 0;
+}
+
+@mixin paddingH($gap) {
+  padding: {
+    left: $gap;
+    right: $gap;
+  }
+}
+@mixin paddingV($gap) {
+  padding: {
+    top: $gap;
+    bottom: $gap;
+  }
+}
+
+@mixin colFixedWidth($width, $gap) {
+  $colWidth: $width + ($gap * 2);
+  $width: $colWidth;
+  flex: 0 0 $colWidth;
+}
+
+// = Scroll
+
+$scrollbarWidth: 8px;
+$scrollbarHeight: 8px;
+$scrollbarColor: $color-gray-5;
+$scrollbarRadius: 12px;
+
+// + scrollDefault
+@mixin scrollStyle($bgColor, $barColor: $scrollbarColor) {
+  &::-webkit-scrollbar {
+    width: $scrollbarWidth;
+    height: $scrollbarHeight;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $bgColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $bgColor;
+    border-radius: 3px;
+    transition: background-color 1s;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $barColor;
+    }
+
+    transition: background-color 1s;
+  }
+}
+
+@mixin ieScroll {
+  scrollbar-arrow-color: $color-gray-5;
+  scrollbar-track-color: $color-white-1;
+  scrollbar-face-color: $color-gray-5;
+  scrollbar-3dlight-color: $color-gray-5;
+  scrollbar-highlight-color: $color-gray-5;
+  scrollbar-shadow-color: $color-gray-5;
+}
+
+// + scrollType01
+@mixin scrollType01 {
+  &::-webkit-scrollbar {
+    height: $scrollbarHeight;
+    width: $scrollbarWidth;
+    background-color: $color-white-1;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $color-white-1;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color-gray-5;
+    border-radius: 50px;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: $color-gray-5;
+  }
+  // @include ieScroll;
+  &:hover {
+  }
+}
+
+// + scrollType02
+/*
+	terms scroll
+*/
+
+@mixin scrollType02 {
+  &:hover {
+    //@include isScrollHover;
+  }
+}
+
+// + scrollType03
+
+@mixin scrollType03 {
+  &:hover {
+    //@include isScrollHover;
+  }
+}
+// coTermsScroll01
+@mixin coTermsScroll01 {
+  &:hover {
+    //    @include isScrollHover;
+  }
+}
+
+@mixin fontStyle($font-size, $line-height, $font-weight) {
+  $calc-line-height: calc($line-height / $font-size);
+  @if ($font-weight == 300) {
+    font: {
+      size: $font-size;
+    }
+  } @else {
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+    }
+  }
+  line-height: #{$calc-line-height};
+}
+
+@mixin calcPercent($num1, $num2) {
+  $width: calc($num2 / $num1 * 100);
+  width: #{$width}+ '%';
+}
+
+// = font Style
+@mixin fontStyleSmall01 {
+  @include fontStyle(12px, 24px, 300);
+  color: $color-gray-3;
+}
+
+@mixin coTitle01 {
+  @include fontStyle(24px, 36px, 700);
+}
+
+@mixin coMainTitle {
+  @include fontStyle(20px, 36px, 500);
+}
+
+@mixin coSubTitle {
+  @include fontStyle(16px, 32px, 400);
+}
+
+@mixin coTxtSmall01 {
+  @include fontStyle(12px, 20px, 300);
+}
+
+@mixin coBodyTxt {
+  @include fontStyle(14px, 30px, 300);
+}
+
+@mixin coTxtCaption {
+  @include fontStyle(12px, 24px, 400);
+}
+
+@mixin coBodyBtn {
+  @include fontStyle(14px, 30px, 500);
+}
+
+@mixin coBodyTxt {
+  @include fontStyle(14px, 30px, 300);
+}
+
+// = Card List
+@mixin cardListNoneData {
+  position: relative;
+  > div {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  .img {
+    overflow: hidden;
+    opacity: 0.3;
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+  .co-none-txt {
+    margin-top: 12px;
+  }
+}
+
+// = Responsive
+@mixin responsive($device) {
+  @if ($device == 'laptop') {
+    @media screen and (max-width: 1280px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- [comment]
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                <button type="button" class="co-btn btn-open-popup" data-toggle="modal" data-target="#popupJoin02_01"><span>open popup</span></button>
+
+                <div class="c-layer-popup type03" id="popupJoin02_01" role="dialog" aria-labelledby="popupJoin02_Label01" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field">
+                            <!-- modal Header -->
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupJoin02_Label01">회원 가입 및 확인 <span>(2/4)</span></h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="join-login-field step02">
+                                        <div class="row">
+                                            <div class="col label-input">
+                                                <label for="selfCertification01_01" class="co-sub-title-01 is-black-1">본인인증</label>
+
+                                                <div class="row inner c-input-btn-group">
+                                                    <div class="col">
+                                                        <input type="text" class="c-input" id="selfCertification01_01" placeholder="인증받기 버튼을 눌러주세요." />
+                                                        <!-- [comment] 
+																- 인증 완료 시 input 변경
+															-->
+                                                        <!-- <input type="text" class="c-input" id="selfCertification01_01" placeholder="인증받기 버튼을 눌러주세요." value="YYYY-MM-DD 인증완료" disabled /> -->
+                                                    </div>
+                                                    <div class="col buttons">
+                                                        <button type="button" class="co-btn bg-navy-1"><span>인증받기</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="co-cont-article type01 certify-info-cont">
+                                            <div class="inner">
+                                                <p class="title">○ 인증창이 표지 되지 않는 경우, 이렇게 해결하세요.</p>
+                                                <div class="info-cont-box">
+                                                    <p>※ Internet Explorer 설정</p>
+                                                    <ol class="co-list-card number01">
+                                                        <li>상단 메뉴 [도구 &gt; 인터넷 옵션 ] 선택</li>
+                                                        <li>[인터넷 옵션 &gt; 보안 &gt; 인터넷 아이콘] 선택</li>
+                                                        <li>보안 수준이 [높음] 이라면 보안 수준을 [보통]으로 설정</li>
+                                                        <li>[ □ 보호 모드 사용] 의 체크를 해제</li>
+                                                        <li>[인터넷 옵션 &gt; 보안 &gt; 신뢰할 수 있는 사이트 아이콘] 선택</li>
+                                                        <li>[사이트] 클릭 후, 신뢰할 수 있는 사이트에 <br />[http://000,000.or.kr] 입력 후 [추가] 클릭 <br />[https://000.000.or.kr] 입력 후 [추가] 클릭</li>
+                                                        <li>보안 수준이 [높음]이라면, 보안 수준을 [보통]으로 설정</li>
+                                                        <li>[□ 보호 모드 사용]의 체크를 해제</li>
+                                                        <li>인터넷 옵션 팝업창의 [확인]을 클릭하여 종료</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+
+                            <!-- modal-footer -->
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button type="button" class="co-btn bg-navy-1"><span>다음</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- = type03  -->
+                    <!-- [ // layer popup] -->
+                </div>
+            </section>
+            <!-- // Contents -->
+
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

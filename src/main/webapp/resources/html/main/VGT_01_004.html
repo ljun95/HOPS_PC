@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <section class="contents">
+                <!-- popup -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupCheckupResult01"><span>popup (건강검진 결과 전달)</span></button>
+
+                <div class="c-layer-popup type03" id="popupCheckupResult01" role="dialog" aria-labelledby="popupCheckupResult01_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupCheckupResult01_Label">건강검진 결과 전달</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+                            <!-- c-modal-body -->
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="main-popup-field chkup-deliver-field">
+                                        <div class="cont-box">
+                                            <p class="cont">본인의 건강검진 결과가 아닌 경우 개인정보 보호법에 따라 검진 결과의 열람이 불가합니다.<br />다만, 해당 검진자에게 검진 결과 열람을 요청하실 수 있으며, 실제 검진자가 본인 인증을 완료 한 경우 본인에 한하여 열람하실 수 있습니다.</p>
+                                        </div>
+                                        <div class="c-input-list-view line">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input-type view01">
+                                                        <label for="inpuCheckupResult01_01">검진자명</label>
+                                                        <input type="text" class="c-input" id="inpuCheckupResult01_01" value="홍길동" readonly="readonly" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="input-type view01">
+                                                        <label for="inpuCheckupResult01_02">검진기관</label>
+                                                        <input type="text" class="c-input" id="inpuCheckupResult01_02" value="한국의학연구소 광화문센터" readonly="readonly" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="input-type view01">
+                                                        <label for="inpuCheckupResult01_03">검진일자</label>
+                                                        <input type="text" class="c-input" id="inpuCheckupResult01_03" value="2021-03-15" readonly="readonly" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="c-input-list-basic">
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label class="c-label-txt">휴대폰 전화번호</label>
+                                                    <div class="c-input-phone-group">
+                                                        <div class="row inner">
+                                                            <div class="col input-phone-01">
+                                                                <div class="c-select">
+                                                                    <select title="휴대폰 전화번호 앞 3자리 선택">
+                                                                        <option value="" selected="">010</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col input-phone-02"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+                                                            <div class="col input-phone-03"><input type="text" class="c-input" title="휴대폰 전화번호 끝 4자리 입력" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="input-ref-txt">※ 검진자 본인 명의의 핸드폰이 아닐 경우 결과 조회에 제한이 있을 수 있습니다.</p>
+                                        </div>
+                                        <ul class="co-terms-chk-list">
+                                            <li>
+                                                <div class="co-terms-chk-card">
+                                                    <div class="c-chkbox type01">
+                                                        <input type="checkbox" id="termsChk_02_01" />
+                                                        <label for="termsChk_02_01" class="chk-label"><i></i><span>[필수] 개인정보 수집동의</span></label>
+                                                    </div>
+                                                    <div class="co-terms-detail terms-scroll">
+                                                        <div class="inner">
+                                                            <div class="terms-row">
+                                                                <div class="cont">
+                                                                    건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //  c-modal-body -->
+
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn is-outline-navy-1 popup-cls-btn"><span>닫기</span></button>
+                                        <button type="button" class="co-btn bg-navy-1 btn-open-popup"><span>건강검진 결과 전달하기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <!-- popup -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertCheckupResult01_01"><span>popup (건강검진 결과 전달을 요청 하시겠습니까 ?)</span></button>
+
+                <!-- alertCheckupResult01_01 -->
+                <div class="c-layer-popup type01" id="alertCheckupResult01_01" role="dialog" aria-labelledby="alertCheckupResult01_01_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="alertCheckupResult01_01_Label">건강검진 결과 전달을 요청 확인 팝업</h4>
+                                    <p>건강검진 결과 전달을 요청 하시겠습니까 ?</p>
+                                </div>
+                            </div>
+
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <!-- popup -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#alertCheckupResult01_02"><span>popup (건강검진 결과 전달을 처리하였습니다.)</span></button>
+
+                <!-- alertCheckupResult01_01 -->
+                <div class="c-layer-popup type01" id="alertCheckupResult01_02" role="dialog" aria-labelledby="alertCheckupResult01_02_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="alertCheckupResult01_02_Label">건강검진 결과 완료 확인 팝업</h4>
+                                    <p>건강건강검진 결과 전달을 처리하였습니다.</p>
+                                </div>
+                            </div>
+
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- // Contents -->
+    </div>
+    <!-- // Content-Wrapper -->
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

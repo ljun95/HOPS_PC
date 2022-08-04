@@ -13,7 +13,7 @@ import com.zaxxer.hikari.HikariDataSource;
  
 
 @Configuration
-@MapperScan("kmi.hc.hops.admin")
+@MapperScan("kmi.hc.hops.pc")
 public class MyBatisConfig {
 	
 	@Bean

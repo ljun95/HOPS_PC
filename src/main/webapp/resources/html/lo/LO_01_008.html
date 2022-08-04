@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container" class="login-container">
+        <!--  Login Wrapper -->
+        <div class="content-wrapper login-wrapper">
+            <!-- Contents -->
+            <section class="login-wrap">
+                <div class="side-area">
+                    <div>
+                        <h1 class="title">로그인</h1>
+                        <div class="co-tab-wrap">
+                            <div class="login-categeory">
+                                <!-- [comment] 
+										+ TAB LIST script, 접근성 제어
+										+  동일 속성값 매칭
+										 - 1. role="tab"의 ID / role="tabpanel"  aria-labelledby
+										 -  2. role="tab"의 aria-controls /  role="tabpanel" 의 ID
+									-->
+                                <ul class="co-tab-list tab-event type01 tab-2" role="tablist">
+                                    <li>
+                                        <a href="javascript:;" class="on" role="tab" aria-selected="true" id="loginTab_01" aria-controls="loginTabPanel_01">통합 로그인</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" role="tab" aria-selected="false" id="loginTab_02" aria-controls="loginTabPanel_02">사업장 로그인</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="login-box type tab-cont-wrap">
+                                <!-- loginTab_01 -->
+                                <div class="login-form on tab-content" role="tabpanel" id="loginTabPanel_01" aria-labelledby="loginTab_01">
+                                    <div class="login-input">
+                                        <input type="text" title="아이디 입력" placeholder="아이디를 입력하세요" />
+                                        <input type="password" title="비밀번호 입력" placeholder="비밀번호를 입력하세요" />
+                                    </div>
+
+                                    <div class="info-chk">
+                                        <div class="c-chkbox">
+                                            <input type="checkbox" id="remeberEmployeeNum" />
+                                            <label for="remeberEmployeeNum" class="chk-label"><i></i><span>아이디 기억하기</span></label>
+                                        </div>
+                                        <a href="javascript:;" class="link-guide">이용가이드</a>
+                                    </div>
+                                </div>
+                                <!-- loginTab_02 -->
+                                <div class="login-form tab-content" role="tabpanel" id="loginTabPanel_02" aria-labelledby="loginTab_02">
+                                    <div class="login-input">
+                                        <div class="row inner search-btn-group">
+                                            <div class="c-input-search">
+                                                <input type="text" id="inputSearch" placeholder="사업장을 입력하세요" />
+                                                <button type="button" class="btn-search"><span class="skip">검색</span></button>
+                                            </div>
+                                            <!-- - 검색어 입력에 따른 연관 검색어 노출 처리 -->
+                                            <div class="search-related-field" style="display: none">
+                                                <ul class="search-list">
+                                                    <li><a href="javascript:;">현대</a></li>
+                                                    <li><a href="javascript:;">현대 건설</a></li>
+                                                    <li><a href="javascript:;">현대</a></li>
+                                                    <li><a href="javascript:;">현대자동차</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" title="아이디 입력" placeholder="사번을 입력하세요" />
+                                        <input type="password" title="비밀번호 입력" placeholder="비밀번호를 입력하세요" />
+                                    </div>
+
+                                    <div class="info-chk">
+                                        <a href="javascript:;" class="link-guide">이용가이드</a>
+                                    </div>
+                                </div>
+                                <button class="co-btn login-btn" type="button">
+                                    <span>로그인</span>
+                                </button>
+                                <ul class="login-info-list">
+                                    <li><a href="javascript:;" role="button">회원가입</a></li>
+                                    <li><a href="javascript:;" role="button">사번/아이디 찾기</a></li>
+                                    <li><a href="javascript:;" role="button">비밀번호 찾기</a></li>
+
+                                    <li><a href="javascript:;">검진 결과 조회</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="use-info">
+                            <p>이용안내 문의<span> : 1599-7070</span></p>
+                            <p>평일 : 오전9시 ~ 오후6시 (토,일, 공휴일 휴무)</p>
+                        </div>
+
+                        <div class="btm-logo">
+                            <img src="../../images/logo/logo_03.svg" alt="KMI 재단법인 한국의학연구소 KOERA MEDICAL INSTITUTE" />
+                        </div>
+                    </div>
+                </div>
+                <div class="contents-area">
+                    <div class="top-header">
+                        <div class="logo">
+                            <div>
+                                <!-- + 기업 별 로고 -->
+                                <img src="../../images/dummy/dummy_logo_kt.png" alt="KT" />
+                            </div>
+                        </div>
+                        <div class="slogan">
+                            <p>평생을 건강하게 !</p>
+                        </div>
+                    </div>
+                    <div class="contents-field">
+                        <div class="login-img">
+                            <div class="c-title">
+                                <p>기업 임직원 건강관리 서비스는</p>
+                                <em>KMI 헬스케어가 함께합니다!</em>
+                            </div>
+                            <div class="img"><img src="../../images/login_img02.png" alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Contents -->
+
+
+        </div>
+        <!-- // Login Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

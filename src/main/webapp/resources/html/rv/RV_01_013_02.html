@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="resevation-container">
+        <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <h1 class="skip">KMI 한국의학연구소</h1>
+                <div class="top-logo">
+                    <h2 class="logo">
+                        <a href="javascript:;"><img src="../../images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
+                    </h2>
+                </div>
+
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav01"> 건강검진제도</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;" class="on">국가건강 검진 제도안내</a></li>
+                                <li><a href="javascript:;">우리회사 검진제도 안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav02">검진예약/결과조회</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">예약하기</a></li>
+                                <li><a href="javascript:;">예약내역</a></li>
+                                <li><a href="javascript:;">검진기관</a></li>
+                                <li><a href="javascript:;">검진결과</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav03">결과상담</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">결과 상담하기</a></li>
+                                <li><a href="javascript:;">상담이력</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav04">건강정보</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">검진항목 정보</a></li>
+                                <li><a href="javascript:;">영상건강정보</a></li>
+                                <li><a href="javascript:;">질환별건강정보</a></li>
+                                <li><a href="javascript:;">검진센터 탐방</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav05">커뮤니티</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">공지사항</a></li>
+                                <li><a href="javascript:;">FAQ</a></li>
+                                <li><a href="javascript:;">이벤트</a></li>
+                                <li><a href="javascript:;">서비스 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <p class="slogan">평생을 건강하게 !</p>
+                    </div>
+                    <div class="top-right">
+                        <ul class="user-info">
+                            <li>KT</li>
+                            <li>운영지원팀</li>
+                        </ul>
+                        <div class="user-profile">
+                            <a href="javascript:;" class="btn-open-usercontrol">
+                                <div class="img">
+                                    <img src="../../images/ico/ico_user_profile.svg" alt="" />
+                                </div>
+                                <div class="name"><em>홍길동</em> 님</div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                    <li>
+                                        <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupModPernalInfo"><span>개인정보 변경</span></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header-->
+
+            <div class="contents-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <div class="cont-wrap">
+                        <!-- reservation-sidebar -->
+                        <div class="reservation-sidebar">
+                            <div class="inner-wrap">
+                                <em class="top-title">대상자 선택</em>
+                                <div class="reservation-step-field">
+                                    <!-- [comment] 
+																	- side list 상태별 스타일 제어 class
+																	- is-now : 현재
+																	- is-end : 완료
+																-->
+                                    <ul class="reservation-step-list">
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">01. 대상자 선택</p>
+                                                    <p class="rsv-data">김크미</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">02. 검진기관 및 검진항목</p>
+                                                    <p class="rsv-data">검진기관 및 검진항목검진기관 및 검진항목</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">03. 선택검사</p>
+                                                    <p class="rsv-data">선택검사선택검사선택검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">04. 추가검사</p>
+                                                    <p class="rsv-data">추가검사추가검사추가검사추가검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-now">
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">05. 검진일자</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">06. 검진자 정보 입력</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">07. 최종 확인</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // reservation-sidebar -->
+                        <div class="contents-area reserve-contents-area">
+                            <div class="co-location-wrap">
+                                <div class="co-location">
+                                    <p>
+                                        <a href="javascript:;" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
+                                    </p>
+
+                                    <p>검진예약/결과조회</p>
+
+
+                                    <p class="on">예약하기</p>
+
+                                </div>
+
+                                <div class="co-title-field">
+                                    <h1 class="title">검진일자</h1>
+                                </div>
+                            </div>
+                            <div class="co-cont-section">
+                                <div class="co-subcont-field">
+                                    <p class="co-ref-txt">검진기관 예약 특이사항 : 오전 7시부터 검진이 가능하며, 오전 일찍 내원해 주실수록 대기시간을 줄이실 수 있음을 안내 드립니다.</p>
+                                </div>
+                                <div class="co-article examination-date-article">
+                                    <div class="row type02">
+                                        <div class="col-4">
+                                            <div class="co-title-field">
+                                                <h2 class="sub-title">1차 희망 신청일자</h2>
+                                                <div class="c-chkbox">
+                                                    <input type="checkbox" id="chkOnlyMorningDate03_01" />
+                                                    <label for="chkOnlyMorningDate03_01" class="chk-label"><i></i><span>오전 예약 가능일만 보기</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="co-cont-article input-cont-article">
+                                                <div class="c-input-list-basic input-cont">
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="rsvHopeDate03_01">예약일자</label>
+                                                            <div class="c-input-date">
+                                                                <input type="text" class="c-input" id="rsvHopeDate03_01" placeholder="YYYY-MM-DD" autocomplete="off" />
+                                                                <span><i class="date-btn"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="rsvHopeTime03_01">예약시간</label>
+                                                            <div class="c-select">
+                                                                <select title="예약시간 선택" id="rsvHopeTime03_01">
+                                                                    <option value="" selected="">선택</option>
+                                                                    <option value="">option</option>
+                                                                    <option value="">option</option>
+                                                                    <option value="">option</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="co-title-field">
+                                                <h2 class="sub-title">연기검사 신청 일자</h2>
+                                            </div>
+                                            <div class="co-cont-article input-cont-article">
+                                                <div class="c-input-list-basic input-cont">
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label>신청 내역</label>
+                                                            <div class="in-input-row">
+                                                                <input type="text" class="c-input" value="대장내시경" readonly="readonly" />
+                                                            </div>
+                                                            <div class="in-input-row">
+                                                                <input type="text" class="c-input" value="대장내시경 _ 2" readonly="readonly" />
+                                                            </div>
+                                                            <div class="in-input-row">
+                                                                <input type="text" class="c-input" value="대장내시경 _ 3" readonly="readonly" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="rsvHopeDate03_02">예약일자</label>
+                                                            <div class="c-input-date">
+                                                                <input type="text" class="c-input" id="rsvHopeDate03_02" placeholder="YYYY-MM-DD" autocomplete="off" />
+                                                                <span><i class="date-btn"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="rsvHopeTime03_02">예약시간</label>
+                                                            <div class="c-select">
+                                                                <select title="예약시간 선택" id="rsvHopeTime03_02">
+                                                                    <option value="" selected="">선택</option>
+                                                                    <option value="">option</option>
+                                                                    <option value="">option</option>
+                                                                    <option value="">option</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resevation-btmbar-wrap">
+                                <div class="resevation-btm-bar type01">
+                                    <div class="buttons">
+                                        <div class="left">
+                                            <a href="javascript:;" class="co-btn btn-reservation-prev is-active"><span>이전</span></a>
+                                        </div>
+                                        <div class="right">
+
+                                            <a href="javascript:;" class="co-btn btn-reservation-next"><span>다음</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Contents -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="logo">
+                        <img src="../../images/logo/footer_logo_01.svg" alt="KMI 재단법인 한국의학연구소 KOREA MEDICAL INSTITUTE" />
+                    </div>
+                    <div class="info-field">
+                        <ul class="top-useinfo">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이용약관</a></li>
+                            <li><a href="javascript:;">이용가이드</a></li>
+                        </ul>
+                        <ul class="company-info">
+                            <li>상호 : 재단법인 한국의학연구소대표자 성명 : 이상호본원 : (우)03173 서울시 종로구 세종대로 23길 54(당주동, 세종빌딩)</li>
+                            <li>전화 : 1599-7070 전자우편주소 : <a href="mailto:webmaster@kmi.or.kr">webmaster@kmi.or.kr</a>사업자등록번호 : 130-82-06 960 </li>
+                            <li>오전 09:00 ~ 오후 18:00 공휴일 휴무 고객문의 : 5555-5555</li>
+                            <li>Copyright© KMI.All Rights Reserved.</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn-go-top"><span class="skip">맨 위로 이동</span></a>
+                </div>
+            </footer>
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        $(window).on('load resize', function() {
+            reservationSideBarFloating();
+        });
+        $(window).on('load resize scroll', function() {
+            reservationBtmBarFixed();
+        });
+    </script>
+</body>
+
+</html>

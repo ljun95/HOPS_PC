@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- [comment]
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                <a href="javascript:;" class="co-btn btn-open-popup" data-toggle="modal" data-target="#popupFindPW02">open popup</a>
+
+                <div class="c-layer-popup type03" id="popupFindPW02" role="dialog" aria-labelledby="popupFindPW02_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field">
+                            <!-- modal Header -->
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupFindPW02_Label">비밀번호 찾기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="join-login-field find-accinfo-field">
+                                        <div class="cont-box">
+                                            <h5 class="title">본인확인</h5>
+                                            <p class="cont">비밀번호를 찾을 방법을 선택해 주세요!</p>
+                                        </div>
+                                        <div class="co-article">
+                                            <!-- [comment] 
+										+ TAB LIST script, 접근성 제어
+										+  동일 속성값 매칭
+										 - 1. role="tab"의 ID / role="tabpanel"  aria-labelledby
+										 -  2. role="tab"의 aria-controls /  role="tabpanel" 의 ID
+									-->
+                                            <div class="co-tab-wrap">
+                                                <ul class="co-tab-list tab-event type01 tab-3" role="tablist">
+                                                    <li><a href="javascript:;" class="on" role="tab" aria-selected="true" id="findWayPwTab_01" aria-controls="findWayPwTabPanel_01">휴대전화</a></li>
+                                                    <li><a href="javascript:;" role="tab" aria-selected="false" id="findWayPwTab_02" aria-controls="findWayPwTabPanel_02">이메일 </a></li>
+                                                    <li><a href="javascript:;" role="tab" id="findWayPwTab_03" aria-selected="false">아이핀</a></li>
+                                                </ul>
+                                                <div class="tab-cont-wrap">
+                                                    <!-- findWayPwTabPanel_01 -->
+                                                    <div class="tab-content on" role="tabpanel" id="findWayPwTabPanel_01" aria-labelledby="findWayPwTab_01">
+                                                        <div class="c-input-list-basic">
+                                                            <div class="row">
+                                                                <div class="col label-input">
+                                                                    <label for="inputFindPwTab01_01">이름</label>
+                                                                    <div class="row inner c-input-btn-group">
+                                                                        <div class="col">
+                                                                            <input type="text" class="c-input" id="inputFindPwTab01_01" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col label-input">
+                                                                    <label class="c-label-txt">휴대폰 전화번호</label>
+                                                                    <div class="c-input-phone-group certified">
+                                                                        <div class="row inner w-btn">
+                                                                            <div class="col input-phone-01">
+                                                                                <div class="c-select">
+                                                                                    <select title="휴대폰 전화번호 앞 3자리 선택">
+                                                                                        <option value="" selected="">010</option>
+                                                                                        <option value="">option</option>
+                                                                                        <option value="">option</option>
+                                                                                        <option value="">option</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col input-phone-02"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+                                                                            <div class="col input-phone-03"><input type="text" class="c-input" title="휴대폰 전화번호 끝 4자리 입력" /></div>
+                                                                            <div class="col buttons">
+                                                                                <button type="button" class="co-btn bg-navy-1"><span>인증받기</span></button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row inner">
+                                                                            <div class="col"><input type="text" class="c-input" title="인증번호 6자리 숫자 입력" placeholder="인증번호 6자리 숫자 입력" /></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- findWayPwTabPanel_02 -->
+                                                    <div class="tab-content" role="tabpanel" id="findWayPwTabPanel_02" aria-labelledby="findWayPwTab_02">
+                                                        <div class="c-input-list-basic">
+                                                            <div class="row">
+                                                                <div class="col label-input">
+                                                                    <label for="inputFindPwTab02_01">이름</label>
+                                                                    <div class="row inner c-input-btn-group">
+                                                                        <div class="col">
+                                                                            <input type="text" class="c-input" id="inputFindPwTab02_01" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col label-input">
+                                                                    <label class="c-label-txt">이메일</label>
+                                                                    <div class="c-input-email-group certified">
+                                                                        <div class="row inner w-btn">
+                                                                            <div class="col input-email-01">
+                                                                                <input type="text" class="c-input" title="이메일 계정입력" value="test" />
+                                                                            </div>
+                                                                            <div class="col input-email-02">
+                                                                                <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" />
+                                                                            </div>
+                                                                            <div class="col buttons">
+                                                                                <button type="button" class="co-btn bg-navy-1"><span>인증받기</span></button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row inner">
+                                                                            <div class="col"><input type="text" class="c-input" title="인증번호 6자리 숫자 입력" placeholder="인증번호 6자리 숫자 입력" /></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+
+                            <!-- modal-footer -->
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn is-outline-navy-1 popup-cls-btn"><span>취소</span></button>
+                                        <button type="button" class="co-btn bg-navy-1"><span>다음</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- = type03  -->
+                    <!-- [ // layer popup] -->
+                </div>
+            </section>
+            <!-- // Contents -->
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

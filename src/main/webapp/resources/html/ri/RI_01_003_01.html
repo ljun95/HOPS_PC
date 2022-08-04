@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+        <p><a href="#subSideNav" tabindex="1">서브메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="resevation-container">
+        <!-- Content-Wrapper -->
+
+        <div div class="content-wrapper">
+            <!-- 검진결과 비교하기 버튼 클릭 시 팝업 -->
+            <button type="button" class="btn-open-popup co-btn" data-toggle="modal" data-target="#popupChkupResultCompare01"><span>검진결과 비교하기 버튼 클릭 시 팝업</span></button>
+
+            <!-- [Popup Source] -->
+            <div class="c-layer-popup type04" id="popupChkupResultCompare01" role="dialog" aria-labelledby="popupChkupResultCompare01_Label" aria-modal="true" aria-hidden="true">
+                <div class="modal-field" tabindex="0">
+                    <div class="c-modal-header">
+                        <div class="c-modal-title-field">
+                            <h4 class="c-title" id="popupChkupResultCompare01_Label">검진 결과 비교</h4>
+                        </div>
+                        <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                    </div>
+                    <!-- c-modal-body -->
+                    <div class="c-modal-body">
+                        <div class="c-modal-inner">
+                            <div class="graph-chkupresult-compare-wrap">
+                                <div class="co-detail-title-field">
+                                    <p class="title">LDL콜레스트롤(LDL-Chol)</p>
+                                    <button class="btn-chkup-info-detail">
+                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                    </button>
+                                </div>
+                                <div class="co-tab-wrap graph-chkupresult-compare-tab-wrap">
+                                    <ul class="co-tab-list type01 tab-event w-auto" role="tablist">
+                                        <li><a href="javascript:;" class="on" role="tab" aria-selected="true" id="chkupResultCompareTab_01" aria-controls="chkupResultCompareTabPanel_01">KMI</a></li>
+                                        <li><a href="javascript:;" role="tab" aria-selected="false" id="chkupResultCompareTab_02" aria-controls="chkupResultCompareTabPanel_02">하나로 병원</a></li>
+                                        <li><a href="javascript:;" role="tab" aria-selected="false" id="chkupResultCompareTab_03" aria-controls="chkupResultCompareTabPanel_03">삼성병원</a></li>
+                                    </ul>
+                                    <div class="tab-cont-wrap">
+                                        <!-- chkupResultCompareTabPanel_01 -->
+                                        <div class="tab-content on" role="tabpanel" id="chkupResultCompareTabPanel_01" aria-labelledby="chkupResultCompareTab_01" tabindex="0">
+                                            <!--  [comment]
+												-	chart Sample 
+											 -->
+                                            <div class="chart-field">
+                                                <canvas id="resultCompareChart01" class="compare-chart"></canvas>
+                                            </div>
+                                        </div>
+                                        <!-- chkupResultCompareTabPanel_02 -->
+                                        <div class="tab-content" role="tabpanel" id="chkupResultCompareTabPanel_02" aria-labelledby="chkupResultCompareTab_02" tabindex="0">
+                                            <!--  [comment]
+												-	chart Sample 
+											 -->
+                                            <div class="chart-field">chart js 삽입</div>
+                                        </div>
+                                        <!-- chkupResultCompareTabPanel_03 -->
+                                        <div class="tab-content" role="tabpanel" id="chkupResultCompareTabPanel_03" aria-labelledby="chkupResultCompareTab_03" tabindex="0">
+                                            <!--  [comment]
+												-	chart Sample 
+											 -->
+                                            <div class="chart-field">chart js 삽입</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="co-ref-txt">
+                                    최대 5개의 검진 결과에 대한 내역입니다.<br />
+                                    검진 결과의 임상참고치는 검진 기관별 분석 방법의 차이로 임상참고치의 범위에 차이가 발생할 수 있습니다.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //  c-modal-body -->
+
+                    <div class="c-modal-footer">
+                        <div class="inner">
+                            <div class="buttons">
+                                <button type="button" class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- = type04  -->
+            <!-- [ // layer popup] -->
+        </div>
+
+        <!-- // 검진결과 비교하기 버튼 클릭 시 팝업 -->
+    </div>
+    <!-- // Content-Wrapper -->
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <link href="../../lib/chart.js/dist/Chart.min.css" />
+    <script src="../../lib/chart.js/dist/Chart.min.js"></script>
+    <script src="../../lib/chartjs-plugin-annotation-0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <title>Document</title>
+    <style>
+        #myChart {
+            width: 400px !important;
+            height: 400px !important;
+        }
+    </style>
+    <script>
+        const ctx = document.getElementById('resultCompareChart01');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 10, 3, 5, 2, 3],
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                    borderWidth: 1,
+                }, ],
+            },
+            options: {
+                autocolors: false,
+                annotation: {
+                    // annotation 적용 예시
+                    drawTime: 'afterDatasetsDraw', // (default)
+                    annotations: [{
+                        type: 'box',
+                        xScaleID: 'x-axis-0',
+                        yScaleID: 'y-axis-0',
+                        xMin: 0,
+                        xMax: 10,
+                        yMin: 5,
+                        yMax: 10,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'transparent',
+                    }, ],
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

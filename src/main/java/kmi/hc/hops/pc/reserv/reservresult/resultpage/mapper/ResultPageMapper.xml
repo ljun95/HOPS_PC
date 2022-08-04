@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kmi.hc.hops.pc.reserv.reservresult.resultpage.mapper.ResultPageMapper">
+	<!-- 건강검진 이력 리스트 -->
+	<select id="examinationResultList" resultType="kmi.hc.hops.pc.reserv.reservresult.resultpage.model.ResultPageDto">
+		 SELECT  hcr.CHECKUP_ROSTER_NO 
+		 			,hcp.CHECKUP_PROPOS_NO
+			 		,hcr.ROSTER_NAME # 검진대상자 이름			 		
+			 		,hcp.CHECKUP_DIV_CD # 검진구분		
+			 		,hcp.PROPOS_TITLE # 제목			 			 		
+			 		,hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+			 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디			 		
+			 		,DATE_FORMAT(hc.CHECKUP_DT, '%Y-%m-%d') AS CHECKUP_DT		# 검진일시
+			 		,hc.CHECKUP_NO	 		
+			   FROM HC_CHECKUP_ROSTER hcr
+			   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+			   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+			   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+			   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID
+		   WHERE user_id = #{user_id} ORDER BY hc.CHECKUP_DT DESC
+	</select>		
+	<!-- 종합소견  -->
+	<select id="examinationresultlookupinformation" resultType="map">
+		 SELECT  hcr.CHECKUP_ROSTER_NO 
+			 		,hcr.ROSTER_NAME # 검진대상자 이름			 		
+			 		,hcp.CHECKUP_DIV_CD # 검진구분		
+			 		,hcp.PROPOS_TITLE # 제목			 			 		
+			 		,hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+			 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디
+			 		,hc.CHECKUP_OPINION # 종합소견		 		
+			   FROM HC_CHECKUP_ROSTER hcr
+			   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+			   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+			   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+			   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+		   WHERE user_id = #{user_id}
+		   and hc.PARTNER_CENTER_ID = #{partnerCenterId}		   
+		   and hc.CHECKUP_NO = #{checkupNo}
+		   and hcp.CHECKUP_PROPOS_NO = #{checkupProposNo}
+	</select>
+	<!-- 종합소견 비교하기 -->
+	<select id="comparisonofresults" resultType="map">
+		 SELECT  hcr.CHECKUP_ROSTER_NO 
+			 		,hcr.ROSTER_NAME # 검진대상자 이름			 		
+			 		,hcp.CHECKUP_DIV_CD # 검진구분		
+			 		,hcp.PROPOS_TITLE # 제목			 			 		
+			 		,hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+			 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디
+			 		,hc.CHECKUP_OPINION # 종합소견	
+			 		,DATE_FORMAT(hc.CHECKUP_DT, '%Y-%m-%d') AS CHECKUP_DT		# 검진일시	 		
+			   FROM HC_CHECKUP_ROSTER hcr
+			   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+			   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+			   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+			   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+		   WHERE user_id = #{user_id}
+		   and hc.PARTNER_CENTER_ID = #{partnerCenterId}
+		   and hc.CHECKUP_DT <![CDATA[<=]]> #{checkupDt}
+		   ORDER BY hc.CHECKUP_DT DESC
+		   limit 0, 5		   
+	</select>
+	
+	<!-- 클릭한 데이터 리스트 가져오기 -->
+	<select id="comparisonofresultsList" resultType="map">
+		 SELECT h.*,(SELECT hsc.CD_VALUE_NAME FROM HC_SERVICE_CD hsc where CD_ID ='C221' and hsc.CD_VALUE = h.MID_CATEGORY) AS CD_VALUE_MID_NAME
+				FROM (
+						   SELECT  hcr.CHECKUP_ROSTER_NO 
+						 		,hcr.ROSTER_NAME # 검진대상자 이름			 		
+						 		,hcpc.CHECKUP_PROPOS_NO 
+						 		,hcp.CHECKUP_DIV_CD # 검진구분		
+						 		,hcp.PROPOS_TITLE # 제목			 			 		
+						 		,hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+						 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디			 		
+						 		,hsc.CD_VALUE_NAME  # 대구분					 		 			 		
+						 		,hctrc.CENTER_TEST_RESULT_CD_NAME # 구분			 					 					 							 		
+						 		#,IFNULL(htr.RESULT_VALUE, '-') AS RESULT_VALUE # 결과
+						 		,htr.RESULT_VALUE # 결과
+						 		,htrcr.VALUE_DIV_TYPE # 10 : 숫자, 20 : 문자 
+						 		,htrcr.VALUE_SYMBOL 
+						 		,hctrc.CENTER_TEST_RESULT_CD  
+						 		,hctrc.MAIN_CATEGORY 
+						 		,hctrc.MID_CATEGORY
+						 		,hsc.CD_ID  
+						 		,hsc.CD_VALUE
+						 		,DATE_FORMAT(hc.CHECKUP_DT, '%Y-%m-%d') AS CHECKUP_DT		# 검진일시
+						 		#,htrcr.MALE_MIN_VALUE 		# 남자 최저 임상참고치
+						 		#,htrcr.MALE_MAX_VALUE		# 남자 최대 임상참고치
+						 		#,htrcr.FEMALE_MIN_VALUE		# 여자 최저 임상참고치 
+						 		#,htrcr.FEMALE_MAX_VALUE	 	# 여자 최대 임상참고치
+						 		, CASE WHEN hcr.GENDER_CD = '10' THEN  htrcr.MALE_MIN_VALUE
+								  	   WHEN hcr.GENDER_CD = '20' THEN  htrcr.FEMALE_MIN_VALUE 	
+									   END AS MIN_VALUE	# 최소임상참고치 							
+								, CASE WHEN hcr.GENDER_CD = '10' THEN  htrcr.MALE_MAX_VALUE
+								  	   WHEN hcr.GENDER_CD = '20' THEN  htrcr.FEMALE_MAX_VALUE 	
+									   END AS MAX_VALUE	# 최대임상참고치 
+								,htr.RESULT_OPINION_CD 			   							  				 		
+						   FROM HC_CHECKUP_ROSTER hcr
+						   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+						   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+						   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+						   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+						   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD  	and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID		   
+						   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY   						   
+						   left join HC_TEST_RESULT_CLINICAL_REF htrcr on htrcr.CENTER_TEST_RESULT_CD = hctrc.CENTER_TEST_RESULT_CD      
+					   WHERE user_id = #{user_id}					  
+		   			   and hc.CHECKUP_DT <![CDATA[<=]]> #{checkupDt}
+		   			   and hctrc.CENTER_TEST_RESULT_CD_NAME = #{resultName}
+		   			   and hctrc.MID_CATEGORY = #{midCategory}		   
+		   			   ORDER BY hc.CHECKUP_DT DESC limit 0, 5				   
+					  ) h  			   	   
+	</select>
+	<!-- 혈압 비교하기 버튼 클릭 -->
+	<select id="bloodpressurecomparisonresult" resultType="map">
+		 SELECT h.*,(SELECT hsc.CD_VALUE_NAME FROM HC_SERVICE_CD hsc where CD_ID ='C221' and hsc.CD_VALUE = h.MID_CATEGORY) AS CD_VALUE_MID_NAME
+				FROM (
+						   SELECT  hcr.CHECKUP_ROSTER_NO 
+						 		,hcr.ROSTER_NAME # 검진대상자 이름			 		
+						 		,hcpc.CHECKUP_PROPOS_NO 
+						 		,hcp.CHECKUP_DIV_CD # 검진구분		
+						 		,hcp.PROPOS_TITLE # 제목			 			 		
+						 		,hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+						 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디			 		
+						 		,hsc.CD_VALUE_NAME  # 대구분					 		 			 		
+						 		,hctrc.CENTER_TEST_RESULT_CD_NAME # 구분			 					 					 							 		
+						 		#,IFNULL(htr.RESULT_VALUE, '-') AS RESULT_VALUE # 결과
+						 		,htr.RESULT_VALUE # 결과
+						 		,htrcr.VALUE_DIV_TYPE # 10 : 숫자, 20 : 문자 
+						 		,htrcr.VALUE_SYMBOL 
+						 		,hctrc.CENTER_TEST_RESULT_CD  
+						 		,hctrc.MAIN_CATEGORY 
+						 		,hctrc.MID_CATEGORY
+						 		,hsc.CD_ID  
+						 		,hsc.CD_VALUE
+						 		,DATE_FORMAT(hc.CHECKUP_DT, '%Y-%m-%d') AS CHECKUP_DT		# 검진일시
+						 		#,htrcr.MALE_MIN_VALUE 		# 남자 최저 임상참고치
+						 		#,htrcr.MALE_MAX_VALUE		# 남자 최대 임상참고치
+						 		#,htrcr.FEMALE_MIN_VALUE		# 여자 최저 임상참고치 
+						 		#,htrcr.FEMALE_MAX_VALUE	 	# 여자 최대 임상참고치
+						 		, CASE WHEN hcr.GENDER_CD = '10' THEN  htrcr.MALE_MIN_VALUE
+								  	   WHEN hcr.GENDER_CD = '20' THEN  htrcr.FEMALE_MIN_VALUE 	
+									   END AS MIN_VALUE	# 최소임상참고치 							
+								, CASE WHEN hcr.GENDER_CD = '10' THEN  htrcr.MALE_MAX_VALUE
+								  	   WHEN hcr.GENDER_CD = '20' THEN  htrcr.FEMALE_MAX_VALUE 	
+									   END AS MAX_VALUE	# 최대임상참고치 							  				 		
+						   FROM HC_CHECKUP_ROSTER hcr
+						   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+						   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+						   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+						   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+						   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD  	and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID		   
+						   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY   						   
+						   left join HC_TEST_RESULT_CLINICAL_REF htrcr on htrcr.CENTER_TEST_RESULT_CD = hctrc.CENTER_TEST_RESULT_CD      
+					   WHERE user_id = #{user_id}					  
+		   			   and hc.CHECKUP_DT <![CDATA[<=]]> #{checkupDt}
+		   			   and hctrc.CENTER_TEST_RESULT_CD_NAME REGEXP (#{resultName})
+		   			   and hctrc.MID_CATEGORY = #{midCategory}		   
+		   			   ORDER BY hc.CHECKUP_DT DESC limit 0, 10				   
+					  ) h  			   	   
+	</select>
+
+	<select id="examinationresultlookupinformationList" resultType="map"> 
+		 SELECT h.*,(SELECT hsc.CD_VALUE_NAME FROM HC_SERVICE_CD hsc where CD_ID ='C221' and hsc.CD_VALUE = h.MID_CATEGORY) AS CD_VALUE_MID_NAME
+				FROM (
+						   SELECT  hcr.CHECKUP_ROSTER_NO 
+						 		,hcr.ROSTER_NAME # 검진대상자 이름			 		
+						 		,hcpc.CHECKUP_PROPOS_NO 
+						 		,hcp.CHECKUP_DIV_CD # 검진구분		
+						 		,hcp.PROPOS_TITLE # 제목			 			 		
+						 		,hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+						 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디			 		
+						 		,hsc.CD_VALUE_NAME  # 대구분					 		 			 		
+						 		,hctrc.CENTER_TEST_RESULT_CD_NAME # 구분			 					 					 							 		
+						 		#,IFNULL(htr.RESULT_VALUE, '-') AS RESULT_VALUE # 결과
+						 		,htr.RESULT_VALUE # 결과
+						 		,htrcr.VALUE_DIV_TYPE # 10 : 숫자, 20 : 문자 webdb, webcash
+						 		,htrcr.VALUE_SYMBOL 
+						 		,hctrc.CENTER_TEST_RESULT_CD  
+						 		,hctrc.MAIN_CATEGORY 
+						 		,hctrc.MID_CATEGORY
+						 		,hsc.CD_ID  
+						 		,hsc.CD_VALUE
+						 		,hc.CHECKUP_DT  			 		
+						   FROM HC_CHECKUP_ROSTER hcr
+						   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+						   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+						   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+						   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+						   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD  	and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID		   
+						   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY   						   
+						   join HC_TEST_RESULT_CLINICAL_REF htrcr on htrcr.CENTER_TEST_RESULT_CD = hctrc.CENTER_TEST_RESULT_CD      
+					   WHERE user_id = #{user_id}					  
+		   			   and hc.PARTNER_CENTER_ID = #{partnerCenterId}
+		   			   and hc.CHECKUP_NO = #{checkupNo}
+		   			   and hcp.CHECKUP_PROPOS_NO = #{checkupProposNo}
+					  ) h  ORDER BY h.CENTER_TEST_RESULT_CD*1 ASC  			   
+	</select>
+	
+	<select id="basichearingtest" resultType="map">
+		SELECT h.*,(SELECT hsc.CD_VALUE_NAME FROM HC_SERVICE_CD hsc where CD_ID ='C221' and hsc.CD_VALUE = h.MID_CATEGORY) AS CD_VALUE_MID_NAME
+				FROM (
+						   SELECT  hcr.CHECKUP_ROSTER_NO 
+						 		,hcr.ROSTER_NAME # 검진대상자 이름			 		
+						 		,hcpc.CHECKUP_PROPOS_NO 
+						 		,hcp.CHECKUP_DIV_CD # 검진구분		
+						 		,hcp.PROPOS_TITLE # 제목			 			 		
+						 		,hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+						 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디			 		
+						 		,hsc.CD_VALUE_NAME  # 대구분					 		 			 		
+						 		,hctrc.CENTER_TEST_RESULT_CD_NAME # 구분			 					 					 	
+						 		,htr.RESULT_VALUE # 결과
+						 		#,htrcr.VALUE_DIV_TYPE # 10 : 숫자, 20 : 문자 webdb, webcash
+						 		#,htrcr.VALUE_SYMBOL # 단위						 		
+						 		,hctrc.MAIN_CATEGORY 
+						 		,hctrc.MID_CATEGORY
+						 		,hsc.CD_ID  
+						 		,hsc.CD_VALUE
+						 		,hc.CHECKUP_DT # 검사일
+						 		,htr.CLINICAL_MAX_VALUE # 임상참고치 최대값 결과
+						 		,htr.CLINICAL_MIN_VALUE # 임상참고치 최소값 결과
+						 		#,htrcr.MALE_MIN_VALUE   # 남자 임상참고치 참고 최소값
+						 		#,htrcr.MALE_MAX_VALUE   # 남자 임상참고치 참고 최대값
+						 		#,htrcr.FEMALE_MIN_VALUE # 여자 임상참고치 참고 최소값
+						 		#,htrcr.FEMALE_MAX_VALUE # 여자 임상참고치 참고 최소값
+						 		,hctrc.CENTER_TEST_RESULT_CD 	
+						 		,hctrc.TEST_ITEM_CD # 이걸로 if문에서 조건걸면 될듯하다
+						 		,htr.RESULT_OPINION_CD 						 								 		
+						   FROM HC_CHECKUP_ROSTER hcr
+						   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+						   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+						   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+						   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+						   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID  			   
+						   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY   	
+					   WHERE user_id = #{user_id}					  
+		   			   and hc.PARTNER_CENTER_ID = #{partnerCenterId}
+		   			   and hc.CHECKUP_NO = #{checkupNo}
+		   			   and hcp.CHECKUP_PROPOS_NO = #{checkupProposNo}
+					  ) h  ORDER BY h.CENTER_TEST_RESULT_CD*1 ASC  			   			   
+	</select>
+	
+	<select id="basalurinetest" resultType="map">
+		SELECT h.*,(SELECT hsc.CD_VALUE_NAME FROM HC_SERVICE_CD hsc where CD_ID ='C221' and hsc.CD_VALUE = h.MID_CATEGORY) AS CD_VALUE_MID_NAME
+				FROM (
+						   SELECT  			 								 		 						 											 				 			 		
+						 		 hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+						 		,hpc.PARTNER_CENTER_ID 	# 파트너 센터 아이디			 		
+						 		,hsc.CD_VALUE_NAME  # 대구분					 		 			 		
+						 		,hctrc.CENTER_TEST_RESULT_CD_NAME # 구분			 					 					 	
+						 		#,IFNULL(htr.RESULT_VALUE, '')# 결과
+						 		,htr.RESULT_VALUE # 결과
+						 		,htr.RESULT_CONTENTS #테이블 소견(확인필요) 						 								 								 	
+						 		,hctrc.MID_CATEGORY						 		  						 		
+						 		,hc.CHECKUP_DT # 검사일
+						 		,hctrc.CENTER_TEST_RESULT_CD
+						 		,hctrc.TEST_ITEM_CD # 이걸로 if문에서 조건걸면 될듯하다						 		
+						 		,hcr.GENDER_CD						 		
+						 		, CASE WHEN hcr.GENDER_CD = '10' THEN  htrcr.MALE_MIN_VALUE
+								  	   WHEN hcr.GENDER_CD = '20' THEN  htrcr.FEMALE_MIN_VALUE 	
+									   END AS MIN_VALUE	# 최소임상참고치 							
+								, CASE WHEN hcr.GENDER_CD = '10' THEN  htrcr.MALE_MAX_VALUE
+								  	   WHEN hcr.GENDER_CD = '20' THEN  htrcr.FEMALE_MAX_VALUE 	
+									   END AS MAX_VALUE	# 최대임상참고치 														 									   	   			   			 	
+						 		,htr.RESULT_OPINION_CD
+								,htic.TEST_ITEM_NAME # 검사항목 이름
+								,htrcr.VALUE_SYMBOL #단위 
+								,htrcr.VALUE_DIV_TYPE # 10 : 숫자, 20 : 문자						 								 		
+						   FROM HC_CHECKUP_ROSTER hcr
+						   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+						   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+						   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+						   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+						   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID  			   
+						   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY   						   
+						   join HC_TEST_RESULT_CLINICAL_REF htrcr on htrcr.CENTER_TEST_RESULT_CD = hctrc.CENTER_TEST_RESULT_CD
+						   left join HC_TEST_ITEM_CD htic on htic.PARTNER_CENTER_ID = hctrc.PARTNER_CENTER_ID and htic.TEST_ITEM_CD = hctrc.TEST_ITEM_CD   	
+					   WHERE user_id = #{user_id}					  
+		   			   and hc.PARTNER_CENTER_ID = #{partnerCenterId}
+		   			   <if test='checkupNo != null and checkupNo != ""'>    
+		   			   and hc.CHECKUP_NO = #{checkupNo}
+		   			   </if>
+		   			  <if test='checkupProposNo != null and checkupProposNo != ""'>    
+		   			   and hcp.CHECKUP_PROPOS_NO = #{checkupProposNo}
+		   			   </if>
+					  ) h ORDER BY h.CENTER_TEST_RESULT_CD*1 ASC  			   
+	</select>
+	
+	<!-- 최신 검사 결과 가져오기 -->
+	<select id="currentResult" resultType="map">
+		SELECT h.*,(SELECT hsc.CD_VALUE_NAME FROM HC_SERVICE_CD hsc where CD_ID ='C221' and hsc.CD_VALUE = h.MID_CATEGORY) AS CD_VALUE_MID_NAME
+				FROM (
+						   SELECT  			 								 		 						 											 				 			 		
+						 		 hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+						 		 ,htr.CHECKUP_NO  						 					 					 					 	
+						 		#,IFNULL(htr.RESULT_VALUE, '') AS RESULT_VALUE # 결과 			 								 								 								 								 		  						 		
+						 		,htr.RESULT_VALUE # 결과 			 								 								 								 								 		  						 		
+						 		,hc.CHECKUP_DT # 검사일
+						 		,hctrc.CENTER_TEST_RESULT_CD						 		
+						 		,hctrc.MID_CATEGORY
+						 		,hctrc.CENTER_TEST_RESULT_CD_NAME # 구분
+						 		,IFNULL(htrcr.MALE_MAX_VALUE, '') AS MALE_MAX_VALUE
+						 		,IFNULL(htrcr.MALE_MIN_VALUE, '') AS MALE_MIN_VALUE 						 		
+						 		,IFNULL(htrcr.FEMALE_MAX_VALUE, '') AS FEMALE_MAX_VALUE 						 		
+						 		,IFNULL(htrcr.FEMALE_MIN_VALUE, '') AS FEMALE_MIN_VALUE 		 		
+						   FROM HC_CHECKUP_ROSTER hcr
+						   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+						   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+						   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+						   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+						   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID  			   
+						   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY
+						   left join HC_TEST_RESULT_CLINICAL_REF htrcr on htrcr.PARTNER_CENTER_ID = hctrc.PARTNER_CENTER_ID and htrcr.CENTER_TEST_RESULT_CD = hctrc.CENTER_TEST_RESULT_CD   						   						   						    						   
+						   left join HC_TEST_ITEM_CD htic on htic.PARTNER_CENTER_ID = hctrc.PARTNER_CENTER_ID and htic.TEST_ITEM_CD = hctrc.TEST_ITEM_CD
+					   WHERE user_id = #{user_id}					  
+		   			   and hc.PARTNER_CENTER_ID = #{partnerCenterId}
+					   and hc.CHECKUP_DT IN (#{checkupDt}) 
+					  ) h ORDER BY h.CENTER_TEST_RESULT_CD*1 ASC  			   
+	</select>
+	<!-- 두번째 최신결과 가져오기 -->
+	<select id="previousResults" resultType="map">
+		SELECT h.*,(SELECT hsc.CD_VALUE_NAME FROM HC_SERVICE_CD hsc where CD_ID ='C221' and hsc.CD_VALUE = h.MID_CATEGORY) AS CD_VALUE_MID_NAME
+				FROM (
+						   SELECT  			 								 		 						 											 				 			 		
+						 		 hpc.PARTNER_CENTER_NAME # 파트너 센터 이름
+						 		,htr.CHECKUP_NO  						 			 					 					 							 		
+						 		,IFNULL(htr.RESULT_VALUE, '') AS RESULT_VALUE # 결과 										 							 								 								 								 								 		  						 	
+						 		,hc.CHECKUP_DT # 검사일
+						 		,hctrc.CENTER_TEST_RESULT_CD						 		
+						 		,hctrc.MID_CATEGORY
+						 		,hctrc.CENTER_TEST_RESULT_CD_NAME # 구분						 		
+						 		,IFNULL(htrcr.MALE_MAX_VALUE, '') AS MALE_MAX_VALUE
+						 		,IFNULL(htrcr.MALE_MIN_VALUE, '') AS MALE_MIN_VALUE 						 		
+						 		,IFNULL(htrcr.FEMALE_MAX_VALUE, '') AS FEMALE_MAX_VALUE 						 		
+						 		,IFNULL(htrcr.FEMALE_MIN_VALUE, '') AS FEMALE_MIN_VALUE 						 								 					 	
+						   FROM HC_CHECKUP_ROSTER hcr
+						   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+						   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+						   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+						   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+						   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID  			   
+						   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY
+						   left join HC_TEST_RESULT_CLINICAL_REF htrcr on htrcr.PARTNER_CENTER_ID = hctrc.PARTNER_CENTER_ID and htrcr.CENTER_TEST_RESULT_CD = hctrc.CENTER_TEST_RESULT_CD   						   						   						    						   
+						   left join HC_TEST_ITEM_CD htic on htic.PARTNER_CENTER_ID = hctrc.PARTNER_CENTER_ID and htic.TEST_ITEM_CD = hctrc.TEST_ITEM_CD
+					   WHERE user_id = #{user_id}					  
+		   			   and hc.PARTNER_CENTER_ID = #{partnerCenterId}
+					   and hc.CHECKUP_DT IN (SELECT  			 								 		 						 											 				 			 								 								 								 								 								 								 		  						 								 								 	
+											 		MAX(hc.CHECKUP_DT) AS SECOND_CHECKUP_DT # 검사일						 		 								
+											   FROM HC_CHECKUP_ROSTER hcr
+											   join HC_CHECKUP_PROPOS hcp on hcr.CUSTOMER_ID = hcp.CUSTOMER_ID and hcr.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO
+											   join HC_CHECKUP_PROPOS_CENTER hcpc on hcpc.CHECKUP_PROPOS_NO = hcp.CHECKUP_PROPOS_NO 
+											   join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hcpc.PARTNER_CENTER_ID 			    			   
+											   join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO and hc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID 			
+					   					       join HC_TEST_RESULT htr on htr.CHECKUP_NO = hc.CHECKUP_NO 						   						   
+											   join HC_CENTER_TEST_RESULT_CD hctrc on hctrc.CENTER_TEST_RESULT_CD = htr.CENTER_TEST_RESULT_CD and hctrc.PARTNER_CENTER_ID = hpc.PARTNER_CENTER_ID  			   
+											   join HC_SERVICE_CD hsc on hsc.CD_VALUE = hctrc.MAIN_CATEGORY
+											   left join HC_TEST_RESULT_CLINICAL_REF htrcr on htrcr.PARTNER_CENTER_ID = hctrc.PARTNER_CENTER_ID and htrcr.CENTER_TEST_RESULT_CD = hctrc.CENTER_TEST_RESULT_CD   						   						   						    											   
+											   left join HC_TEST_ITEM_CD htic on htic.PARTNER_CENTER_ID = hctrc.PARTNER_CENTER_ID and htic.TEST_ITEM_CD = hctrc.TEST_ITEM_CD
+										   WHERE user_id = #{user_id}					  
+		   			   					   and hc.PARTNER_CENTER_ID = #{partnerCenterId}
+										   and hc.CHECKUP_DT <![CDATA[<]]> (#{checkupDt})) 
+					  ) h ORDER BY h.CENTER_TEST_RESULT_CD*1 ASC  			   
+	</select>
+</mapper>

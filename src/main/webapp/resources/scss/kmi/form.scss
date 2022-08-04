@@ -1,0 +1,1798 @@
+.c-layer-popup {
+  textarea {
+    &[readonly='readonly'] {
+      background-color: $color-white-2;
+    }
+  }
+}
+
+// + input
+.c-input-group {
+  min-height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.c-input {
+  width: 100%;
+}
+label.title-md {
+  color: $color-gray-1;
+}
+
+.label-input {
+  label,
+  .c-label-txt {
+    margin-bottom: $gap-8;
+    display: flex;
+  }
+  .c-select {
+    width: 100%;
+  }
+
+  .co-btn {
+    width: 100%;
+  }
+}
+
+// = input List Detail
+
+.input-list {
+  &.detail-list {
+    $gap: $gap-20;
+    padding: $gap $gap-40;
+    .row {
+      margin: {
+        left: -$gap;
+        right: -$gap;
+      }
+      > [class*='col'] {
+        padding: {
+          left: $gap;
+          right: $gap;
+        }
+      }
+    }
+  }
+}
+
+.label-input {
+  &.detail {
+    > label,
+    .c-label-txt {
+      margin-bottom: 0;
+    }
+    .input-view {
+      line-height: $g-lineheight-2;
+      color: $color-gray-1;
+
+      input[type='text'],
+      input[type='password'] {
+        @include ellipsisLine01;
+        padding-left: 0;
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        cursor: default;
+
+        &:focus {
+          transition: none;
+          box-shadow: none;
+        }
+      }
+      border-bottom: 1px solid $color-gray-5;
+    }
+  }
+}
+
+.c-btn {
+  &.input-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-8;
+    padding: {
+      left: 0;
+      right: 0;
+    }
+    span {
+      line-height: $input-basic-lineheight;
+      display: block;
+    }
+  }
+}
+
+// = Input search
+
+.search-box {
+  width: 230px;
+}
+.search-input {
+  border-radius: 0;
+  border: none;
+  min-width: 186px;
+  &:focus {
+    transition: none;
+    box-shadow: none;
+    border-color: inherit;
+  }
+}
+
+.c-input-search {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  input[type='text'] {
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+    flex: 1 1 auto;
+    padding: 6px 44px 6px 12px;
+    width: 100%;
+
+    &:focus {
+      @include inputTextFocus;
+    }
+    // readonly
+    &[readonly='readonly'] {
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+  }
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .btn-search {
+    background: url($image-ico-path + 'ico_search_01.svg') 0/20px no-repeat;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    content: '';
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  // + input-view
+  &.input-view {
+    .btn-search {
+      right: 0;
+    }
+  }
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  input {
+    flex: 1 1 auto;
+  }
+}
+
+.is-nec {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  &:before {
+    content: '*';
+    color: $color-orange-1;
+    font: {
+      size: $fs-small;
+      weight: $weight-300;
+    }
+  }
+  width: 8px;
+  height: 10px;
+}
+
+/*
+	= checkbox, Radio
+*/
+
+// + check group
+.c-chk-group {
+  width: 100%;
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  .c-chk-list {
+    margin-left: -10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .c-chkbox,
+    .c-rdochk {
+      & ~ .c-chkbox,
+      & ~ .c-rdochk,
+      & ~ .c-multi-input-group {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+.c-multi-input-group {
+  > .c-chkbox {
+    margin-right: 8px;
+  }
+}
+
+.c-article.input-list {
+  .input-chk-wrap {
+    .c-chk-list {
+      padding-bottom: 12px;
+    }
+  }
+}
+
+// + 다중 인풋 유형 결합
+$multi-input-ml: 1.714rem;
+// .c-m-input-group {
+//   &:after {
+//     @include after;
+//   }
+//   width: 100%;
+//   display: table;
+//   table-layout: fixed;
+//   align-items: center;
+//   justify-content: flex-start;
+//   > li {
+//     & + li {
+//       margin-left: $multi-input-ml;
+//     }
+//   }
+//   .input-col {
+//     &:first-child {
+//       padding-right: 1.714rem;
+//     }
+//     display: table-cell;
+//     align-items: center;
+//     flex-grow: 1;
+
+//     .inner {
+//       display: flex;
+//     }
+//   }
+
+//   .c-chk-list {
+//     flex: 1 0 auto;
+//     + input {
+//       margin-left: $multi-input-ml;
+//       flex-grow: 1;
+//     }
+//   }
+
+//   .input-date-group {
+//     padding-left: 10px;
+//     .label-input:first-child {
+//       padding-left: 0;
+//     }
+//     .label-input:last-child {
+//       padding-right: 0;
+//     }
+//   }
+// }
+
+// = 다중 인풋 타입
+// + c-m-input-list
+
+label {
+  & + .c-m-input-list {
+    margin-top: 12px;
+  }
+}
+.c-m-input-list {
+  @include align-items-center;
+  flex: 1 1 auto;
+  width: 100%;
+  white-space: nowrap;
+  .input-col {
+    padding: 0 !important;
+    & ~ .input-col {
+      padding: 0;
+      margin-left: 20px;
+    }
+  }
+  display: flex;
+  // flex: 1 0 auto;
+
+  &.row.inner {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+    .c-chk-group {
+      padding: {
+        left: $gap-6;
+        right: $gap-6;
+      }
+    }
+    .c-chk-list {
+      // margin: {
+      //   left: -$gap-6;
+      //   right: -$gap-6;
+      // }
+    }
+    .c-multi-input-group {
+      width: 100%;
+      input[type='text'] {
+        width: 100%;
+      }
+    }
+
+    // > .col {
+    //   padding: {
+    //     left: $gap-10;
+    //     right: $gap-10;input-cont
+    //   }
+    // }
+  }
+}
+
+.c-check-list {
+  > .row {
+    & + .row {
+      margin-top: 20px;
+    }
+  }
+}
+
+// + multi-input-group
+.c-multi-input-group {
+  @include align-items-center;
+  flex-wrap: nowrap;
+  .c-rdochk,
+  .c-chkbox {
+    & + input[type='text'] {
+      margin-left: 0.857rem;
+    }
+  }
+  .input-date-group {
+    margin-left: 0;
+  }
+  .c-btn {
+    margin-left: 1.714rem;
+  }
+  .c-input {
+    // width: auto;
+    flex: 1 1 auto;
+  }
+}
+
+.label-input {
+  .c-input-group {
+    min-height: 40px;
+  }
+}
+
+.chk-label {
+  > i,
+  > span {
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+.chk-label > span {
+  @include coBodyTxt;
+  line-height: 1;
+  color: $color-gray-3;
+  font-weight: 300;
+}
+
+.c-chkbox,
+.c-rdochk {
+  &.txt-type02 {
+    span {
+      @include fontStyle(12px, 17px, 300);
+    }
+  }
+}
+
+// = radio
+.c-rdochk {
+  input[type='radio'] {
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked {
+      & + .chk-label > span {
+        color: $color-navy-1;
+      }
+      & + .chk-label i {
+        background-position: -56px 0;
+      }
+      &:disabled {
+        + .chk-label i {
+          cursor: default;
+          background-position: -84px 0;
+        }
+      }
+    }
+    &:disabled {
+      + .chk-label i {
+        cursor: default;
+        background-position: -28px 0;
+      }
+    }
+  }
+}
+
+// + chk-btn-type
+/*
+	= Date
+*/
+.c-input-date-group {
+  @at-root .c-multi-input-group {
+    .row.c-input-date-group {
+      margin-left: 5px;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.row {
+  &.c-input-date-group {
+    $gap: $gap-12;
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+    @include justify-row;
+    > [class*='col-'] {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+      > {
+        & {
+          @include paddingH(15px);
+        }
+      }
+    }
+    .input-email-01 {
+      position: relative;
+      &:after {
+        content: '@';
+        position: absolute;
+        bottom: 10px;
+        right: -7px;
+        color: $color-gray-3;
+        font: {
+          size: $fs-nomal;
+          weight: $weight-300;
+        }
+        line-height: $g-lineheight-2;
+      }
+    }
+    .input-email-02 {
+      > .row {
+        margin: {
+          left: -$gap-6;
+          right: -$gap-6;
+        }
+        > .col-6 {
+          padding: {
+            left: $gap-6;
+            right: $gap-4;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-article {
+  &.input-list {
+    .input-date-group {
+      [class*='col-'] {
+        padding: {
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// = c-input-unit
+.c-input-unit {
+  position: relative;
+  input[type='text'] {
+    width: 100%;
+    padding-right: 36px;
+
+    &[readonly='readonly'] {
+      @include coSubTitle;
+    }
+  }
+
+  .unit {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    text-align: center;
+    color: $color-gray-3;
+    @include coSubTitle;
+
+    // + input view
+    @at-root .c-input-unit.input-view {
+      input[type='text'] {
+        padding-right: 36px;
+      }
+    }
+  }
+}
+
+// + c-input-unit-type02
+
+.in-input-row {
+  .c-input-unit-field {
+    border: 1px solid $color-gray-4;
+    background-color: $color-white-1;
+    border-radius: 12px;
+    padding: 12px 20px;
+
+    input[type='text'] {
+      border: 0;
+      padding: 0;
+      min-height: initial;
+    }
+  }
+}
+
+// + Input File
+.c-input-file-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+
+  input.c-input-file,
+  .c-file-label {
+    padding: 8px 12px 8px 107px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    line-height: $input-basic-lineheight;
+    background-color: $color-white-1;
+  }
+
+  input.c-input-file {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  label:focus {
+    @include inputTextFocus;
+  }
+  .c-file-label {
+    @include inputText;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    font: {
+      size: $fs-nomal;
+      weight: $weight-300;
+    }
+    display: inline-block;
+    @include ellipsisLine01;
+
+    &:after {
+      position: absolute;
+      left: -1px;
+      right: auto;
+      top: -1px;
+      bottom: -1px;
+      z-index: 3;
+      display: block;
+      padding: 7px 20px;
+      line-height: 1.7;
+      color: $color-gray-1;
+      content: '파일 선택';
+      background-color: $color-gray-5;
+      border-left: inherit;
+      overflow: hidden;
+      border-radius: 0;
+    }
+  }
+}
+.c-input-file-list {
+  margin-top: 12px;
+  > li {
+    margin-top: 4px;
+  }
+
+  .file-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .name {
+    @include ellipsisLine01;
+    flex-grow: 1;
+  }
+  .btn-del {
+    margin-left: 4px;
+    flex-basis: 20px;
+    background: url($image-ico-path + '/ico_del_01.svg') 0/20px no-repeat;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+}
+
+// + c-input-mark
+.c-input-mark {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.is-rate {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  font-size: $fs-small;
+  text-align: right;
+}
+// + Input + Button
+
+// = Address
+// + input write
+
+.c-input-address-group {
+  $gap: 8px;
+  > .row {
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+    & ~ .row {
+      margin-top: 16px;
+    }
+  }
+
+  .input-addr-01 {
+    @include colFixedWidth(100px, 8px);
+  }
+  .input-addr-03 {
+    @include colFixedWidth(92px, 8px);
+    .co-btn {
+      padding: 6px;
+    }
+  }
+
+  // + view
+  &.input-view {
+    > .row {
+      margin: 0;
+      display: block;
+      > .col {
+        padding: 0;
+        display: inline-block;
+      }
+    }
+    input[type='text'] {
+      border-bottom: 0;
+    }
+  }
+}
+
+.inner.c-input-address-group {
+  margin: {
+    left: -$gap-6;
+    right: -$gap-6;
+  }
+  .col {
+    padding: {
+      left: $gap-6;
+      right: $gap-6;
+    }
+  }
+}
+
+// + Input + Button
+.c-input-btn-group {
+  $gap: $gap-8;
+  margin: {
+    left: -$gap-8;
+    right: -$gap-8;
+  }
+  [class*='col'] {
+    @include paddingH(8px);
+  }
+
+  .co-btn {
+    width: 100%;
+  }
+}
+
+// = input download
+.c-input-download {
+  position: relative;
+  width: 100%;
+
+  .btn-download {
+    position: relative;
+    padding: 8px 28px 8px 0;
+    min-height: 40px;
+    display: block;
+
+    &:after {
+      background: url($image-ico-path + 'ico_download_01.svg') 0/24px no-repeat;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      content: '';
+      display: inline-block;
+      overflow: hidden;
+      content: '';
+    }
+  }
+  .filename {
+    border-bottom: 1px solid $color-blue-1;
+    color: $color-blue-1;
+    overflow: hidden;
+  }
+
+  &.input-view {
+    border-bottom: 1px solid $color-gray-5;
+  }
+}
+
+// = input url
+.c-input-url {
+  padding: {
+    top: 8px;
+    bottom: 8px;
+  }
+  > a {
+    color: $color-blue-1;
+    border-bottom: 1px solid $color-blue-1;
+  }
+
+  &.input-view {
+    border-bottom: 1px solid $color-gray-5;
+  }
+}
+
+// + detail input
+
+.c-input-search {
+  &.detail-input {
+    input[type='text'] {
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+  }
+}
+
+// + c-input-badge-group
+.c-input-badge-group {
+  border-bottom: 1px solid $input-detail-border-color;
+  padding-bottom: 2px;
+  display: flex;
+  align-items: center;
+  .c-badge-list {
+    margin: {
+      left: -4px;
+      right: -4px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .badge-card {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+}
+.c-badge {
+  padding: 2px 12px;
+  background-color: $color-navy-1;
+  border-radius: $radius-8;
+  > span {
+    line-height: 1.7;
+    color: $color-white-1;
+  }
+}
+.c-badge-detail {
+  padding-left: 12px;
+  line-height: 1.7;
+}
+
+// ============================================== FORM
+
+// = Input & Textarea
+
+input,
+input {
+  &[type='text'],
+  &[type='password'] {
+    max-width: 100%;
+    @include inputText;
+    border: 1px solid $color-gray-4;
+    color: $color-black-1;
+
+    // + focus
+    &:focus {
+      outline: 0;
+      @include inputTextFocus;
+      transition: all 0.5s;
+    }
+
+    // + disabled
+    &:disabled {
+      border-color: $input-disabled-border-color;
+      background-color: $input-disabled-bg-color;
+      color: $input-disabled-font-color;
+    }
+
+    // + readonly
+    &[readonly='readonly'] {
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+  }
+}
+
+label,
+.c-label-txt {
+  @include coTxtSmall01;
+  font-weight: 400;
+  color: $color-gray-2;
+}
+
+.input-ref-txt {
+  margin-top: 8px;
+  @include fontStyleSmall01;
+}
+
+// = textarea
+.c-txtarea-field {
+  height: 100%;
+  width: 100%;
+}
+textarea,
+.c-txt-area {
+  display: block;
+  border: 1px solid $color-gray-4;
+  height: 120px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include inputText;
+  padding: 16px 20px;
+  min-width: 100%;
+  color: $color-gray-1;
+
+  &:focus {
+    @include inputTextFocus;
+  }
+
+  textarea {
+    &[readonly='readonly'] {
+      @include txtareaReadonly;
+      min-height: initial;
+      height: 100%;
+      overflow: auto;
+      &:focus {
+        @include inputTextFocus;
+        border: 0;
+        box-shadow: none;
+        transition: none;
+      }
+    }
+  }
+
+  // + type01
+  &.type01 {
+    height: 172px;
+  }
+  // + type02
+  &.type02 {
+    height: 300px;
+  }
+}
+
+// = Checkbox, Radio
+
+.c-chkbox,
+.c-rdochk {
+  //opacity: 0;
+  cursor: pointer;
+
+  position: relative;
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    & + .chk-label,
+    & + label.chk-label {
+      line-height: 1;
+      display: table;
+      i {
+        cursor: pointer;
+        display: inline-block;
+        background: {
+          repeat: no-repeat;
+        }
+      }
+    }
+  }
+  // type01, type02
+  &.type01,
+  &.type02 {
+    input[type='checkbox'],
+    input[type='radio'] {
+      top: 7px;
+      left: 7px;
+      opacity: 0;
+      & + .chk-label,
+      & + label.chk-label {
+        line-height: 1;
+        display: table;
+        i {
+          margin-right: 4px;
+          cursor: pointer;
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          background: {
+            image: url($image-ico-chkbox-sprite01);
+            position: 0 0;
+            size: auto 29px;
+          }
+        }
+      }
+    }
+    &.type01 {
+      input[type='checkbox'],
+      input[type='radio'] {
+        &:checked {
+          & + .chk-label {
+            > span {
+              color: $color-navy-1;
+            }
+          }
+        }
+      }
+    }
+    &.type02 {
+      input[type='checkbox'],
+      input[type='radio'] {
+        &:checked {
+          & + .chk-label {
+            > span {
+              color: $color-navy-1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .chk-label,
+  label.chk-label {
+    margin-bottom: 0;
+  }
+}
+
+// + check box
+.c-chkbox {
+  // - blue
+  &.type01 {
+    input[type='radio'],
+    input[type='checkbox'] {
+      &:checked + .chk-label {
+        i {
+          background-position-x: -76px;
+        }
+        > span {
+          color: $color-navy-1;
+        }
+      }
+    }
+  }
+
+  // - navy
+  &.type02 {
+    input[type='radio'],
+    input[type='checkbox'] {
+      &:checked + .chk-label {
+        i {
+          background-position-x: -76px;
+        }
+      }
+    }
+  }
+}
+
+// + checkbox basic
+.c-chkbox {
+  position: relative;
+  input[type='checkbox'] {
+    & + .chk-label {
+      i {
+        margin-right: 8px;
+        background: {
+          image: url($image-ico-chkbox-sprite02);
+          size: auto 18px;
+        }
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+    }
+    &:checked {
+      + .chk-label i {
+        background-position: -56px 0;
+      }
+      &:disabled {
+        + .chk-label i {
+          cursor: default;
+          background-position: -84px 0;
+        }
+      }
+    }
+    &:disabled {
+      + .chk-label i {
+        cursor: default;
+        background-position: -28px 0;
+      }
+    }
+  }
+}
+
+// + radio
+.c-rdochk {
+  input[type='radio'] {
+    opacity: 0;
+    cursor: pointer;
+
+    & + .chk-label {
+      i {
+        margin-right: 8px;
+        background-image: url($image-ico-path + 'ico_sprites_radio.svg');
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+    }
+    &:checked {
+      + .chk-label > span {
+        color: $color-navy-1;
+      }
+      + .chk-label i {
+        background-position: -56px 0;
+      }
+      &:disabled {
+        + .chk-label i {
+          cursor: default;
+          background-position: -84px 0;
+        }
+      }
+    }
+    &:disabled {
+      + .chk-label i {
+        cursor: default;
+        background-position: -28px 0;
+      }
+    }
+  }
+}
+
+/* 
+	 = Select
+*/
+
+.select-box {
+  &.region01 {
+    width: 120px;
+  }
+
+  &.region02 {
+    width: 160px;
+  }
+}
+.c-select-list {
+  display: flex;
+}
+.c-select {
+  position: relative;
+  font-size: 0;
+  &:after {
+    background: {
+      image: url($image-ico-path + 'ico_arrow_09.svg');
+      position: right center;
+      size: 16px auto;
+      repeat: no-repeat;
+    }
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    content: '';
+    display: inline-block;
+  }
+
+  select::ms-expand {
+    display: none;
+  }
+  select {
+    border: 1px solid $color-gray-4;
+    border-radius: $radius-8;
+    background-color: $color-white-1;
+    color: $color-gray-1;
+    min-height: 44px;
+    width: 100%;
+    padding: 6px 36px 6px 12px;
+
+    @include coBodyTxt;
+
+    &:focus {
+      @include inputTextFocus;
+    }
+    &:disabled {
+      $input-disabled-border-color: $color-gray-4;
+      $input-disabled-bg-color: $color-gray-5;
+      $input-disabled-font-color: $color-gray-2;
+    }
+  }
+
+  &.type02 {
+    select {
+      line-height: 20px;
+    }
+  }
+}
+
+.c-select {
+  & + .c-select {
+    margin-left: 8px;
+  }
+}
+
+// = c-input-btn-group
+.c-input-btn-group {
+  $gap: 8px;
+  &.row.inner {
+    margin : {
+      left: -$gap;
+      right: -$gap;
+    }
+  }
+
+  .col {
+    padding: {
+      left: $gap;
+      right: $gap;
+    }
+
+    &.buttons {
+      @include colFixedWidth(92px, 8px);
+    }
+  }
+}
+
+// = c-input-list-basic
+.c-input-list-basic {
+  $gap: 16px;
+  > .row {
+    &:not(:first-of-type) {
+      padding-top: $gap;
+    }
+    &:not(:last-of-type),
+    &:only-child {
+      padding-bottom: $gap;
+    }
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+
+    > [class|='col'],
+    > .col {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+  }
+
+  &.input-cont {
+    $gap: 16px;
+    > .row {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+  }
+
+  .in-input-row {
+    & ~ .in-input-row {
+      margin-top: 20px;
+    }
+  }
+}
+
+// = c-input-list-view (
+.c-input-list-view {
+  padding: {
+    top: 20px;
+    bottom: 20px;
+  }
+  &.line {
+    border-top: 1px solid $color-gray-5;
+    border-bottom: 1px solid $color-gray-5;
+  }
+  $gap: 16px;
+  > .row {
+    &:not(:first-of-type) {
+      padding-top: 4px;
+    }
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+
+    > [class|='col'],
+    > .col {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+
+    .c-input {
+      margin-left: 12px;
+    }
+  }
+
+  &.type02 {
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+
+    > .row {
+      $gap: 8px;
+      &:not(:first-of-type) {
+        padding-top: 8px;
+      }
+      margin: {
+        left: -$gap;
+        right: -$gap;
+      }
+
+      > [class|='col'],
+      > .col {
+        padding: {
+          left: $gap;
+          right: $gap;
+        }
+      }
+
+      .c-input {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+// + input-type
+.input-type {
+  &.view01 {
+    display: flex;
+    > label,
+    > input {
+      align-items: center;
+      display: inline-flex;
+    }
+    label {
+      @include fontStyle(12px, 24px, 300);
+      color: $color-gray-2;
+      min-width: 80px;
+    }
+
+    input[type='text'],
+    input[type='password'] {
+      &.c-input {
+        @include fontStyle(14px, 32px, 300);
+        padding: 0;
+        border-radius: 0;
+        min-height: initial;
+        color: $color-gray-1;
+        // + disabled
+        &:disabled {
+          border: 0;
+          background-color: transparent;
+        }
+        // + readonly
+        &[readonly='readonly'] {
+          border: 0;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .co-link {
+      @include coBodyTxt;
+      margin-left: 12px;
+    }
+  }
+}
+
+// = Email
+.c-input-email-group {
+  > .row {
+    $gap: 15px;
+    margin: {
+      left: -$gap;
+      right: -$gap;
+    }
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+    @include justify-row;
+    > .col,
+    .col-6 {
+      padding: {
+        left: $gap;
+        right: $gap;
+      }
+    }
+    .input-email-01 {
+      position: relative;
+      &:after {
+        content: '@';
+        position: absolute;
+        top: 10px;
+        right: -7px;
+        color: $color-gray-3;
+        font: {
+          size: $fs-nomal;
+          weight: $weight-300;
+        }
+        line-height: $g-lineheight-2;
+      }
+    }
+    .input-email-02 {
+      > .row {
+        margin: {
+          left: -$gap-6;
+          right: -$gap-6;
+        }
+        > .col-6 {
+          padding: {
+            left: $gap-8;
+            right: $gap-8;
+          }
+        }
+      }
+    }
+
+    select {
+      min-width: auto;
+    }
+
+    & + .row {
+      margin-top: 16px;
+    }
+  }
+
+  &.certified {
+    $gap: 6px;
+    .row {
+      &.w-btn {
+        margin-right: -$gap;
+        .input-email-02 {
+          padding-right: $gap;
+        }
+        .buttons {
+          padding: {
+            left: $gap;
+            right: $gap;
+          }
+        }
+      }
+    }
+    .buttons {
+      @include colFixedWidth(92px, 6px);
+    }
+  }
+}
+
+// + phone
+.c-input-phone-group {
+  > .row {
+    $gap: $gap-8;
+    margin: {
+      left: -$gap-8;
+      right: -$gap-8;
+    }
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+
+    & + .row {
+      margin-top: 16px;
+    }
+    .input-phone-01 {
+      @include colFixedWidth(92px, 8px);
+    }
+
+    > .col {
+      padding: {
+        left: $gap-8;
+        right: $gap-8;
+      }
+    }
+  }
+  // - certified
+  &.certified {
+    .w-btn {
+      $gap: 6px;
+      margin-right: -$gap;
+
+      .input-phone-03 {
+        padding-right: $gap;
+      }
+      .buttons {
+        padding: {
+          left: $gap;
+          right: $gap;
+        }
+      }
+    }
+    .buttons {
+      @include colFixedWidth(92px, 6px);
+    }
+  }
+}
+
+.input-btn-type {
+  display: flex;
+  align-items: flex-end;
+}
+
+// + input date
+.c-input-date {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  input[type='text'] {
+    border: 1px solid $color-gray-4;
+    border-radius: 8px;
+    flex: 1 1 auto;
+    padding-right: 44px;
+    + span {
+      display: inline-block;
+
+      i.date-btn {
+        background: url($image-ico-sprite01) -228px 0 / $image-ico-sprite01-size no-repeat;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        content: '';
+        display: inline-block;
+        overflow: hidden;
+      }
+    }
+
+    &:focus {
+      @include inputTextFocus;
+    }
+
+    // readonly
+    &[readonly='readonly'] {
+      &:focus {
+        @include inputReadonlyFocus;
+      }
+    }
+  }
+}
+
+// = error
+
+// + focuse 시 red keyup  시 blue
+.c-input.is-error,
+.c-select.is-error select,
+.c-input-search input[type='text'].is-error {
+  @include inputError;
+}
+
+.c-select {
+  &.is-error {
+    select {
+      @include inputError;
+    }
+  }
+}
+
+// = detail input
+.row {
+  &.input-view {
+    .label-input {
+      > label {
+        margin-bottom: 4px;
+      }
+    }
+    input[type='text'],
+    input[type='password'] {
+      &[readonly='readonly'] {
+        @include inputDetail;
+      }
+    }
+  }
+}
+
+// = datepicker
+.ui-widget {
+  @include fontStyle(14px, 30px, 300);
+}
+.ui-datepicker {
+  border: 1px solid $color-gray-5;
+  box-shadow: 4px 4px 4px -3px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  width: 428px;
+  padding: 0;
+  overflow: hidden;
+
+  .ui-datepicker-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-blue-1;
+    &,
+    > span {
+      @include fontStyle(24px, 36px, 400);
+    }
+    margin: 0;
+
+    select {
+      color: $color-blue-1;
+      border: 0;
+      width: auto;
+      margin: 0;
+      line-height: 34px;
+      vertical-align: top;
+      > option {
+        @include coBodyTxt;
+        color: $color-black-1;
+      }
+    }
+    .ui-datepicker-month {
+      text-align: center;
+      margin: {
+        top: 1px;
+      }
+    }
+  }
+
+  .ui-widget-header {
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid $color-gray-5;
+    padding: 20px 0;
+  }
+
+  .ui-datepicker-calendar {
+    border-collapse: inherit;
+    margin: 20px 0;
+    padding: 0 12px;
+    background-color: $color-white-1;
+
+    thead {
+      tr {
+        th {
+          color: $color-gray-2;
+          padding: 4px 0;
+          text-align: center;
+          > span {
+            @include fontStyle(16px, 32px, 400);
+          }
+
+          &:first-child {
+            color: $color-orange-1;
+          }
+        }
+      }
+    }
+
+    .ui-datepicker-week-end {
+      &:first-child {
+        a {
+          color: $color-orange-1;
+        }
+      }
+    }
+
+    td {
+      padding: 0;
+
+      .ui-state-default {
+        background: transparent;
+        border: 0;
+        border-radius: 4px;
+
+        @include fontStyle(16px, 32px, 700);
+        color: $color-gray-2;
+        text-align: center;
+        padding: 4px 0;
+
+        &.ui-state-active,
+        &.ui-state-hover {
+          color: $color-white-1;
+          background: $color-blue-1;
+          opacity: 1;
+        }
+
+        &.ui-state-hover {
+          border: 0;
+          opacity: 0.3;
+        }
+
+        &.ui-state-highlight {
+          background: $color-navy-1;
+          color: $color-white-1;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .ui-datepicker-buttonpane {
+    height: 55px;
+    margin: 0;
+    min-height: 30px;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 30px;
+    height: 30px;
+
+    .ui-icon {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    > .ui-icon {
+      width: 28px;
+      height: 28px;
+      background: {
+        position: 0 0;
+        size: 28px;
+        repeat: no-repeat;
+      }
+    }
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    &:hover {
+      background-color: transparent;
+      border: 0;
+    }
+  }
+
+  .ui-datepicker-prev {
+    left: 109px;
+    .ui-icon {
+      background-image: url($image-ico-path + 'ico_date_arrow_prev.svg');
+    }
+  }
+
+  .ui-datepicker-next {
+    right: 109px;
+
+    .ui-icon {
+      background-image: url($image-ico-path + 'ico_date_arrow_next.svg');
+    }
+  }
+
+  .ui-datepicker-buttonpane {
+    padding: 12px 0;
+
+    button {
+      display: none;
+    }
+
+    .datepicker-caption-warp {
+      text-align: center;
+
+      .datepicker-caption {
+        display: inline-block;
+        padding: 0 10px;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          position: relative;
+          top: -2px;
+          margin-right: 8px;
+        }
+
+        &.toDay {
+          color: $color-navy-1;
+          &::before {
+            background-color: $color-navy-1;
+          }
+        }
+
+        &.selectDay {
+          color: $color-blue-1;
+          &::before {
+            background-color: $color-blue-1;
+          }
+        }
+
+        &.holiDay {
+          color: $color-orange-1;
+          &::before {
+            background-color: $color-orange-1;
+          }
+        }
+
+        &.deadDay {
+          color: $color-gray-4;
+          &::before {
+            background-color: $color-gray-4;
+          }
+        }
+      }
+    }
+  }
+  tr {
+    td:first-child {
+      &.ui-datepicker-week-end {
+        &.ui-state-disabled {
+          .ui-state-default {
+            color: $color-orange-1;
+          }
+        }
+      }
+    }
+  }
+}
