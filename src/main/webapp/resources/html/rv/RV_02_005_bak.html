@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="resevation-container">
+        <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <h1 class="skip">KMI 한국의학연구소</h1>
+                <div class="top-logo">
+                    <h2 class="logo">
+                        <a href="javascript:;"><img src="../../images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
+                    </h2>
+                </div>
+
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav01"> 건강검진제도</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;" class="on">국가건강 검진 제도안내</a></li>
+                                <li><a href="javascript:;">우리회사 검진제도 안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav02">검진예약/결과조회</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">예약하기</a></li>
+                                <li><a href="javascript:;">예약내역</a></li>
+                                <li><a href="javascript:;">검진기관</a></li>
+                                <li><a href="javascript:;">검진결과</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav03">결과상담</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">결과 상담하기</a></li>
+                                <li><a href="javascript:;">상담이력</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav04">건강정보</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">검진항목 정보</a></li>
+                                <li><a href="javascript:;">영상건강정보</a></li>
+                                <li><a href="javascript:;">질환별건강정보</a></li>
+                                <li><a href="javascript:;">검진센터 탐방</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav05">커뮤니티</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">공지사항</a></li>
+                                <li><a href="javascript:;">FAQ</a></li>
+                                <li><a href="javascript:;">이벤트</a></li>
+                                <li><a href="javascript:;">서비스 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <p class="slogan">평생을 건강하게 !</p>
+                    </div>
+                    <div class="top-right">
+                        <ul class="user-info">
+                            <li>KT</li>
+                            <li>운영지원팀</li>
+                        </ul>
+                        <div class="user-profile">
+                            <a href="javascript:;" class="btn-open-usercontrol">
+                                <div class="img">
+                                    <img src="../../images/ico/ico_user_profile.svg" alt="" />
+                                </div>
+                                <div class="name"><em>홍길동</em> 님</div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                    <li>
+                                        <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupModPernalInfo"><span>개인정보 변경</span></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header-->
+
+            <!-- cancel-chkup-details-wrap -->
+            <div class="contents-wrap cancel-chkup-details-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <div class="cont-wrap">
+                        <!-- // reservation-sidebar -->
+                        <div class="contents-area reserve-contents-area">
+                            <div class="co-location-wrap">
+                                <div class="co-location">
+                                    <p>
+                                        <a href="javascript:;" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
+                                    </p>
+
+                                    <p>검진예약/결과조회</p>
+
+
+                                    <p class="on">예약내역</p>
+
+                                </div>
+
+                                <div class="co-title-field">
+                                    <h1 class="title">건강검진 내역 취소</h1>
+                                </div>
+                            </div>
+                            <div class="co-cont-section">
+                                <div class="co-per-scroll-layout final-confirm-wrap">
+                                    <div class="info-txt">
+                                        <p>취소신청을 하신 후 취소 확정까지는 다소 시간이 소요 될 수 있으며 취소 확정 후 재 예약이 가능합니다.</p>
+                                    </div>
+                                    <!-- reservation-detail -->
+                                    <div class="row">
+                                        <!-- left-wrap -->
+                                        <div class="col left-wrap">
+                                            <div class="c-inner">
+                                                <div class="co-article">
+                                                    <div class="co-title-field">
+                                                        <h2 class="sub-title">검진 상품</h2>
+                                                        <a href="javascript:;" class="co-link">상세보기</a>
+                                                    </div>
+                                                    <div class="co-cont-list type01">
+                                                        <div class="co-cont-article input-cont-article">
+                                                            <div class="c-input-list-basic input-cont">
+                                                                <div class="row input-view">
+                                                                    <div class="col-6 label-input">
+                                                                        <label for="inputVeiwChkConfirm01_01">검진 기관</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm01_01" value="한국의학연구소 강남 센터" readonly="readonly" />
+                                                                    </div>
+                                                                    <div class="col-6 label-input">
+                                                                        <label for="inputVeiwChkConfirm01_02">검진 기관 주소</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm01_02" value="서울시 강남구 테헤란로" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row input-view">
+                                                                    <div class="col-6 label-input">
+                                                                        <label for="inputVeiwChkConfirm01_03">검진상품명</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm01_03" value="정밀종합검진 일반형" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="co-cont-article input-view type01">
+                                                            <p>기본 건강검진(화이트) 프로그램에 최근 발병률이 높아진 질병을 체크하고자 초음파 검사(경동맥 초음파, 심장 초음파와 CT검사를 강화했습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="co-article">
+                                                    <div class="co-title-field">
+                                                        <h2 class="sub-title">선택검사</h2>
+                                                    </div>
+                                                    <div class="co-cont-article input-view type01">
+                                                        <ul class="confirm-chk-card-list">
+                                                            <li>
+                                                                <div class="confirm-chk-card">
+                                                                    <div class="col title">
+                                                                        <p>선택검사 1</p>
+                                                                    </div>
+                                                                    <div class="col list">
+                                                                        <div class="in-row">
+                                                                            <div class="col-4">
+                                                                                <div class="exam-ctg">
+                                                                                    <em>위 내시경 (수면)</em>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="confirm-chk-card">
+                                                                    <div class="col title">
+                                                                        <p>선택검사 2</p>
+                                                                    </div>
+                                                                    <div class="col list">
+                                                                        <div class="in-row">
+                                                                            <div class="col-4">
+                                                                                <div class="exam-ctg">
+                                                                                    <em>대장내시경</em>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="confirm-chk-card">
+                                                                    <div class="col title">
+                                                                        <p>선택검사 3</p>
+                                                                    </div>
+                                                                    <div class="col list">
+                                                                        <div class="in-row">
+                                                                            <div class="col-4">
+                                                                                <div class="exam-ctg">
+                                                                                    <em>심장초음파</em>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-4">
+                                                                                <div class="exam-ctg">
+                                                                                    <em>A형 간염 접종</em>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-4">
+                                                                                <div class="exam-ctg">
+                                                                                    <em>경동맥초음파</em>
+                                                                                    <button class="btn-chkup-info-detail">
+                                                                                        <i class="ico-type01 t-i-info01"><span>설명 자세히 보기</span></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="co-article">
+                                                    <div class="co-title-field">
+                                                        <h2 class="sub-title">추가검사</h2>
+                                                    </div>
+                                                    <div class="co-cont-article input-view type01">
+                                                        <p class="is-gray-3">추가검사 없음</p>
+                                                    </div>
+                                                </div>
+                                                <div class="co-article">
+                                                    <div class="row col-full-height">
+                                                        <div class="column">
+                                                            <div class="co-title-field">
+                                                                <h2 class="sub-title">1차 검진일정</h2>
+                                                            </div>
+                                                            <div class="co-cont-list type01 inner-full-cont">
+                                                                <div class="co-cont-article input-cont-article">
+                                                                    <div class="c-input-list-basic input-cont">
+                                                                        <div class="row input-view">
+                                                                            <div class="col label-input">
+                                                                                <label for="inputVeiwChkConfirm02_01">예약일자</label>
+                                                                                <input type="text" class="c-input" id="inputVeiwChkConfirm02_01" value="YYYY-MM-DD" readonly="readonly" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row input-view">
+                                                                            <div class="col label-input">
+                                                                                <label for="inputVeiwChkConfirm02_02">예약일자</label>
+                                                                                <input type="text" class="c-input" id="inputVeiwChkConfirm02_02" value="24:60" readonly="readonly" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="column">
+                                                            <div class="co-title-field">
+                                                                <h2 class="sub-title">2차 검진일정</h2>
+                                                            </div>
+                                                            <div class="co-cont-list type01 inner-full-cont">
+                                                                <div class="co-cont-article input-cont-article">
+                                                                    <div class="c-input-list-basic input-cont">
+                                                                        <div class="row input-view">
+                                                                            <div class="col label-input">
+                                                                                <label for="inputVeiwChkConfirm03_01">예약일자</label>
+                                                                                <input type="text" class="c-input" id="inputVeiwChkConfirm03_01" value="YYYY-MM-DD" readonly="readonly" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row input-view">
+                                                                            <div class="col label-input">
+                                                                                <label for="inputVeiwChkConfirm03_02">예약일자</label>
+                                                                                <input type="text" class="c-input" id="inputVeiwChkConfirm03_02" value="24:60" readonly="readonly" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="co-article">
+                                                    <div class="row col-full-height">
+                                                        <div class="column">
+                                                            <div class="co-title-field">
+                                                                <h2 class="sub-title">연기 검사항목</h2>
+                                                            </div>
+                                                            <div class="co-cont-list type01 inner-full-cont">
+                                                                <div class="co-cont-article input-cont-article">
+                                                                    <div class="c-input-list-basic input-cont">
+                                                                        <div class="row input-view">
+                                                                            <div class="col label-input">
+                                                                                <label for="inputVeiwChkConfirm04_01">검사항목</label>
+                                                                                <input type="text" class="c-input" id="inputVeiwChkConfirm04_01" value="MP2K" readonly="readonly" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row input-view">
+                                                                            <div class="col label-input">
+                                                                                <label for="inputVeiwChkConfirm04_02">항목 상세</label>
+                                                                                <input type="text" class="c-input" id="inputVeiwChkConfirm04_02" value="심장초음파" readonly="readonly" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="column">
+                                                            <div class="co-title-field">
+                                                                <h2 class="sub-title">연기일정</h2>
+                                                            </div>
+                                                            <div class="co-cont-list type01 inner-full-cont">
+                                                                <div class="co-cont-article input-cont-article">
+                                                                    <div class="c-input-list-basic input-cont">
+                                                                        <div class="row input-view">
+                                                                            <div class="col label-input">
+                                                                                <label for="inputVeiwChkConfirm05_01">예약일자</label>
+                                                                                <input type="text" class="c-input" id="inputVeiwChkConfirm05_01" value="YYYY-MM-DD" readonly="readonly" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="co-article">
+                                                    <div class="co-title-field">
+                                                        <h2 class="sub-title">개인정보</h2>
+                                                    </div>
+                                                    <div class="co-cont-list type01">
+                                                        <div class="co-cont-article input-cont-article">
+                                                            <div class="c-input-list-basic input-cont">
+                                                                <div class="row input-view">
+                                                                    <div class="col-6 label-input">
+                                                                        <label for="inputVeiwChkConfirm06_01">검진자명</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm06_01" value="홍길동" readonly="readonly" />
+                                                                    </div>
+                                                                    <div class="col-6 label-input">
+                                                                        <label for="inputVeiwChkConfirm06_02">생년월일</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm06_02" value="780101" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row input-view">
+                                                                    <div class="col-6 label-input">
+                                                                        <label for="inputVeiwChkConfirm06_03">성별</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm06_03" value="남" readonly="readonly" />
+                                                                    </div>
+                                                                    <div class="col-6 label-input">
+                                                                        <label for="inputVeiwChkConfirm06_04">휴대폰 전화번호</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm06_04" value="010-1234-6789" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row input-view">
+                                                                    <div class="col label-input">
+                                                                        <label for="inputVeiwChkConfirm06_05">이메일</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm06_05" value="test@test.com" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row input-view">
+                                                                    <div class="col label-input">
+                                                                        <label for="inputVeiwChkConfirm06_06">주소</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm06_06" value="서울특별시 종로구 123123123" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row input-view">
+                                                                    <div class="col label-input">
+                                                                        <label for="inputVeiwChkConfirm06_07">검진 결과 수신 방법</label>
+                                                                        <input type="text" class="c-input" id="inputVeiwChkConfirm06_07" value="우편으로 수신" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // left-wrap -->
+                                        <!-- right-wrap -->
+                                        <div class="col right-wrap">
+                                            <div class="c-inner">
+                                                <div class="co-article">
+                                                    <h2 class="skip">추가금 합계</h2>
+                                                    <div class="co-cont-article type01">
+                                                        <div class="surcharges-sum-wrap">
+                                                            <div class="c-input-list-basic input-cont">
+                                                                <div class="row">
+                                                                    <div class="col label-input">
+                                                                        <label for="inputSurcharges01" class="sub-title">검사대상인원</label>
+                                                                        <div class="c-input-unit">
+                                                                            <input type="text" class="c-input" id="inputSurcharges01" value="0" readonly="readonly" />
+                                                                            <span class="unit">원</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col label-input">
+                                                                        <p class="sub-title">선택검사 추가금</p>
+                                                                        <div class="in-input-row">
+                                                                            <div class="c-input-unit-field">
+                                                                                <label for="inputSurcharges02_01" class="c-label-txt">선택검사 01</label>
+                                                                                <div class="c-input-unit">
+                                                                                    <input type="text" class="c-input" id="inputSurcharges02_01" value="30,000" readonly="readonly" />
+                                                                                    <span class="unit">원</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="in-input-row">
+                                                                            <div class="c-input-unit-field">
+                                                                                <label for="inputSurcharges02_02" class="c-label-txt">선택검사 01</label>
+                                                                                <div class="c-input-unit">
+                                                                                    <input type="text" class="c-input" id="inputSurcharges02_02" value="30,000" readonly="readonly" />
+                                                                                    <span class="unit">원</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="in-input-row">
+                                                                            <div class="c-input-unit-field">
+                                                                                <label for="inputSurcharges02_03" class="c-label-txt">선택검사 03</label>
+                                                                                <div class="c-input-unit">
+                                                                                    <input type="text" class="c-input" id="inputSurcharges02_03" value="0" readonly="readonly" />
+                                                                                    <span class="unit">원</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col label-input">
+                                                                        <label for="inputSurcharges03" class="sub-title">추가검사 추가금</label>
+                                                                        <div class="c-input-unit">
+                                                                            <input type="text" class="c-input" id="inputSurcharges03" value="0" readonly="readonly" />
+                                                                            <span class="unit">원</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col label-input">
+                                                                        <label for="inputSurcharges04" class="sub-title">개인 추가금 합계</label>
+                                                                        <div class="c-input-unit">
+                                                                            <input type="text" class="c-input" id="inputSurcharges04" value="0" readonly="readonly" />
+                                                                            <span class="unit">원</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col label-input">
+                                                                        <label for="inputSurcharges05" class="sub-title">결제 수납</label>
+                                                                        <input type="text" class="c-input sub-title is-blue-1" id="inputSurcharges05" value="현장결제" readonly="readonly" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resevation-btmbar-wrap">
+                                <div class="resevation-btm-bar type01">
+                                    <div class="buttons">
+                                        <div class="left">
+                                            <a href="javascript:;" class="co-btn btn-reservation-prev is-active"><span>이전</span></a>
+                                        </div>
+                                        <div class="right">
+                                            <a href="javascript:;" class="co-btn bg-navy-1"><span>예약 신청하기</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Contents -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="logo">
+                        <img src="../../images/logo/footer_logo_01.svg" alt="KMI 재단법인 한국의학연구소 KOREA MEDICAL INSTITUTE" />
+                    </div>
+                    <div class="info-field">
+                        <ul class="top-useinfo">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이용약관</a></li>
+                            <li><a href="javascript:;">이용가이드</a></li>
+                        </ul>
+                        <ul class="company-info">
+                            <li>상호 : 재단법인 한국의학연구소대표자 성명 : 이상호본원 : (우)03173 서울시 종로구 세종대로 23길 54(당주동, 세종빌딩)</li>
+                            <li>전화 : 1599-7070 전자우편주소 : <a href="mailto:webmaster@kmi.or.kr">webmaster@kmi.or.kr</a>사업자등록번호 : 130-82-06 960 </li>
+                            <li>오전 09:00 ~ 오후 18:00 공휴일 휴무 고객문의 : 5555-5555</li>
+                            <li>Copyright© KMI.All Rights Reserved.</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn-go-top"><span class="skip">맨 위로 이동</span></a>
+                </div>
+            </footer>
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        $(window).on('load resize scroll', function() {
+            reservationBtmBarFixed();
+        });
+    </script>
+</body>
+
+</html>

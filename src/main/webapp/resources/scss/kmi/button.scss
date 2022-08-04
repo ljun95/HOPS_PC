@@ -1,0 +1,107 @@
+@import 'variables';
+@import 'mixin';
+/*
+	button
+*/
+.buttons {
+  display: flex;
+}
+
+button.co-btn,
+a.co-btn,
+.co-btn {
+  padding: 6px 20px;
+  min-width: 80px;
+  border-radius: 12px;
+  text-align: center;
+  color: $color-white-1;
+  transition: opacity 0.3s;
+  background-color: $color-navy-1;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  min-height: 44px;
+  @include coBodyBtn;
+
+  > span {
+    position: relative;
+    text-align: center;
+  }
+  + .co-btn {
+    margin: {
+      left: 16px;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  // + outline btn
+  $btn-outline: (
+    blue-1: $color-blue-1,
+    navy-1: $color-navy-1,
+    black-op4: $color-black-op4,
+  );
+  @each $class, $line in $btn-outline {
+    &.is-outline-#{$class} {
+      border-width: 1px;
+      border-style: solid;
+      background-color: $color-white-1;
+      border-color: $line;
+      color: $line;
+
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &.is-outline-blue-1 {
+    &.type02 {
+      background-color: $color-gray-9;
+    }
+  }
+
+  &.w-full {
+    width: 100%;
+  }
+}
+
+button {
+  &:disabled {
+    cursor: default;
+  }
+
+  > span {
+    position: relative;
+  }
+}
+
+// = arrow btn
+.c-arrow-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: $radius-4;
+  background: url($image-ico-path + 'ico_arrow_08.svg') $color-navy-1 center 6px/6px auto no-repeat;
+
+  &.left {
+    background-position-y: 5px;
+    transform: rotate(-180deg);
+  }
+}
+
+.c-plus-btn-1 {
+  background: url($image-ico-path + 'ico_plus_01.svg') center/100% auto no-repeat;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+}
+
+// = co-btn-field
+.co-btn-field {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+}

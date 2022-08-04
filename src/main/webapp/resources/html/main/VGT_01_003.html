@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="main-container">
+        <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <h1 class="skip">KMI 한국의학연구소</h1>
+                <div class="top-logo">
+                    <h2 class="logo">
+                        <a href="javascript:;"><img src="../../images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
+                    </h2>
+                </div>
+
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav01"> 건강검진제도</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;" class="on">국가건강 검진 제도안내</a></li>
+                                <li><a href="javascript:;">우리회사 검진제도 안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav02">검진예약/결과조회</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">예약하기</a></li>
+                                <li><a href="javascript:;">예약내역</a></li>
+                                <li><a href="javascript:;">검진기관</a></li>
+                                <li><a href="javascript:;">검진결과</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav03">결과상담</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">결과 상담하기</a></li>
+                                <li><a href="javascript:;">상담이력</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav04">건강정보</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">검진항목 정보</a></li>
+                                <li><a href="javascript:;">영상건강정보</a></li>
+                                <li><a href="javascript:;">질환별건강정보</a></li>
+                                <li><a href="javascript:;">검진센터 탐방</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav05">커뮤니티</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">공지사항</a></li>
+                                <li><a href="javascript:;">FAQ</a></li>
+                                <li><a href="javascript:;">이벤트</a></li>
+                                <li><a href="javascript:;">서비스 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <div class="contents-wrap">
+                <!-- Header-->
+                <header class="header">
+                    <div class="wrap">
+                        <div class="top-left">
+                            <p class="slogan">평생을 건강하게 !</p>
+                        </div>
+                        <div class="top-right">
+                            <ul class="user-info">
+                                <li>KT</li>
+                                <li>운영지원팀</li>
+                            </ul>
+                            <div class="user-profile">
+                                <a href="javascript:;" class="btn-open-usercontrol">
+                                    <div class="img">
+                                        <img src="../../images/ico/ico_user_profile.svg" alt="" />
+                                    </div>
+                                    <div class="name"><em>홍길동</em> 님</div>
+                                </a>
+                                <div class="user-control">
+                                    <ul>
+                                        <li><a href="javascript:;">로그아웃</a></li>
+                                        <li>
+                                            <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupModPernalInfo"><span>개인정보 변경</span></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- // Header-->
+
+                <!-- Contents -->
+                <section class="contents">
+                    <div class="cont-wrap">
+                        <!-- checkup-sidebar -->
+                        <div class="checkup-sidebar">
+                            <div class="inner-wrap">
+                                <ul class="co-tab-list tab-event type01 tab-2" role="tablist">
+                                    <li>
+                                        <a href="javascript:;" class="on" role="tab" aria-selected="true" id="sidenavChkupTab_01" aria-controls="sidenavChkupTabPanel_01">검진 대상자</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" role="tab" aria-selected="false" id="sidenavChkupTab_02" aria-controls="sidenavChkupTabPanel_02">검진 결과</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-cont-wrap">
+                                    <!-- 검진대상자 -->
+                                    <div class="tab-content on" id="sidenavChkupTabPanel_01" aria-labelledby="sidenavChkupTab_01">
+                                        <div class="client-card-field">
+                                            <div class="client-card">
+                                                <p class="relationship">본인</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 종합검진</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 출장검진</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 기타</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="buttons">
+                                                    <a href="javascript:;;" class="co-btn bg-navy-1 w-full">예약하기</a>
+                                                </div>
+                                            </div>
+                                            <!-- 로딩 처리  -->
+                                            <div class="client-card">
+                                                <div class="spinner-field">
+                                                    <div>
+                                                        <div class="spinner"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="client-card">
+                                                <p class="relationship">본인</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="buttons">
+                                                    <a href="javascript:;;" class="co-btn bg-navy-1 w-full">예약하기</a>
+                                                </div>
+                                            </div>
+                                            <div class="client-card">
+                                                <p class="relationship">본인</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="buttons">
+                                                    <a href="javascript:;;" class="co-btn bg-navy-1 w-full">예약하기</a>
+                                                </div>
+                                            </div>
+                                            <div class="client-card">
+                                                <p class="relationship">본인</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="buttons">
+                                                    <a href="javascript:;;" class="co-btn bg-navy-1 w-full">예약하기</a>
+                                                </div>
+                                            </div>
+                                            <div class="client-card">
+                                                <p class="relationship">본인</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="buttons">
+                                                    <a href="javascript:;;" class="co-btn bg-navy-1 w-full">예약하기</a>
+                                                </div>
+                                            </div>
+                                            <div class="client-card">
+                                                <p class="relationship">본인</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detail-info">
+                                                    <ul>
+                                                        <li>
+                                                            <span>종류</span>
+                                                            <p>종합검진 일반</p>
+                                                        </li>
+                                                        <li>
+                                                            <span>장소</span>
+                                                            <p>한국의학연구소 광화문센터</p>
+                                                        </li>
+                                                        <li>
+                                                            <span>1차</span>
+                                                            <p>2022<span>년</span> 05<span>월 </span>15<span>일 오전</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <span>2차</span>
+                                                            <p>2022<span>년</span> 05<span>월 </span>15<span>일 오전</span></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="buttons">
+                                                    <button class="co-btn bg-gray-3 w-full"><span>예약 접수 중</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 검진결과-->
+                                    <div class="tab-content" id="sidenavChkupTabPanel_02" aria-labelledby="sidenavChkupTab_02">
+                                        <div class="client-card-field">
+                                            <div class="client-card">
+                                                <div class="none-data">
+                                                    <div class="img"><img src="../../images/logo/kmi/kmi_06.svg" alt="" /></div>
+                                                    <p class="co-none-txt">검진 대상자가 없습니다.</p>
+                                                </div>
+                                            </div>
+                                            <div class="client-card">
+                                                <p class="relationship">배우자 부</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 종합검진</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 출장검진</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 기타</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="buttons">
+                                                        <button type="button" class="co-btn bg-gray-3 w-full btn-open-popup" data-toggle="modal" data-target="#popupOverTime01"><span>신청시간 경과</span></button>
+                                                    </div>
+                                                    <!-- 로딩 처리  -->
+                                                </div>
+                                            </div>
+
+                                            <div class="client-card">
+                                                <p class="relationship">본인</p>
+                                                <div class="client-info">
+                                                    <em class="name">김크미</em>
+                                                    <p class="reg-number">2020-12-30</p>
+                                                </div>
+                                                <div class="ctg-list-slide-wrap">
+                                                    <div class="swiper category-swiper">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <span class="co-badge type01"># 회사지원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detail-info">
+                                                    <ul>
+                                                        <li>
+                                                            <span>종류</span>
+                                                            <p>종합검진 일반</p>
+                                                        </li>
+                                                        <li>
+                                                            <span>장소</span>
+                                                            <p>한국의학연구소 광화문센터</p>
+                                                        </li>
+                                                        <li>
+                                                            <span>1차</span>
+                                                            <p>2022<span>년</span> 05<span>월 </span>15<span>일 오전</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <span>2차</span>
+                                                            <p>2022<span>년</span> 05<span>월 </span>15<span>일 오전</span></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="buttons">
+                                                    <!-- 
+								[comment]
+								- script 추가
+								- btn-open-popup
+							 -->
+                                                    <button type="button" class="co-btn bg-blue-1 w-full" data-toggle="modal" data-target=""><span>검진결과 전달</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- =  POPUP 시간경과 버튼 클릭 시-->
+                                    <div class="c-layer-popup type01" id="popupOverTime01" role="dialog" aria-labelledby="popupOverTime01_Label" aria-modal="true" aria-hidden="true">
+                                        <div class="modal-wrap">
+                                            <div class="modal-field" tabindex="0">
+                                                <div class="c-modal-body">
+                                                    <div class="c-modal-inner">
+                                                        <h4 class="c-title skip" id="popupOverTime01_Label">예약시간 경과 안내 팝업</h4>
+                                                        <p>자세한 문의는 콜센터로 <br />연락하여 주시기 바랍니다. <br />1599-7070</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="c-modal-footer">
+                                                    <div class="inner">
+                                                        <div class="buttons">
+                                                            <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- = // 시간경과 버튼 클릭 시 팝업-->
+                                </div>
+                                <!-- // checkup-sidebar -->
+                            </div>
+                        </div>
+
+                        <!-- main-contents-area -->
+                        <div class="contents-area main-contents-area">
+                            <div class="container">
+                                <div class="co-article">
+                                    <div class="rolling-banner">
+                                        <!-- rolling-txt hover  -->
+                                        <ul class="list">
+                                            <li>
+                                                <span class="co-badge type01">예약 검진기간</span>
+                                                <p>임직원 검진 예약 신청 기간 2021.03.01 ~ 2021.06.31</p>
+                                            </li>
+                                            <li>
+                                                <span class="co-badge type01">예약 검진기간</span>
+                                                <p>임직원 검진 예약 신청 기간 2021.03.01 ~ 2021.06.31</p>
+                                            </li>
+                                            <li>
+                                                <span class="co-badge type01">예약 신청기간</span>
+                                                <p>임직원 검진 예약 신청 기간 2021.03.01 ~ 2021.06.31</p>
+                                            </li>
+                                        </ul>
+                                        <div class="rolling-btn-group">
+                                            <div class="buttons">
+                                                <button type="button" class="c-arrow-btn left prev-btn"><span class="skip">이전</span></button>
+                                                <button type="button" class="c-arrow-btn next-btn"><span class="skip">다음</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- main-slide-swiper -->
+                                <!-- 로딩 중인 경우  is-loading , spinner 추가 -->
+                                <div class="main-swiper-field is-loading">
+                                    <div class="spinner-field">
+                                        <div>
+                                            <div class="spinner"></div>
+                                        </div>
+                                    </div>
+                                    <!-- // 로딩 중인 경우  is-loading , spinner 추가 -->
+                                    <div class="swiper main-slide-swiper" style="visibility: hidden">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <!--  Image 등록 case -->
+                                                <div class="slide-card img-type" style="background-image: url(../../images/mainslide_01.jpg)">
+                                                    <div class="co-slide-cont">
+                                                        <div class="inner">
+                                                            <!-- <img src="../../images/mainslide_01.jpg" alt="" /> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <!--  Text 등록 case -->
+                                                <div class="slide-card txt-type" style="background-image: url(../../images/mainslide_bg_01.jpg)">
+                                                    <div class="co-slide-cont">
+                                                        <div class="inner">
+                                                            <div class="txt-cont">
+                                                                <p class="sub-title-01 is-navy-1">Since 1985</p>
+                                                                <em class="title-01 is-navy-1">평생을 건강하게</em>
+                                                                <p class="cont-01 is-gray-1">종합건강검진기관 KMI 한국의학연구소가 함께합니다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main-slide-btn-prev">
+                                            <i class="ico"></i>
+                                        </div>
+                                        <div class="main-slide-btn-next">
+                                            <i class="ico"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="co-article">
+                                    <div class="row type02">
+                                        <div class="col-4">
+                                            <div class="main-card">
+                                                <div class="co-title-field">
+                                                    <h2 class="main-title">가족 검진 신청</h2>
+                                                    <div class="date">신청기간 : YYYY-MM-DD ~ YYYY-MM-DD</div>
+                                                </div>
+                                                <a href="javascript:;" class="add-checkup">
+                                                    <div class="card-cont type01">
+                                                        <div class="cont-inner">
+                                                            <div class="img">
+                                                                <img src="../../images/logo/kmi/kmi_07.png" alt="healthy Kmi" />
+                                                            </div>
+                                                            <p class="title-add"><span>검진 대상자 추가</span><i class="c-plus-btn-1"></i></p>
+                                                            <p class="ref-txt">※ 신청시 개인 비용이 발생합니다.</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="main-card">
+                                                <div class="co-title-field">
+                                                    <h2 class="main-title">예약/결과 조회</h2>
+                                                </div>
+                                                <div class="card-cont type02">
+                                                    <div class="cont-inner">
+                                                        <div class="inner">
+                                                            <a href="javascript:;">
+                                                                <div class="ico">
+                                                                    <div><img src="../../images/ico/ico_main_card_01.svg" alt="" /></div>
+                                                                </div>
+                                                                <div class="cont">
+                                                                    <p class="title">건강검진 예약 확인</p>
+                                                                    <p class="go-link">예약확인 하러가기</p>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="inner">
+                                                            <a href="javascript:;">
+                                                                <div class="ico">
+                                                                    <div><img src="../../images/ico/ico_main_card_02.svg" alt="" /></div>
+                                                                </div>
+                                                                <div class="cont">
+                                                                    <p class="title">건강검진 결과조회</p>
+                                                                    <p class="go-link">결과조회 하러가기</p>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="main-card">
+                                                <div class="co-title-field">
+                                                    <h2 class="main-title">고객센터</h2>
+                                                    <a href="javascript:;" class="co-link">서비스 문의하기</a>
+                                                </div>
+                                                <div class="card-cont type03">
+                                                    <div class="cont-inner">
+                                                        <div class="customer-service">
+                                                            <em class="time">오전 09:00 ~ 오후 18:00</em>
+                                                            <p>서비스 이용 시 불편사항이나 문의사항을 남겨주시면 신속하고 친절하게 안내해 드리겠습니다 !</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="co-article">
+                                    <div class="row type02">
+                                        <div class="col-6">
+                                            <div class="main-card">
+                                                <div class="co-title-field">
+                                                    <h2 class="main-title">공지사항</h2>
+                                                    <a href="javascript:;" class="co-link">더보기</a>
+                                                </div>
+                                                <!-- 로딩 중인 경우  is-loading , 태그 추가 -->
+                                                <div class="co-list-field is-loading main-notice">
+                                                    <div class="spinner-field">
+                                                        <div>
+                                                            <div class="spinner"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- // 로딩 중인 경우  is-loading , 태그 추가 -->
+                                                    <ul class="co-list-article main-notice-list">
+                                                        <li>
+                                                            <div>
+                                                                <span class="co-badge type01">시스템</span>
+
+                                                                <a href="javascript:;" class="title">
+                                                                    <p>공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀타이틀</p>
+                                                                </a>
+                                                                <span class="date">YYYY.MM.DD</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <span class="co-badge type01">시스템</span>
+
+                                                                <a href="javascript:;" class="title">
+                                                                    <p>공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀타이틀</p>
+                                                                </a>
+                                                                <span class="date">YYYY.MM.DD</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <span class="co-badge type02">고객사</span>
+
+                                                                <a href="javascript:;" class="title">
+                                                                    <p>공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀타이틀</p>
+                                                                </a>
+                                                                <span class="date">YYYY.MM.DD</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <span class="co-badge type01">시스템</span>
+
+                                                                <a href="javascript:;" class="title">
+                                                                    <p>공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀타이틀</p>
+                                                                </a>
+                                                                <span class="date">YYYY.MM.DD</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <span class="co-badge type01">시스템</span>
+
+                                                                <a href="javascript:;" class="title">
+                                                                    <p>공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀 공지사항 타이틀타이틀</p>
+                                                                </a>
+                                                                <span class="date">YYYY.MM.DD</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="main-card">
+                                                <div class="co-title-field main-center-introduce">
+                                                    <h2 class="main-title">검진센터 탐방</h2>
+
+                                                    <div class="main-center-pagination"></div>
+                                                </div>
+
+                                                <div class="center-introduce-wrapper">
+                                                    <div class="main-center-slide-field">
+                                                        <div class="swiper main-center-swiper center01">
+                                                            <div class="swiper-wrapper">
+                                                                <div class="swiper-slide">
+                                                                    <div class="slide-card">
+                                                                        <div class="co-slide-cont">
+                                                                            <div class="inner">
+                                                                                <img src="https://via.placeholder.com/360x234?text=img1" alt="본원 센터 전경 1" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="swiper-slide">
+                                                                    <div class="slide-card">
+                                                                        <div class="co-slide-cont">
+                                                                            <div class="inner">
+                                                                                <img src="https://via.placeholder.com/360x234?text=img2" alt="본원 센터 전경 1" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="co-slide-btn-prev"></div>
+                                                            <div class="co-slide-btn-next"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // main-contents-area -->
+                    </div>
+                </section>
+                <!-- // Contents -->
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="logo">
+                            <img src="../../images/logo/footer_logo_01.svg" alt="KMI 재단법인 한국의학연구소 KOREA MEDICAL INSTITUTE" />
+                        </div>
+                        <div class="info-field">
+                            <ul class="top-useinfo">
+                                <li><a href="javascript:;">개인정보처리방침</a></li>
+                                <li><a href="javascript:;">이용약관</a></li>
+                                <li><a href="javascript:;">이용가이드</a></li>
+                            </ul>
+                            <ul class="company-info">
+                                <li>상호 : 재단법인 한국의학연구소대표자 성명 : 이상호본원 : (우)03173 서울시 종로구 세종대로 23길 54(당주동, 세종빌딩)</li>
+                                <li>전화 : 1599-7070 전자우편주소 : <a href="mailto:webmaster@kmi.or.kr">webmaster@kmi.or.kr</a>사업자등록번호 : 130-82-06 960 </li>
+                                <li>오전 09:00 ~ 오후 18:00 공휴일 휴무 고객문의 : 5555-5555</li>
+                                <li>Copyright© KMI.All Rights Reserved.</li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="btn-go-top"><span class="skip">맨 위로 이동</span></a>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+
+    <script>
+        selectedTabList();
+
+        // main Banner Slide
+        var swiper = new Swiper('.main-slide-swiper', {
+            loop: true,
+            touchRatio: 1,
+            allowTouchMove: true,
+            autoplay: true,
+            navigation: {
+                prevEl: '.main-slide-btn-prev',
+                nextEl: '.main-slide-btn-next',
+            },
+        });
+
+        // main Center Slide
+        var swiper = new Swiper('.main-center-swiper', {
+            slidesPerView: 'auto',
+            loop: true,
+            allowTouchMove: true,
+            spaceBetween: 20,
+            pagination: {
+                el: '.main-center-pagination',
+                type: 'fraction',
+            },
+
+            navigation: {
+                prevEl: '.co-slide-btn-prev',
+                nextEl: '.co-slide-btn-next',
+            },
+        });
+
+        // Side Category Tab
+        $('.category-swiper').each(function(idx, e) {
+            $(this).addClass('slide-num-' + idx);
+            var siwper02 = new Swiper('.slide-num-' + idx, {
+                observer: true, // update 반영
+                slidesPerView: 'auto',
+                observeParents: true,
+                spaceBetween: 8,
+                navigation: {
+                    prevEl: $('.slide-num-' + idx).find('.co-slide-btn-prev'),
+                    nextEl: $('.slide-num-' + idx).find('.co-slide-btn-next'),
+                },
+            });
+        });
+        $(window).on('load', function() {
+            rollingTxtBanner();
+        });
+
+        $(window).on('load resize', function() {
+            mainContSideNav();
+        });
+    </script>
+</body>
+
+</html>

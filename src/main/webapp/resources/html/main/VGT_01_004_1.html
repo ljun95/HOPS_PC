@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <section class="contents">
+                <!-- = 건강검진 결과 보기 팝업 -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupViewCheckupResult01_01"><span>popup (건강검진 결과 보기)</span></button>
+
+                <div class="c-layer-popup type03" id="popupViewCheckupResult01_01" role="dialog" aria-labelledby="popupViewCheckupResult01_Label01" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupViewCheckupResult01_Label01">건강검진 결과 보기</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+                            <!-- c-modal-body -->
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="main-popup-field">
+                                        <div class="cont-box">
+                                            <p class="cont">본인의 건강검진 결과가 아닌 경우 개인정보 보호법에 따라 검진 결과의 열람이 불가 합니다. <br />다만, 14세 미만의 어린이 및 청소년은 보호자(법정대리인)의 동의 후 열람이 가능합니다.</p>
+                                        </div>
+                                        <div class="c-input-list-basic">
+                                            <div class="row">
+                                                <div class="col-6 label-input">
+                                                    <label for="inpuViewCheckupResult01_01">보호자명</label>
+                                                    <input type="text" class="c-input" id="inpuViewCheckupResult01_01" placeholder="이름입력" />
+                                                </div>
+                                                <div class="col-6 label-input">
+                                                    <label for="inpuViewCheckupResult01_02">생년월일</label>
+                                                    <input type="text" class="c-input" id="inpuViewCheckupResult01_02" placeholder="하이픈 없이 입력해주세요 ex) 19851026" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label class="c-label-txt">휴대폰 전화번호</label>
+                                                    <div class="c-input-phone-group certified">
+                                                        <div class="row inner w-btn">
+                                                            <div class="col input-phone-01">
+                                                                <div class="c-select">
+                                                                    <select title="휴대폰 전화번호 앞 3자리 선택">
+                                                                        <option value="" selected="">010</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col input-phone-02"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+                                                            <div class="col input-phone-03"><input type="text" class="c-input" title="휴대폰 전화번호 끝 4자리 입력" /></div>
+                                                            <div class="col buttons">
+                                                                <button type="button" class="co-btn bg-navy-1"><span>인증받기</span></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row inner">
+                                                            <div class="col"><input type="text" class="c-input" title="인증번호 6자리 숫자 입력" placeholder="인증번호 6자리 숫자 입력" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //  c-modal-body -->
+
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <!--  Popup -->
+                <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupViewCheckupResult01_02">
+                    <span>popup (건강검진 결과 보기 안내 팝업 공통 레이아웃 (※ text만 변경하여 사용))</span>
+                </button>
+
+                <div class="c-layer-popup type01" id="popupViewCheckupResult01_02" role="dialog" aria-labelledby="popupViewCheckupResult01_Label02 " aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap">
+                        <div class="modal-field" tabindex="0">
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <h4 class="c-title skip" id="popupViewCheckupResult01_Label02">건강검진 결과 보기 안내 팝업</h4>
+                                    <p>인증번호를 다시 확인해 주세요.</p>
+                                    <!-- <p>본인인증 성공하였습니다.</p>
+																<p>본인인증을 완료 해주세요.</p> -->
+                                </div>
+                            </div>
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- // Contents -->
+    </div>
+    <!-- // Content-Wrapper -->
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

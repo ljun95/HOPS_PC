@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="resevation-container">
+        <!-- Side Navigation -->
+        <nav id="sideNav">
+            <!-- Sidebar -->
+            <div class="sidenav-wrapper">
+                <h1 class="skip">KMI 한국의학연구소</h1>
+                <div class="top-logo">
+                    <h2 class="logo">
+                        <a href="javascript:;"><img src="../../images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
+                    </h2>
+                </div>
+
+                <div class="sidebar-wrap">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav01"> 건강검진제도</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;" class="on">국가건강 검진 제도안내</a></li>
+                                <li><a href="javascript:;">우리회사 검진제도 안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav02">검진예약/결과조회</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">예약하기</a></li>
+                                <li><a href="javascript:;">예약내역</a></li>
+                                <li><a href="javascript:;">검진기관</a></li>
+                                <li><a href="javascript:;">검진결과</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav03">결과상담</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">결과 상담하기</a></li>
+                                <li><a href="javascript:;">상담이력</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav04">건강정보</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">검진항목 정보</a></li>
+                                <li><a href="javascript:;">영상건강정보</a></li>
+                                <li><a href="javascript:;">질환별건강정보</a></li>
+                                <li><a href="javascript:;">검진센터 탐방</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <span class="s-menu nav05">커뮤니티</span>
+                            </a>
+                            <ul class="sidebar-sub-menu">
+                                <li><a href="javascript:;">공지사항</a></li>
+                                <li><a href="javascript:;">FAQ</a></li>
+                                <li><a href="javascript:;">이벤트</a></li>
+                                <li><a href="javascript:;">서비스 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Header-->
+            <header class="header">
+                <div class="wrap">
+                    <div class="top-left">
+                        <p class="slogan">평생을 건강하게 !</p>
+                    </div>
+                    <div class="top-right">
+                        <ul class="user-info">
+                            <li>KT</li>
+                            <li>운영지원팀</li>
+                        </ul>
+                        <div class="user-profile">
+                            <a href="javascript:;" class="btn-open-usercontrol">
+                                <div class="img">
+                                    <img src="../../images/ico/ico_user_profile.svg" alt="" />
+                                </div>
+                                <div class="name"><em>홍길동</em> 님</div>
+                            </a>
+                            <div class="user-control">
+                                <ul>
+                                    <li><a href="javascript:;">로그아웃</a></li>
+                                    <li>
+                                        <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupModPernalInfo"><span>개인정보 변경</span></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- // Header-->
+
+            <div class="contents-wrap">
+                <!-- Contents -->
+                <section class="contents">
+                    <div class="cont-wrap">
+                        <!-- reservation-sidebar -->
+                        <div class="reservation-sidebar">
+                            <div class="inner-wrap">
+                                <em class="top-title">검진기관DF 및 검진항목</em>
+                                <div class="reservation-step-field">
+                                    <!-- [comment] 
+																	- side list 상태별 스타일 제어 class
+																	- is-now : 현재
+																	- is-end : 완료
+																-->
+                                    <ul class="reservation-step-list">
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;;">
+                                                    <p class="rsv-title">01. 선택검사</p>
+                                                    <p class="rsv-data">선택검사선택검사선택검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;;">
+                                                    <p class="rsv-title">02. 추가검사</p>
+                                                    <p class="rsv-data">추가검사추가검사추가검사</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-end">
+                                            <div class="rsv-step">
+                                                <a href="javascript:;">
+                                                    <p class="rsv-title">03. 검진일자</p>
+                                                    <p class="rsv-data">검진일자검진일자검진일자</p>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="is-now">
+                                            <div class="rsv-step">
+                                                <p class="rsv-title">04. 검진자 정보 입력</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // reservation-sidebar -->
+                        <div class="contents-area reserve-contents-area">
+                            <div class="co-location-wrap">
+                                <div class="co-location">
+                                    <p>
+                                        <a href="javascript:;" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
+                                    </p>
+
+                                    <p>검진예약/결과조회</p>
+
+
+                                    <p class="on">예약내역</p>
+
+                                </div>
+
+                                <div class="co-title-field">
+                                    <h1 class="title">예약내역 변경신청</h1>
+                                </div>
+                            </div>
+                            <div class="co-cont-section">
+                                <div class="row type02">
+                                    <div class="col-6">
+                                        <div class="co-article">
+                                            <div class="co-title-field">
+                                                <h2 class="sub-title">검진자 정보</h2>
+                                            </div>
+                                            <div class="co-cont-article input-view-cont type02">
+                                                <div class="inner">
+                                                    <div class="c-input-list-view">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="input-type view01">
+                                                                    <label for="inputChkPersoninfo01_01">검진자명</label>
+                                                                    <input type="text" class="c-input" id="inputChkPersoninfo01_01" value="홍길동" disabled />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="input-type view01">
+                                                                    <label for="inputChkPersoninfo01_02">생년월일</label>
+                                                                    <input type="text" class="c-input" id="inputChkPersoninfo01_02" value="780101" disabled />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="input-type view01">
+                                                                    <label for="rsvHopeDate01_01">성별</label>
+                                                                    <input type="text" class="c-input" value="남" id="inputChkPersoninfo01_03" disabled />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="co-article">
+                                            <div class="co-cont-article input-cont-article">
+                                                <div class="c-input-list-basic input-cont">
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label class="c-label-txt">휴대폰 전화번호<i class="is-nec">필수입력</i></label>
+                                                            <div class="c-input-phone-group">
+                                                                <div class="row inner">
+                                                                    <div class="col input-phone-01">
+                                                                        <div class="c-select">
+                                                                            <select title="휴대폰 전화번호 앞 3자리 선택">
+                                                                                <option value="" selected="">010</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+                                                                    <div class="col"><input type="text" class="c-input" title="휴대폰 전화번호 끝 4자리 입력" /></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label class="c-label-txt">유선 전화번호</label>
+                                                            <div class="c-input-phone-group">
+                                                                <div class="row inner">
+                                                                    <div class="col input-phone-01">
+                                                                        <div class="c-select">
+                                                                            <select title="유선 전화번호 앞 3자리 선택">
+                                                                                <option value="" selected="">010</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                                <option value="">option</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col"><input type="text" class="c-input" title="유선 전화번호 중간 4자리 입력" /></div>
+                                                                    <div class="col"><input type="text" class="c-input" title="유선 전화번호 끝 4자리 입력" /></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label class="c-label-txt">주소<i class="is-nec">필수입력</i></label>
+                                                            <div class="row inner c-input-address-group">
+                                                                <div class="col input-addr-01">
+                                                                    <input type="text" class="c-input" title="우편번호 입력" placeholder="우편번호" />
+                                                                </div>
+                                                                <div class="col input-addr-02"><input type="text" class="c-input" title="주소 입력" placeholder="주소를 입력해주세요." /></div>
+                                                                <div class="col input-addr-03">
+                                                                    <button type="button" class="co-btn input-btn"><span>주소검색</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="inputChkPersoninfo01_04">상세주소<i class="is-nec">필수입력</i></label>
+                                                            <input type="text" class="c-input" id="inputChkPersoninfo01_04" value="11442222" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label class="c-label-txt">이메일<i class="is-nec">필수입력</i></label>
+                                                            <div class="c-input-email-group">
+                                                                <div class="row inner">
+                                                                    <div class="col-6 input-email-01">
+                                                                        <input type="text" class="c-input" title="이메일 계정입력" value="test" />
+                                                                    </div>
+                                                                    <div class="col-6 input-email-02">
+                                                                        <div class="row">
+                                                                            <div class="col-6">
+                                                                                <input type="text" class="c-input" title="이메일 도메인 입력" value="hanmail.net" />
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="c-select">
+                                                                                    <select title="이메일 도메인 선택">
+                                                                                        <option value="" selected="">직접입력</option>
+                                                                                        <option value="">option</option>
+                                                                                        <option value="">option</option>
+                                                                                        <option value="">option</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label>검진 결과 수신 방법<i class="is-nec">필수입력</i></label>
+                                                            <div class="c-m-input-list">
+                                                                <div class="input-col">
+                                                                    <div class="inner">
+                                                                        <div class="inner">
+                                                                            <div class="c-rdochk txt-type02">
+                                                                                <input type="radio" id="rdoChkupClassify01_01" name="rdogrp01" />
+                                                                                <label for="rdoChkupClassify01_01" class="chk-label"><i></i><span>E-Mail 수신</span></label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-col">
+                                                                    <div class="inner">
+                                                                        <div class="c-rdochk txt-type02">
+                                                                            <input type="radio" id="rdoChkupClassify01_02" name="rdogrp01" />
+                                                                            <label for="rdoChkupClassify01_02" class="chk-label"><i></i><span>우편으로 수신</span></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-col">
+                                                                    <div class="inner">
+                                                                        <div class="c-rdochk txt-type02">
+                                                                            <input type="radio" id="rdoChkupClassify01_03" name="rdogrp01" />
+                                                                            <label for="rdoChkupClassify01_03" class="chk-label"><i></i><span>검진기관 내원 수령</span></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-col">
+                                                                    <div class="inner">
+                                                                        <div class="c-rdochk txt-type02">
+                                                                            <input type="radio" id="rdoChkupClassify01_04" name="rdogrp01" />
+                                                                            <label for="rdoChkupClassify01_04" class="chk-label"><i></i><span>전자등기 수령</span></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col label-input">
+                                                            <label for="inputChkPersoninfo01_05">검진 요청사항</label>
+                                                            <div class="c-txtarea-field">
+                                                                <textarea id="inputChkPersoninfo01_05" class="c-txt-area type02" placeholder="의료진에 전달하고자 하는 내용(ex 알러지, 복용약 등)을 입력해 주세요. 아스피린, 항 응고제, 혈압, 당뇨 기타 약이 있으시면 꼭 기재해 주세요. &#13;&#10;심장관련 질환이 있거나 수술 또는 병력, 치료중인 사항도 기입해주셔야 하며 검진 진행 시 제한이 있을 수 있습니다."></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="co-article">
+                                            <div class="co-title-field">
+                                                <h2 class="sub-title">예약 시 유의사항</h2>
+                                            </div>
+                                            <div class="co-cont-article type01">
+                                                <div class="inner">
+                                                    <ul class="co-list-card circle02 is-gray-2">
+                                                        <li>검진 예약의 “예약상태”는 예약신청&gt;예약대기&gt;예약확정&gt;검진완료 순으로 진행 됩니다.</li>
+                                                        <li>검진 예약 변경 및 취소는 [ 검진예약/결과조회&gt;예약내역 ] 에서 신청 가능합니다.</li>
+                                                        <li>특수검사(대장내시경,MRI,MRA,유방초음파,심장초음파 등)의 일정에 따라 예약 신청일정이 변경될 수 있습니다.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="co-article">
+                                            <div class="co-title-field">
+                                                <h2 class="sub-title">서비스 약관 동의</h2>
+                                            </div>
+                                            <!-- [commnet] 
+				- 약관동의 내용 아코디언 기능 추가 필요 
+			-->
+                                            <div class="co-cont-article terms-type all-chk-field">
+                                                <div class="terms-all-chkbox">
+                                                    <div class="left">
+                                                        <div class="c-chkbox type01">
+                                                            <input type="checkbox" id="termsAllChk_01" class="all-terms-chk" />
+                                                            <label for="termsAllChk_01" class="chk-label"><i></i><span>모두 동의합니다.</span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont">전체 동의는 약관 동의를 한번에 동의할 수 있으며, 개별적으로도 동의를 선택하실 수 있습니다.</div>
+                                                </div>
+                                                <ul class="co-terms-chk-list">
+                                                    <li>
+                                                        <div class="co-terms-chk-card">
+                                                            <a href="javascript:;" rolw="button" class="btn-terms-accordion">
+                                                                <div class="left">
+                                                                    <div class="c-chkbox type01">
+                                                                        <input type="checkbox" id="termsChk_01_01" class="per-term-chk" />
+                                                                        <label for="termsChk_01_01" class="chk-label"><i></i><span>[필수] 개인정보 수집 및 이용동의</span></label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="inner">
+                                                                        <!-- [comment] 
+										- accordion 처리 접히는 경우 on 클래스 제거 (화살표 방향 전환)
+										-->
+                                                                        <div class="ico-terms-accord on"><span class="is-blind">접기</span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="co-terms-detail terms-scroll">
+                                                                <div class="inner">
+                                                                    <div class="terms-row">
+                                                                        <p class="title">제공 받는 자</p>
+                                                                        <div class="cont">
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="co-terms-chk-card">
+                                                            <a href="javascript:;" rolw="button" class="btn-terms-accordion">
+                                                                <div class="left">
+                                                                    <div class="c-chkbox type01">
+                                                                        <input type="checkbox" id="termsChk_01_02" class="per-term-chk" />
+                                                                        <label for="termsChk_01_02" class="chk-label"><i></i><span>[필수] 민감정보 수집 및 이용동의 </span></label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="inner">
+                                                                        <div class="ico-terms-accord on"><span class="is-blind">접기</span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="co-terms-detail terms-scroll">
+                                                                <div class="inner">
+                                                                    <div class="terms-row">
+                                                                        <p class="cont">KMI 헬스케어는 검진예약의 원활한 진행을 위해 아래와 같이 개인정보를 수집 이용합니다. 개인정보 수집 이용동의 (필수사항)</p>
+                                                                    </div>
+                                                                    <div class="terms-row">
+                                                                        <p class="title">제공 받는자</p>
+                                                                        <div class="cont">검진기관명</div>
+                                                                    </div>
+                                                                    <div class="terms-row">
+                                                                        <p class="title">제공항목</p>
+                                                                        <div class="cont">요청사항</div>
+                                                                    </div>
+                                                                    <div class="terms-row">
+                                                                        <p class="title">제공목적</p>
+                                                                        <div class="cont">검진예약시 다음과 귀하의 개인정보를 수집 이용합니다.</div>
+                                                                    </div>
+                                                                    <div class="terms-row">
+                                                                        <p class="title">보유 및 이용기간</p>
+                                                                        <div class="cont">이용 목적 달성 시 또는 보유기간 경과시</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="co-terms-chk-card">
+                                                            <a href="javascript:;" rolw="button" class="btn-terms-accordion">
+                                                                <div class="left">
+                                                                    <div class="c-chkbox type01">
+                                                                        <input type="checkbox" id="termsChk_01_03" class="per-term-chk" />
+                                                                        <label for="termsChk_01_03" class="chk-label"><i></i><span>[필수] 개인정보의 제3자 제공 동의</span></label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="inner">
+                                                                        <div class="ico-terms-accord on"><span class="is-blind">접기</span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="co-terms-detail terms-scroll">
+                                                                <div class="inner">
+                                                                    <div class="terms-row">
+                                                                        <p class="title">제공 받는자</p>
+                                                                        <div class="cont">
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="co-terms-chk-card">
+                                                            <a href="javascript:;" rolw="button" class="btn-terms-accordion">
+                                                                <div class="left">
+                                                                    <div class="c-chkbox type01">
+                                                                        <input type="checkbox" id="termsChk_01_04" class="per-term-chk" />
+                                                                        <label for="termsChk_01_04" class="chk-label"><i></i><span>[필수] 개인정보의 제3자 제공 동의</span></label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <div class="inner">
+                                                                        <div class="ico-terms-accord on"><span class="is-blind">접기</span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="co-terms-detail terms-scroll">
+                                                                <div class="inner">
+                                                                    <div class="terms-row">
+                                                                        <p class="title">제공 받는자</p>
+                                                                        <div class="cont">
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                            건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="co-ref-txt fs-small">
+                                                    ※ 고객님은 본 약관에 동의하지 않을 권리가 있습니다. 다만 본 약관에 동의하지 않을 경우 검진 예약 진행이 불가 함을 알려 드립니다.<br />
+                                                    검진예약을 진행 하실 경우 해당 약관에 동의하여 주시기 바랍니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resevation-btmbar-wrap">
+                                <div class="resevation-btm-bar type01">
+                                    <div class="buttons">
+                                        <div class="left">
+                                            <a href="javascript:;" class="co-btn btn-reservation-prev is-active"><span>이전</span></a>
+                                        </div>
+                                        <div class="right">
+                                            <a href="javascript:;" class="co-btn bg-navy-1"><span>변경신청</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Contents -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="logo">
+                        <img src="../../images/logo/footer_logo_01.svg" alt="KMI 재단법인 한국의학연구소 KOREA MEDICAL INSTITUTE" />
+                    </div>
+                    <div class="info-field">
+                        <ul class="top-useinfo">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이용약관</a></li>
+                            <li><a href="javascript:;">이용가이드</a></li>
+                        </ul>
+                        <ul class="company-info">
+                            <li>상호 : 재단법인 한국의학연구소대표자 성명 : 이상호본원 : (우)03173 서울시 종로구 세종대로 23길 54(당주동, 세종빌딩)</li>
+                            <li>전화 : 1599-7070 전자우편주소 : <a href="mailto:webmaster@kmi.or.kr">webmaster@kmi.or.kr</a>사업자등록번호 : 130-82-06 960 </li>
+                            <li>오전 09:00 ~ 오후 18:00 공휴일 휴무 고객문의 : 5555-5555</li>
+                            <li>Copyright© KMI.All Rights Reserved.</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn-go-top"><span class="skip">맨 위로 이동</span></a>
+                </div>
+            </footer>
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+    <script>
+        // 서비스 약관 전체 동의 Checkbox Control
+        $('.all-chk-field').on('click', '.all-terms-chk', function() {
+            $(this).parents('.all-chk-field').find('input').prop('checked', $(this).is(':checked'));
+        });
+
+        $('.all-chk-field').on('click', '.per-term-chk', function() {
+            var isChecked = true;
+            $('.all-chk-field .per-term-chk').each(function() {
+                isChecked = isChecked && $(this).is(':checked');
+            });
+
+            $('#termsAllChk_01').prop('checked', isChecked);
+        });
+
+        $(window).on('load resize scroll', function() {
+            reservationBtmBarFixed();
+        });
+    </script>
+</body>
+
+</html>

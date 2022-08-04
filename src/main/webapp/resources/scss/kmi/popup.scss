@@ -1,0 +1,337 @@
+.c-layer-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0s ease-in-out;
+  .buttons {
+    justify-content: flex-end;
+    .c-btn {
+      min-width: 80px;
+    }
+  }
+  .c-tab-field {
+    .c-tab-list {
+      > li {
+        a {
+          background-color: $color-white-1;
+        }
+      }
+    }
+  }
+
+  .c-article {
+    background-color: $color-white-2;
+  }
+
+  // = show
+  &.show {
+    visibility: visible;
+    z-index: 2000;
+    opacity: 1;
+
+    .modal-field {
+      top: 0;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+.modal-wrap {
+  display: flex;
+  align-items: center;
+  max-height: calc(100% - 80px);
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  &::before {
+    content: none;
+  }
+}
+
+.modal-field {
+  position: relative;
+  width: 100%;
+  border: 1px solid $color-gray-5;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: $radius-12;
+  background-color: $color-white-1;
+  z-index: 2001;
+  overflow: hidden;
+  color: $color-gray-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: -100px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  max-height: none;
+}
+.c-modal-body {
+  &.co-modal-scroll {
+    overflow-x: auto;
+    margin-bottom: 10px;
+
+    .c-modal-inner {
+      padding-bottom: 0;
+    }
+    .co-table-field {
+      overflow: initial;
+    }
+  }
+}
+
+// = modal-header
+
+.c-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  flex-shrink: 0;
+  padding: 32px 40px 20px;
+
+  .c-modal-title-field {
+    width: 100%;
+    .c-title {
+      margin-right: 40px;
+      text-align: left;
+
+      @include ellipsisLine01;
+      font: {
+        size: $p-fs-large-2;
+        weight: $weight-700;
+      }
+      line-height: 1.5;
+      color: $color-navy-1;
+    }
+  }
+
+  .popup-cls-btn {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    z-index: 10;
+    background: url($image-ico-path + 'ico_close_01.svg') center/28px no-repeat;
+    width: 28px;
+    height: 28px;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+//  = modal-body
+.c-modal-body {
+  margin: 0 40px;
+
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @include scrollStyle($color-white-1);
+
+  .cont-box {
+    color: $color-gray-2;
+    .title {
+      @include coSubTitle;
+      color: $color-black-1;
+    }
+    .cont {
+      color: $color-gray-2;
+      @include coBodyTxt;
+    }
+
+    & + .co-table-field {
+      margin-top: 20px;
+    }
+  }
+
+  .c-modal-inner {
+    padding-bottom: 20px;
+  }
+}
+// = modal-footer
+.c-modal-footer {
+  padding: 0 40px 32px;
+  flex-shrink: 0;
+
+  .inner {
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid $color-gray-5;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+
+  .buttons {
+    .co-btn {
+      width: auto;
+      min-width: 80px;
+      border-radius: $radius-12;
+    }
+  }
+
+  .ref-txt {
+    color: $color-black-op6;
+  }
+}
+
+.c-layer-popup {
+  &.add-popup {
+    &.show {
+      z-index: 2002;
+    }
+  }
+}
+
+// = modal input
+
+// = type01
+.c-layer-popup {
+  &.type01 {
+    .modal-field {
+      width: 360px;
+    }
+
+    .c-modal-body {
+      margin: {
+        top: 32px;
+        bottom: 0;
+      }
+
+      text-align: center;
+
+      .c-modal-inner {
+        padding-bottom: 0;
+      }
+
+      .in-cont {
+        @include coBodyTxt;
+        > p {
+          & ~ p {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+    .c-modal-footer {
+      .inner {
+        border-top: none;
+        justify-content: center;
+      }
+
+      .buttons {
+        $gap: 6px;
+        margin: {
+          left: -$gap;
+          right: -$gap;
+        }
+
+        justify-content: center;
+        width: 100%;
+
+        > button {
+          width: 100%;
+          padding: {
+            left: $gap;
+            right: $gap;
+          }
+        }
+      }
+    }
+  }
+}
+
+// = type02
+.c-layer-popup {
+  &.type02 {
+    .modal-field {
+      width: 480px;
+    }
+
+    .c-modal-inner {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+// = type03
+.c-layer-popup {
+  &.type03 {
+    .c-modal-inner {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    .modal-field {
+      width: 720px;
+    }
+  }
+}
+
+// = type04
+.c-layer-popup {
+  &.type04 {
+    .c-modal-inner {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    .modal-field {
+      width: 1180px;
+    }
+  }
+}
+
+// = type05 (full)
+.c-layer-popup {
+  &.type05 {
+    .c-modal-inner {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    .modal-wrap {
+      padding: 0 40px;
+      width: 100%;
+    }
+    .modal-field {
+      width: 100%;
+    }
+  }
+}
+
+// = surcharge (추가금 별도 type)
+.c-layer-popup {
+  &.surcharges {
+    .modal-field {
+      width: 480px;
+    }
+    .c-modal-body {
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+  }
+}

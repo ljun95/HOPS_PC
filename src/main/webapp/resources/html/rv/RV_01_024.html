@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>회원가입 및 확인</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Content-Wrapper -->
+        <div class="content-wrapper">
+            <!-- Contents -->
+            <section class="contents">
+                <!-- [comment]
+						- 팝업 연결 button [data-target] - .c-layer-popup [id] 동일 속성값 부여 
+						-  .c-layer-popup [aria-labelledby] - .c-modal-title-field > .c-title  동일 속성값 부여 
+					-->
+                <button type="button" class="co-btn btn-open-popup" data-toggle="modal" data-target="#popupFamilyPersonalInfo01"><span>open popup</span></button>
+
+                <div class="c-layer-popup type03" id="popupFamilyPersonalInfo01" role="dialog" aria-labelledby="popupFamilyPersonalInfo01_Label" aria-modal="true" aria-hidden="true">
+                    <div class="modal-wrap modal-dialog-centered">
+                        <div class="modal-field">
+                            <!-- modal Header -->
+                            <div class="c-modal-header">
+                                <div class="c-modal-title-field">
+                                    <h4 class="c-title" id="popupFamilyPersonalInfo01_Label">회사 지원 가족 대상자 개인 정보 입력</h4>
+                                </div>
+                                <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                            </div>
+
+                            <div class="c-modal-body">
+                                <div class="c-modal-inner">
+                                    <div class="join-login-field step04">
+                                        <div class="cont-box">
+                                            <p class="cont">회사 지원으로 건강검진을 진행하실 가족 정보를 입력하여 주시기 바랍니다.</p>
+                                        </div>
+                                        <div class="c-input-list-basic">
+                                            <div class="row">
+                                                <div class="col-6 label-input">
+                                                    <label for="inputFamilyPersonal01_01">임직원과의 관계</label>
+                                                    <div class="c-select">
+                                                        <select title="임직원과의 관계 선택">
+                                                            <option value="" selected>선택</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 label-input">
+                                                    <label for="inputFamilyPersonal01_02">검진자 이름</label>
+                                                    <input type="text" class="c-input" id="inputFamilyPersonal01_02" placeholder="이름을 입력하세요." />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 label-input">
+                                                    <label for="inputFamilyPersonal01_03">성별</label>
+                                                    <div class="c-select">
+                                                        <select title="성별 선택">
+                                                            <option value="" selected>선택</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 label-input">
+                                                    <label for="inputFamilyPersonal01_04">생년월일</label>
+                                                    <input type="text" class="c-input" id="inputFamilyPersonal01_04" placeholder="ex) 780505" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 label-input">
+                                                    <label for="inputFamilyPersonal01_05">내/외국인</label>
+                                                    <div class="c-select">
+                                                        <select title="내/외국인 선택" id="inputFamilyPersonal01_05">
+                                                            <option value="" selected>선택</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 label-input">
+                                                    <label for="inputFamilyPersonal01_06">국적</label>
+                                                    <div class="c-select">
+                                                        <select title="국적 선택" id="inputFamilyPersonal01_06">
+                                                            <option value="" selected>선택</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                            <option value="">option</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col label-input">
+                                                    <label class="c-label-txt">휴대폰 전화번호</label>
+                                                    <div class="c-input-phone-group">
+                                                        <div class="row inner">
+                                                            <div class="col input-phone-01">
+                                                                <div class="c-select">
+                                                                    <select title="휴대폰 전화번호 앞 3자리 선택">
+                                                                        <option value="" selected="">010</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                        <option value="">option</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col input-phone-02"><input type="text" class="c-input" title="휴대폰 전화번호 중간 4자리 입력" /></div>
+                                                            <div class="col input-phone-03"><input type="text" class="c-input" title="휴대폰 전화번호 끝 4자리 입력" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="co-terms-chk-card">
+                                                        <div class="c-chkbox type01">
+                                                            <input type="checkbox" id="termsChk_01_02" />
+                                                            <label for="termsChk_01_02" class="chk-label"><i></i><span>[필수] 개인정보 처리방침 동의</span></label>
+                                                        </div>
+                                                        <div class="co-terms-detail terms-scroll">
+                                                            <div class="inner">
+                                                                <div class="terms-row">
+                                                                    <p class="title">제공 받는자</p>
+                                                                    <div class="cont">
+                                                                        건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자
+                                                                        1980년에 시작되었음. 건강검진은 건강보험가입자들의 건강을 유지·증진하고, 경제적 손실을 최소화하며 장기적으로 보험급여비의 지출을 줄이고자 1980년에 시작되었음.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // modal body -->
+
+                            <!-- modal-footer -->
+                            <div class="c-modal-footer">
+                                <div class="inner">
+                                    <div class="buttons">
+                                        <button type="button" class="co-btn is-outline-navy-1 popup-cls-btn"><span>닫기</span></button>
+                                        <button type="button" class="co-btn bg-navy-1"><span>개인정보 등록</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- = type03  -->
+                    <!-- [ // layer popup] -->
+                </div>
+            </section>
+            <!-- // Contents -->
+
+
+        </div>
+        <!-- // Content-Wrapper -->
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KMI 한국의학연구소</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/ico/favicon.ico" />
+    <link rel="stylesheet" href="../../lib/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="../../lib/jquery-ui/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../../lib/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+</head>
+
+<body>
+    <div class="skip-navigation">
+        <p><a href="#container" tabindex="1">본문 바로가기</a></p>
+        <p><a href="#sideNav" tabindex="1">주메뉴 바로가기</a></p>
+        <p><a href="#subSideNav" tabindex="1">서브메뉴 바로가기</a></p>
+    </div>
+
+    <div id="container" class="resevation-container">
+        <!-- Content-Wrapper -->
+
+        <div class="content-wrapper">
+            <!-- 검진결과 비교하기 버튼 클릭 시 팝업 -->
+            <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupResultCompare01"><span>popup (검진결과 비교) </span></button>
+            <!-- [Popup Source] -->
+            <div class="c-layer-popup type04" id="popupChkupResultCompare01" role="dialog" aria-labelledby="popupChkupResultCompare01_Label" aria-modal="true" aria-hidden="true">
+                <div class="modal-wrap">
+                    <div class="modal-field" tabindex="0">
+                        <div class="c-modal-header">
+                            <div class="c-modal-title-field">
+                                <h4 class="c-title" id="popupChkupResultCompare01_Label">검진 결과 비교</h4>
+                            </div>
+                            <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                        </div>
+                        <!-- c-modal-body -->
+                        <div class="c-modal-body">
+                            <div class="c-modal-inner">
+                                <p class="co-ref-txt">최대 5개의 검진 결과에 대한 내역입니다.</p>
+                                <div class="co-table-field">
+                                    <div class="co-table cont-type04 tbl-center tbl-chkresult-compare">
+                                        <table class="table">
+                                            <caption>
+                                                검진 결과 비교 : 검진일시, 검진기관, 종합 소견에 대한 정보
+                                            </caption>
+                                            <colgroup>
+                                                <col style="width: 200px" />
+                                                <col style="width: 260px" />
+                                                <col />
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>검진일시</th>
+                                                    <th>검진기관</th>
+                                                    <th>종합 소견</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2021-05-15</td>
+                                                    <td>한국의학연구소 광화문센터</td>
+                                                    <td class="ta-l">
+                                                        <ul class="co-list-card circle02">
+                                                            <li>흉부촬영상 좌상의 비활동성의 섬유흔 소견입니다. 이전 염증등에 의한 변화로 현재 임상적 의의는 없으며 정기적인 검사를 하시기 바랍니다.</li>
+                                                            <li>고혈압 전단계 입니다. 고혈압으로 발전할 가능성이 높으므로 금주, 금연 및 저염식이, 규칙적인 운동하시고 정기적으로 혈압 측정 하시기 바랍니다.</li>
+                                                            <li>우내시경 검사상 만성 표재성 위염 소견입니다. 음주, 흡연, 커피, 소염진통제, 스트레스 및 자극적인 음식을 피하시고 규칙적인 식생활을 하시기 바랍니다.</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2021-05-15</td>
+                                                    <td>한국의학연구소 광화문센터</td>
+                                                    <td class="ta-l">
+                                                        <ul class="co-list-card circle02">
+                                                            <li>흉부촬영상 좌상의 비활동성의 섬유흔 소견입니다. 이전 염증등에 의한 변화로 현재 임상적 의의는 없으며 정기적인 검사를 하시기 바랍니다.</li>
+                                                            <li>고혈압 전단계 입니다. 고혈압으로 발전할 가능성이 높으므로 금주, 금연 및 저염식이, 규칙적인 운동하시고 정기적으로 혈압 측정 하시기 바랍니다.</li>
+                                                            <li>우내시경 검사상 만성 표재성 위염 소견입니다. 음주, 흡연, 커피, 소염진통제, 스트레스 및 자극적인 음식을 피하시고 규칙적인 식생활을 하시기 바랍니다.</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2021-05-15</td>
+                                                    <td>한국의학연구소 광화문센터</td>
+                                                    <td class="ta-l">
+                                                        <p class="co-ref-txt">결과등록 미신청</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //  c-modal-body -->
+
+                        <div class="c-modal-footer">
+                            <div class="inner">
+                                <div class="buttons">
+                                    <button type="button" class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- = type04  -->
+                <!-- [ // layer popup] -->
+            </div>
+
+            <!-- // 검진결과 비교하기 버튼 클릭 시 팝업 -->
+            <br />
+            <!-- + ? 버튼 클릭 시 팝업 -->
+            <button type="button" class="btn-open-popup" data-toggle="modal" data-target="#popupChkupResultCtg01"><span>popup (검사 항목 ? 클릭 시 설명 레이아웃)</span></button>
+
+            <div class="c-layer-popup type02" id="popupChkupResultCtg01" role="dialog" aria-labelledby="popupChkupResultCtg01_Label" aria-modal="true" aria-hidden="true">
+                <div class="modal-wrap">
+                    <div class="modal-field" tabindex="0">
+                        <div class="c-modal-header">
+                            <div class="c-modal-title-field">
+                                <h4 class="c-title" id="popupChkupResultCtg01_Label">혈압</h4>
+                            </div>
+                            <button type="button" class="popup-cls-btn"><span class="skip">팝업 닫기</span></button>
+                        </div>
+                        <div class="c-modal-body">
+                            <div class="c-modal-inner">
+                                <p>혈압은 안정상태에서 수축기와 이완기의 혈압을 측정합니다. 혈압은 운동, 스트레스, 안정 상태 등에 따라 변하므로 한번의 측정으로 고혈압을 진단할 수 는 없습니다. 정기적으로 혈압을 측정하고 증가시에는 반복하여 측정함으로써 고혈압을 조기에 진단 할 수 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="c-modal-footer">
+                            <div class="inner">
+                                <div class="buttons">
+                                    <button class="co-btn bg-navy-1 popup-cls-btn"><span>확인</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- + ? 버튼 클릭 시 팝업 -->
+
+            <!-- // Content-Wrapper -->
+        </div>
+    </div>
+    <script src="../../lib/swiper/js/swiper.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+
+</html>
