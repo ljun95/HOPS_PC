@@ -16,7 +16,7 @@
                 <h1 class="skip">KMI 한국의학연구소</h1>
                 <div class="top-logo">
                     <h2 class="logo">
-                        <a href="javascript:;"><img src="/resources/images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
+                        <a href="${path }/main"><img src="/resources/images/dummy/dummy_logo_kt02.png" alt="KT" /></a>
                     </h2>
                 </div>
 
@@ -39,7 +39,7 @@
                                 <li><a href="javascript:;">예약하기</a></li>
                                 <li><a href="javascript:;">예약내역</a></li>
                                 <li><a href="javascript:;">검진기관</a></li>
-                                <li><a href="javascript:;">검진결과</a></li>
+                                <li><a href="${path }/resultpage/resultinfo">검진결과</a></li>
                             </ul>
                         </li>
                         <li>
@@ -47,8 +47,8 @@
                                 <span class="s-menu nav03">결과상담</span>
                             </a>
                             <ul class="sidebar-sub-menu">
-                                <li><a href="javascript:;">결과 상담하기</a></li>
-                                <li><a href="javascript:;">상담이력</a></li>
+                                <li><a href="${path }/resultcounsel">결과 상담하기</a></li>
+                                <li><a href="${path }/counselresultlist">상담이력</a></li>
                             </ul>
                         </li>
                         <li>

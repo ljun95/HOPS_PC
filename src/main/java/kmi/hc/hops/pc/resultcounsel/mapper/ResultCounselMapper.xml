@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kmi.hc.hops.pc.resultcounsel.mapper.ResultCounselMapper">
+	<!-- 검진이력 가져오기 -->
+	<select id="checkupHistList" resultType="kmi.hc.hops.pc.resultcounsel.model.ResultCounselDto">
+			SELECT 
+				   hc.CHECKUP_NO				  
+				  ,hcr.USER_ID 
+				  ,hpc.PARTNER_CENTER_NAME 				   				   
+				  ,hc.PARTNER_CENTER_ID 				  				  
+				  ,DATE_FORMAT(hc.CHECKUP_DT, '%Y-%m-%d') AS CHECKUP_DT
+		      FROM HC_CHECKUP_ROSTER hcr
+		      join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO 
+		      join HC_PARTNER_CENTER hpc on hpc.PARTNER_CENTER_ID = hc.PARTNER_CENTER_ID 
+		      where hcr.USER_ID = #{userId}		   	  
+		      ORDER BY hc.CHECKUP_DT DESC
+	</select>
+	
+	<!-- 상담신청 insert -->
+	<insert id="counselapplinsert" parameterType="map">
+		INSERT INTO HC_RESULT_COUNSEL
+		(
+		  CHECKUP_NO
+		 ,RESULT_COUNSEL_TYPE
+		 ,QUESTION_TITLE
+		 ,QUESTION_CONTENTS
+		 ,REG_DT
+		 ,RESULT_COUNSEL_ST
+		 ,MOBILE_NO
+		 ,EMAIL
+		)
+		VALUES
+		(
+		   #{checkupNo}			
+		  ,#{type }		  
+		  ,#{title }		  
+		  ,#{content }		  
+		  ,DATE_FORMAT(now(), '%Y%m%d%h%m%s')
+		  ,"10"
+		  ,#{phone }
+		  ,#{email }
+		)
+	</insert>
+	<!-- 상담신청내역 Select -->
+	<select id="counselresultlist" resultType="kmi.hc.hops.pc.resultcounsel.model.ResultCounselListDto">
+		SELECT  hrc.RESULT_COUNSEL_NO
+		   		   ,hcr.CHECKUP_ROSTER_NO 
+		     	   ,hrc.CHECKUP_NO		     	   
+		   		   ,hcr.CUSTOMER_ID 
+		   		   ,hcr.USER_ID 
+		   		   ,hcr.ROSTER_NAME
+		   		   ,DATE_FORMAT(hrc.REG_DT, '%Y.%m.%d') AS REG_DT		# 검진일시	   	  		   		   
+		   		   ,hrc.QUESTION_TITLE 
+		   		   ,hrc.RESULT_COUNSEL_ST # 10이면은 답변준비중, 50이면은 상담답변보기  		   		   
+		   	  FROM HC_CHECKUP_ROSTER hcr
+		   	  join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO 
+		   	  join HC_RESULT_COUNSEL hrc on hrc.CHECKUP_NO = hc.CHECKUP_NO		   	  
+		   	  where hcr.USER_ID = #{userId}		   	  
+			  and hrc.RESULT_COUNSEL_ST != '90'
+			  ORDER BY hrc.RESULT_COUNSEL_NO DESC, hrc.REG_DT DESC
+			  LIMIT #{skip},#{amount}
+	</select>
+	<!-- 상담신청내역 총개수 -->
+	<select id="count" parameterType="kmi.hc.hops.pc.resultcounsel.model.ResultCounselListParam" resultType="integer">
+		SELECT  COUNT(hrc.REG_DT)
+		   	  FROM HC_CHECKUP_ROSTER hcr
+		   	  join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO 
+		   	  join HC_RESULT_COUNSEL hrc on hrc.CHECKUP_NO = hc.CHECKUP_NO
+		   	  WHERE 1=1		   	  
+		   	  and hcr.USER_ID = #{userId}		   	  
+		   	  and hrc.RESULT_COUNSEL_ST != '90'
+	</select>
+	<!-- 상담신청내역 상세보기 -->
+	<select id="counselresultview" resultType="kmi.hc.hops.pc.resultcounsel.model.ResultCounselListDto">
+			SELECT  hrc.RESULT_COUNSEL_NO
+		   		   ,hcr.CHECKUP_ROSTER_NO 
+		     	   ,hrc.CHECKUP_NO		     	   
+		   		   ,hcr.CUSTOMER_ID 
+		   		   ,hcr.USER_ID 
+		   		   ,hcr.ROSTER_NAME
+		   		   ,DATE_FORMAT(hrc.REG_DT, '%Y.%m.%d') AS REG_DT		# 검진일시	   	  		   		   
+		   		   ,hrc.QUESTION_TITLE 
+		   		   ,hrc.RESULT_COUNSEL_ST # 10이면은 답변준비중, 50이면은 상담답변보기
+		   		   ,hrc.QUESTION_CONTENTS # 문의내용
+		   		   ,hrc.ANSWER_CONTENTS # 답변내용  		   		   
+		   	  FROM HC_CHECKUP_ROSTER hcr
+		   	  join HC_CHECKUP hc on hc.CHECKUP_ROSTER_NO = hcr.CHECKUP_ROSTER_NO 
+		   	  join HC_RESULT_COUNSEL hrc on hrc.CHECKUP_NO = hc.CHECKUP_NO		   	  
+		   	  where hcr.USER_ID = #{user_id}		   	  
+			  and hrc.RESULT_COUNSEL_NO  = #{result_counsel_no}		   	
+			  and hrc.RESULT_COUNSEL_ST != '90'			  
+	</select>
+</mapper>
