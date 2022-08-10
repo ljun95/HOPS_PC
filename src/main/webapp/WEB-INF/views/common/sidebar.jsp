@@ -27,8 +27,8 @@
                                 <span class="s-menu nav01"> 건강검진제도</span>
                             </a>
                             <ul class="sidebar-sub-menu">
-                                <li><a href="javascript:;" class="on">국가건강 검진 제도안내</a></li>
-                                <li><a href="javascript:;">우리회사 검진제도 안내</a></li>
+                                <li><a href="${path }/checkuppolicy/countrycheckuppolicy" class="on">국가건강 검진 제도안내</a></li>
+                                <li><a href="${path }/checkuppolicy/companycheckuppolicy">우리회사 검진제도 안내</a></li>
                             </ul>
                         </li>
                         <li>

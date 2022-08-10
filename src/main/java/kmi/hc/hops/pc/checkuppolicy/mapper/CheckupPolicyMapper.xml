@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kmi.hc.hops.pc.checkuppolicy.mapper.CheckupPolicyMapper">
+	<!-- 건강검진제도 안내 가져오기 -->
+	<select id="companycheckuppolicy" resultType="map">
+		SELECT hcp.CHECKUP_POLICY_GUIDE  
+		  	FROM HC_USER hu 
+		  	join HC_CHECKUP_ROSTER hcr on hu.USER_ID = hcr.USER_ID 
+		  	join HC_CUSTOMER hc on hc.CUSTOMER_ID = hcr.CUSTOMER_ID  
+		  	join HC_CHECKUP_POLICY hcp on hcp.CUSTOMER_ID = hcr.CUSTOMER_ID 
+		  	where hu.USER_ID = #{userId} and hcp.POLICY_YEAR = DATE_FORMAT(now(), '%Y')
+	</select>
+</mapper>
