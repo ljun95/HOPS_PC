@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kmi.hc.hops.pc.main.mapper.MainMapper">
+
+	<select id="noticeList" resultType="kmi.hc.hops.pc.main.model.MainDto"> 		 
+		    SELECT hsn.SERVICE_NOTICE_NO
+		   		,CASE WHEN hsn.NOTICE_TYPE  = '00' THEN  '전체'
+					  WHEN hsn.NOTICE_TYPE  = '10' THEN  '서비스'
+					  WHEN hsn.NOTICE_TYPE  = '20' THEN  '검진'
+					  WHEN hsn.NOTICE_TYPE  = '30' THEN  '이벤트'
+					    END AS NOTICE_TYPE	# 공지타입 				     
+		   		 ,hsn.NOTICE_TITLE 
+		   		 #,hsn.NOTICE_CONTENTS 		   		 
+		   		 ,DATE_FORMAT(hsn.REG_DT, '%Y-%m-%d') AS REG_DT			# 공지등록일
+		   		 ,DATE_FORMAT(hsn.UPDATE_DT, '%Y-%m-%d') AS UPDATE_DT	# 공지수정일		   		 
+		   	 FROM HC_SERVICE_NOTICE hsn 
+		   	 join HC_SERVICE_NOTICE_CUSTOMER hsnc on hsnc.SERVICE_NOTICE_NO = hsn.SERVICE_NOTICE_NO
+		   	 WHERE hsnc.CUSTOMER_ID = #{customerId} and hsn.SERVICE_NOTICE_ST = '00' ORDER BY  hsn.UPDATE_DT DESC, hsn.REG_DT DESC limit 0,5;	 
+	</select>
+</mapper>
