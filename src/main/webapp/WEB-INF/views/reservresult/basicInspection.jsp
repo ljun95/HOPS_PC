@@ -86,7 +86,7 @@
                             <div class="co-location-wrap">
                                 <div class="co-location">
                                     <p>
-                                        <a href="javascript:;" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
+                                        <a href="${path }/main" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
                                     </p>
 
                                     <p>검진예약/결과조회</p>
@@ -500,8 +500,6 @@
 <!-- Footer -->                  
 <jsp:include page="../common/footer.jsp"/>                                                            
 </body>
-<script src="${path }/resources/lib/swiper/js/swiper.js"></script>
-<script src="${path }/resources/js/common.js"></script>
 <script src="${path }/resources/lib/chart.js/dist/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
 <script type="text/javascript">

@@ -32,7 +32,7 @@
                         <div class="co-location-wrap">
                             <div class="co-location">
                                 <p>
-                                    <a href="javascript:;" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
+                                    <a href="${path }/main" class="home" title="홈으로 이동"><span class="skip">Home</span></a>
                                 </p>
 
                                 <p>결과상담</p>
